@@ -211,5 +211,51 @@ const WC_DATA = {
     final: [
       {id:"FIN-104", date_bst:"2026-07-19", time_bst:"TBC", home_label:"W SF-101", away_label:"W SF-102", home_team:null,away_team:null, score:null,goals:[],reds:[],yt:null, feeds_from:["SF-101","SF-102"]},
     ]
+  },
+
+  // Predictions — updated daily by /update-worldcup
+  // Source: current standings where matches played, bookmaker odds (FanDuel) otherwise
+  predictions: {
+    groups: {
+      A: ["Mexico","South Korea","Czech Republic","South Africa"],
+      B: ["Switzerland","Canada","Bosnia and Herzegovina","Qatar"],
+      C: ["Scotland","Brazil","Morocco","Haiti"],
+      D: ["United States","Australia","Turkey","Paraguay"],
+      E: ["Germany","Ivory Coast","Ecuador","Curaçao"],
+      F: ["Sweden","Netherlands","Japan","Tunisia"],
+      G: ["Belgium","Egypt","Iran","New Zealand"],
+      H: ["Spain","Uruguay","Saudi Arabia","Cape Verde"],
+      I: ["France","Norway","Senegal","Iraq"],
+      J: ["Argentina","Austria","Algeria","Jordan"],
+      K: ["Portugal","Colombia","DR Congo","Uzbekistan"],
+      L: ["England","Croatia","Ghana","Panama"],
+    },
+    // Predicted best-3rd slot assignments (greedy proxy for FIFA Annex C)
+    best_thirds_slots: {
+      "Best 3rd (A/B/C/D/F)": {team:"Morocco",           group:"C"},
+      "Best 3rd (C/D/F/G/H)": {team:"Turkey",            group:"D"},
+      "Best 3rd (C/E/F/H/I)": {team:"Japan",             group:"F"},
+      "Best 3rd (E/H/I/J/K)": {team:"Saudi Arabia",      group:"H"},
+      "Best 3rd (B/E/F/I/J)": {team:"Bosnia and Herzegovina", group:"B"},
+      "Best 3rd (A/E/H/I/J)": {team:"Czech Republic",    group:"A"},
+      "Best 3rd (E/F/G/I/J)": {team:"Senegal",           group:"I"},
+      "Best 3rd (D/E/I/J/L)": {team:"Algeria",           group:"J"},
+    },
+    // Predicted knockout winners (match id → team name)
+    knockout: {
+      "R32-73":"South Korea",  "R32-74":"Germany",       "R32-75":"Brazil",
+      "R32-76":"Netherlands",  "R32-77":"France",         "R32-78":"Ivory Coast",
+      "R32-79":"Mexico",       "R32-80":"England",        "R32-81":"United States",
+      "R32-82":"Belgium",      "R32-83":"Colombia",       "R32-84":"Spain",
+      "R32-85":"Switzerland",  "R32-86":"Argentina",      "R32-87":"Portugal",
+      "R32-88":"Australia",
+      "R16-89":"Germany",      "R16-90":"Brazil",         "R16-91":"France",
+      "R16-92":"England",      "R16-93":"Belgium",        "R16-94":"Spain",
+      "R16-95":"Argentina",    "R16-96":"Portugal",
+      "QF-97":"Brazil",        "QF-98":"France",          "QF-99":"Spain",
+      "QF-100":"Argentina",
+      "SF-101":"France",       "SF-102":"Spain",
+      "3PL-103":"Brazil",      "FIN-104":"Spain",
+    }
   }
 };

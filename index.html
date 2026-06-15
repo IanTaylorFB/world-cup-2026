@@ -218,6 +218,8 @@
   .ko-team .ko-score { font-weight: 700; color: var(--accent); min-width: 18px; text-align: right; }
   .ko-team .ko-score.win { color: var(--green); }
   .ko-team .ko-date { font-size: 10px; color: var(--muted); text-align: center; padding: 3px 8px; }
+  .ko-team .predicted { color: var(--muted); font-style: italic; flex: 1; font-size: 11px; }
+  .ko-team .predicted .pred-pos { font-size: 10px; opacity: 0.8; }
 
   .final-col {
     display: flex;
@@ -531,6 +533,84 @@ function renderGroups() {
   container.appendChild(grid);
 }
 
+// ── Predictions ───────────────────────────────────────────────────────────────
+
+function findTeamPosition(name) {
+  const groups = WC_DATA.predictions?.groups || {};
+  for (const [grp, teams] of Object.entries(groups)) {
+    const pos = teams.indexOf(name);
+    if (pos !== -1) return {team: name, group: grp, pos: pos + 1};
+  }
+  return {team: name, group: '?', pos: '?'};
+}
+
+function groupStandingsFor(grp) {
+  const group = WC_DATA.groups[grp];
+  if (!group) return null;
+  const st = computeStandings(group);
+  return st.some(t => t.p > 0) ? st : null; // null if no matches played
+}
+
+function resolveSlot(label) {
+  const preds = WC_DATA.predictions;
+  if (!preds) return null;
+
+  // "1st Group C", "2nd Group F", etc.
+  let m = label.match(/^(\d+)(?:st|nd|rd|th) Group ([A-L])$/);
+  if (m) {
+    const pos = parseInt(m[1]);
+    const grp = m[2];
+    const actual = groupStandingsFor(grp);
+    const team = actual
+      ? actual[pos - 1]?.name          // use real standings
+      : preds.groups?.[grp]?.[pos - 1]; // fall back to odds prediction
+    return team ? {team, group: grp, pos} : null;
+  }
+
+  // "Best 3rd (A/B/C/D/F)"
+  m = label.match(/^Best 3rd \(/);
+  if (m) {
+    const entry = preds.best_thirds_slots?.[label];
+    if (!entry) return null;
+    // If that group has actual results, use the actual 3rd-place team
+    const actual = groupStandingsFor(entry.group);
+    const team = actual ? actual[2]?.name : entry.team;
+    return team ? {team, group: entry.group, pos: 3} : null;
+  }
+
+  // "W R32-73", "W R16-89", etc.
+  m = label.match(/^W (.+)$/);
+  if (m) {
+    const team = preds.knockout?.[m[1]];
+    return team ? findTeamPosition(team) : null;
+  }
+
+  // "L SF-101" (loser = 3rd place match participant)
+  m = label.match(/^L (.+)$/);
+  if (m) {
+    const winner = preds.knockout?.[m[1]];
+    if (!winner) return null;
+    // Find the loser: the team that played and didn't win
+    const matchId = m[1];
+    const matchData = [...(WC_DATA.knockout.sf || [])].find(x => x.id === matchId);
+    if (!matchData) return null;
+    const home = matchData.home_team || resolveSlot(matchData.home_label)?.team;
+    const away = matchData.away_team || resolveSlot(matchData.away_label)?.team;
+    const loser = (home === winner) ? away : home;
+    return loser ? findTeamPosition(loser) : null;
+  }
+
+  return null;
+}
+
+function predHtml(resolved) {
+  if (!resolved) return null;
+  const {team, group, pos} = resolved;
+  const {flag, abbr} = teamInfo(team);
+  const suffix = group !== '?' ? ` <span class="pred-pos">${group}-${pos}</span>` : '';
+  return `<span class="predicted">${flag} ${abbr} ${team}${suffix}</span>`;
+}
+
 // ── Knockout Bracket ──────────────────────────────────────────────────────────
 
 function koTeamName(match, side) {
@@ -545,6 +625,8 @@ function koScoreStr(match, side) {
 }
 
 function buildKoMatchEl(match, flipped) {
+  const homeConfirmed = !!match.home_team;
+  const awayConfirmed = !!match.away_team;
   const homeName = koTeamName(match, 'home');
   const awayName = koTeamName(match, 'away');
   const homeScore = koScoreStr(match, 'home');
@@ -552,6 +634,19 @@ function buildKoMatchEl(match, flipped) {
   const homeWin = match.score && match.score.h > match.score.a;
   const awayWin = match.score && match.score.h < match.score.a;
   const dt = fmtDatetime(match.date_bst, match.time_bst !== 'TBC' ? match.time_bst : '');
+
+  // Resolve predictions for unconfirmed slots
+  const homePred = !homeConfirmed ? resolveSlot(match.home_label) : null;
+  const awayPred = !awayConfirmed ? resolveSlot(match.away_label) : null;
+
+  function teamCell(confirmed, name, pred, isWin) {
+    if (confirmed) {
+      const {flag, abbr} = teamInfo(name);
+      return `<span class="name">${flag} ${abbr} ${name}</span>`;
+    }
+    if (pred) return predHtml(pred);
+    return `<span class="tbd">${name}</span>`;
+  }
 
   const wrapper = document.createElement('div');
   wrapper.className = 'ko-match-wrapper';
@@ -568,14 +663,13 @@ function buildKoMatchEl(match, flipped) {
     box.innerHTML += `<div class="ko-team" style="border-bottom:none;padding:3px 8px"><span class="ko-date">${dt} BST${newDot}</span></div>`;
   }
 
-  const isTbd = !match.home_team && !match.away_team && !match.score;
   box.innerHTML += `
     <div class="ko-team">
-      <span class="${match.home_team ? 'name' : 'tbd'}">${homeName}</span>
+      ${teamCell(homeConfirmed, homeName, homePred, homeWin)}
       ${match.score !== null ? `<span class="ko-score ${homeWin ? 'win' : ''}">${homeScore}</span>` : ''}
     </div>
     <div class="ko-team">
-      <span class="${match.away_team ? 'name' : 'tbd'}">${awayName}</span>
+      ${teamCell(awayConfirmed, awayName, awayPred, awayWin)}
       ${match.score !== null ? `<span class="ko-score ${awayWin ? 'win' : ''}">${awayScore}</span>` : ''}
     </div>
   `;
