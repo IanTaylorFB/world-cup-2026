@@ -90,6 +90,13 @@
   .standings tr.qualified td:first-child { border-left: 3px solid var(--green); padding-left: 11px; }
   .standings tr.playoff td:first-child { border-left: 3px solid var(--yellow); padding-left: 11px; }
 
+  /* Team identity cells */
+  .team-cell { display: flex; align-items: center; gap: 5px; }
+  .team-dot-slot { font-size: 9px; color: var(--new); width: 10px; flex-shrink: 0; }
+  .team-flag { font-size: 15px; line-height: 1; flex-shrink: 0; }
+  .team-abbr { font-size: 11px; color: var(--muted); font-weight: 500; flex-shrink: 0; }
+  .team-name { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; max-width: 120px; }
+
   /* Matches section */
   .matches-section { display: none; }
   .group-card.open .matches-section { display: block; }
@@ -113,9 +120,12 @@
   .match-teams {
     display: flex; align-items: center; gap: 8px; font-size: 13px;
   }
-  .match-teams .team { flex: 1; }
-  .match-teams .home { text-align: right; }
-  .match-teams .away { text-align: left; }
+  .match-teams .team { flex: 1; display: flex; align-items: center; gap: 4px; }
+  .match-teams .home { justify-content: flex-end; }
+  .match-teams .away { justify-content: flex-start; }
+  .match-teams .team .team-name { max-width: 110px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .match-teams .team .team-abbr { font-size: 11px; color: var(--muted); flex-shrink: 0; }
+  .match-teams .team .team-flag { font-size: 15px; line-height: 1; flex-shrink: 0; }
   .score-box {
     background: #21262d; border: 1px solid var(--border); border-radius: 4px;
     padding: 2px 10px; font-weight: 700; font-size: 14px; min-width: 50px;
@@ -271,7 +281,64 @@
 </div>
 
 <script>
-// ── Helpers ──────────────────────────────────────────────────────────────────
+// ── Team lookup ───────────────────────────────────────────────────────────────
+
+const TEAMS = {
+  "Mexico":                   {flag:"🇲🇽", abbr:"MEX"},
+  "South Africa":             {flag:"🇿🇦", abbr:"RSA"},
+  "South Korea":              {flag:"🇰🇷", abbr:"KOR"},
+  "Czech Republic":           {flag:"🇨🇿", abbr:"CZE"},
+  "Canada":                   {flag:"🇨🇦", abbr:"CAN"},
+  "Bosnia and Herzegovina":   {flag:"🇧🇦", abbr:"BIH"},
+  "Qatar":                    {flag:"🇶🇦", abbr:"QAT"},
+  "Switzerland":              {flag:"🇨🇭", abbr:"SUI"},
+  "Brazil":                   {flag:"🇧🇷", abbr:"BRA"},
+  "Morocco":                  {flag:"🇲🇦", abbr:"MAR"},
+  "Haiti":                    {flag:"🇭🇹", abbr:"HAI"},
+  "Scotland":                 {flag:"🏴󠁧󠁢󠁳󠁣󠁴󠁿", abbr:"SCO"},
+  "United States":            {flag:"🇺🇸", abbr:"USA"},
+  "Paraguay":                 {flag:"🇵🇾", abbr:"PAR"},
+  "Australia":                {flag:"🇦🇺", abbr:"AUS"},
+  "Turkey":                   {flag:"🇹🇷", abbr:"TUR"},
+  "Germany":                  {flag:"🇩🇪", abbr:"GER"},
+  "Curaçao":                  {flag:"🇨🇼", abbr:"CUW"},
+  "Ivory Coast":              {flag:"🇨🇮", abbr:"CIV"},
+  "Ecuador":                  {flag:"🇪🇨", abbr:"ECU"},
+  "Netherlands":              {flag:"🇳🇱", abbr:"NED"},
+  "Japan":                    {flag:"🇯🇵", abbr:"JPN"},
+  "Sweden":                   {flag:"🇸🇪", abbr:"SWE"},
+  "Tunisia":                  {flag:"🇹🇳", abbr:"TUN"},
+  "Belgium":                  {flag:"🇧🇪", abbr:"BEL"},
+  "Egypt":                    {flag:"🇪🇬", abbr:"EGY"},
+  "Iran":                     {flag:"🇮🇷", abbr:"IRN"},
+  "New Zealand":              {flag:"🇳🇿", abbr:"NZL"},
+  "Spain":                    {flag:"🇪🇸", abbr:"ESP"},
+  "Cape Verde":               {flag:"🇨🇻", abbr:"CPV"},
+  "Saudi Arabia":             {flag:"🇸🇦", abbr:"KSA"},
+  "Uruguay":                  {flag:"🇺🇾", abbr:"URU"},
+  "France":                   {flag:"🇫🇷", abbr:"FRA"},
+  "Senegal":                  {flag:"🇸🇳", abbr:"SEN"},
+  "Iraq":                     {flag:"🇮🇶", abbr:"IRQ"},
+  "Norway":                   {flag:"🇳🇴", abbr:"NOR"},
+  "Argentina":                {flag:"🇦🇷", abbr:"ARG"},
+  "Algeria":                  {flag:"🇩🇿", abbr:"ALG"},
+  "Austria":                  {flag:"🇦🇹", abbr:"AUT"},
+  "Jordan":                   {flag:"🇯🇴", abbr:"JOR"},
+  "Portugal":                 {flag:"🇵🇹", abbr:"POR"},
+  "DR Congo":                 {flag:"🇨🇩", abbr:"COD"},
+  "Uzbekistan":               {flag:"🇺🇿", abbr:"UZB"},
+  "Colombia":                 {flag:"🇨🇴", abbr:"COL"},
+  "England":                  {flag:"🏴󠁧󠁢󠁥󠁮󠁧󠁿", abbr:"ENG"},
+  "Croatia":                  {flag:"🇭🇷", abbr:"CRO"},
+  "Ghana":                    {flag:"🇬🇭", abbr:"GHA"},
+  "Panama":                   {flag:"🇵🇦", abbr:"PAN"},
+};
+
+function teamInfo(name) {
+  return TEAMS[name] || {flag:"🏳", abbr:"???"};
+}
+
+// ── Helpers ───────────────────────────────────────────────────────────────────
 
 const DAYS = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
 const MONTHS = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
@@ -384,10 +451,11 @@ function renderGroups() {
       </tr></thead><tbody>`;
     standings.forEach((t, i) => {
       const cls = i < 2 ? 'qualified' : (i === 2 ? 'playoff' : '');
-      const dot = newTeams.has(t.name) ? '<span class="new-dot">⬤</span>' : '';
+      const {flag, abbr} = teamInfo(t.name);
+      const dotSlot = newTeams.has(t.name) ? '<span class="team-dot-slot">⬤</span>' : '<span class="team-dot-slot"> </span>';
       stHtml += `<tr class="${cls}">
         <td class="pos">${i+1}</td>
-        <td>${dot}${t.name}</td>
+        <td><div class="team-cell">${dotSlot}<span class="team-flag">${flag}</span><span class="team-abbr">${abbr}</span><span class="team-name">${t.name}</span></div></td>
         <td>${t.p}</td><td>${t.w}</td><td>${t.d}</td><td>${t.l}</td>
         <td>${t.gf}</td><td>${t.ga}</td>
         <td>${t.gd > 0 ? '+' : ''}${t.gd}</td>
@@ -413,13 +481,14 @@ function renderGroups() {
         const homeReds = m.reds.filter(r => r.t === m.home).map(r => `${r.p} ${r.m}'`);
         const awayReds = m.reds.filter(r => r.t === m.away).map(r => `${r.p} ${r.m}'`);
 
-        const newDot = m.new ? ' <span class="new-dot">⬤</span>' : '';
+        const newDot = m.new ? '<span class="new-dot">⬤</span>' : '';
+        const hi = teamInfo(m.home), ai = teamInfo(m.away);
         matchHtml += `<div class="match-row" onclick='openMatch(${JSON.stringify(m)}, "${m.home} vs ${m.away}")' style="cursor:pointer">
           <div class="match-datetime">${dt} BST</div>
           <div class="match-teams">
-            <span class="team home">${m.home}</span>
+            <span class="team home"><span class="team-name">${m.home}</span><span class="team-abbr">${hi.abbr}</span><span class="team-flag">${hi.flag}</span></span>
             <span class="score-box">${m.score.h} – ${m.score.a}</span>
-            <span class="team away">${m.away}${newDot}</span>
+            <span class="team away"><span class="team-flag">${ai.flag}</span><span class="team-abbr">${ai.abbr}</span><span class="team-name">${m.away}</span>${newDot}</span>
           </div>
           <div class="match-details">`;
         if (homeGoals.length) matchHtml += `<div class="goal-line">⚽ ${homeGoals.join(', ')}</div>`;
@@ -435,12 +504,13 @@ function renderGroups() {
       matchHtml += `<div class="matches-label">Upcoming</div>`;
       upcomingMatches.forEach(m => {
         const dt = fmtDatetime(m.date_bst, m.time_bst);
+        const uhi = teamInfo(m.home), uai = teamInfo(m.away);
         matchHtml += `<div class="match-row">
           <div class="match-datetime">${dt} BST</div>
           <div class="match-teams">
-            <span class="team home">${m.home}</span>
+            <span class="team home"><span class="team-name">${m.home}</span><span class="team-abbr">${uhi.abbr}</span><span class="team-flag">${uhi.flag}</span></span>
             <span class="score-box upcoming">vs</span>
-            <span class="team away">${m.away}</span>
+            <span class="team away"><span class="team-flag">${uai.flag}</span><span class="team-abbr">${uai.abbr}</span><span class="team-name">${m.away}</span></span>
           </div>
         </div>`;
       });
