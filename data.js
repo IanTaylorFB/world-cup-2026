@@ -241,21 +241,46 @@ const WC_DATA = {
       "Best 3rd (E/F/G/I/J)": {team:"Senegal",           group:"I"},
       "Best 3rd (D/E/I/J/L)": {team:"Algeria",           group:"J"},
     },
-    // Predicted knockout winners (match id → team name)
+    // Predicted knockout winners: "home" or "away" side wins each match.
+    // Stored as sides so predictions cascade correctly when group standings change.
     knockout: {
-      "R32-73":"South Korea",  "R32-74":"Germany",       "R32-75":"Brazil",
-      "R32-76":"Netherlands",  "R32-77":"France",         "R32-78":"Ivory Coast",
-      "R32-79":"Mexico",       "R32-80":"England",        "R32-81":"United States",
-      "R32-82":"Belgium",      "R32-83":"Colombia",       "R32-84":"Spain",
-      "R32-85":"Switzerland",  "R32-86":"Argentina",      "R32-87":"Portugal",
-      "R32-88":"Australia",
-      "R16-89":"Germany",      "R16-90":"Brazil",         "R16-91":"France",
-      "R16-92":"England",      "R16-93":"Belgium",        "R16-94":"Spain",
-      "R16-95":"Argentina",    "R16-96":"Portugal",
-      "QF-97":"Brazil",        "QF-98":"France",          "QF-99":"Spain",
-      "QF-100":"Argentina",
-      "SF-101":"France",       "SF-102":"Spain",
-      "3PL-103":"Brazil",      "FIN-104":"Spain",
+      // R32: home=1st/2nd label, away=opponent label
+      "R32-73":"home",   // 2nd A (S.Korea) beats 2nd B (Canada)
+      "R32-74":"home",   // 1st E (Germany) beats Best 3rd
+      "R32-75":"away",   // 1st F (Sweden) loses to 2nd C (Brazil)
+      "R32-76":"away",   // 1st C (Scotland) loses to 2nd F (Netherlands)
+      "R32-77":"home",   // 1st I (France) beats Best 3rd
+      "R32-78":"home",   // 2nd E (Ivory Coast) beats 2nd I (Norway)
+      "R32-79":"home",   // 1st A (Mexico) beats Best 3rd
+      "R32-80":"home",   // 1st L (England) beats Best 3rd
+      "R32-81":"home",   // 1st D (USA) beats Best 3rd
+      "R32-82":"home",   // 1st G (Belgium) beats Best 3rd
+      "R32-83":"home",   // 2nd K (Colombia) beats 2nd L (Croatia)
+      "R32-84":"home",   // 1st H (Spain) beats 2nd J (Austria)
+      "R32-85":"home",   // 1st B (Bosnia) beats Best 3rd (Senegal)
+      "R32-86":"home",   // 1st J (Argentina) beats 2nd H (Uruguay)
+      "R32-87":"home",   // 1st K (Portugal) beats Best 3rd
+      "R32-88":"home",   // 2nd D (Australia) beats 2nd G (Egypt)
+      // R16
+      "R16-89":"away",   // W73 (S.Korea) loses to W74 (Germany)
+      "R16-90":"home",   // W75 (Brazil) beats W76 (Netherlands)
+      "R16-91":"home",   // W77 (France) beats W78 (Ivory Coast)
+      "R16-92":"away",   // W79 (Mexico) loses to W80 (England)
+      "R16-93":"away",   // W81 (USA) loses to W82 (Belgium)
+      "R16-94":"away",   // W83 (Colombia) loses to W84 (Spain)
+      "R16-95":"away",   // W85 (Bosnia) loses to W86 (Argentina)
+      "R16-96":"home",   // W87 (Portugal) beats W88 (Australia)
+      // QF
+      "QF-97":"away",    // W89 (Germany) loses to W90 (Brazil)
+      "QF-98":"home",    // W91 (France) beats W92 (England)
+      "QF-99":"away",    // W93 (Belgium) loses to W94 (Spain)
+      "QF-100":"home",   // W95 (Argentina) beats W96 (Portugal)
+      // SF
+      "SF-101":"away",   // W97 (Brazil) loses to W98 (France)
+      "SF-102":"home",   // W99 (Spain) beats W100 (Argentina)
+      // 3rd place & Final
+      "3PL-103":"home",  // L101 (Brazil) beats L102 (Argentina)
+      "FIN-104":"away",  // W101 (France) loses to W102 (Spain)
     }
   }
 };

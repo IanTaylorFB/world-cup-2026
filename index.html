@@ -580,6 +580,12 @@ function findTeamPosition(name) {
   return {team: name, group: '?', pos: '?'};
 }
 
+function findKoMatch(matchId) {
+  const ko = WC_DATA.knockout;
+  return [...ko.r32, ...ko.r16, ...ko.qf, ...ko.sf, ...ko.third_place, ...ko.final]
+    .find(m => m.id === matchId) || null;
+}
+
 function groupStandingsFor(grp) {
   const group = WC_DATA.groups[grp];
   if (!group) return null;
@@ -617,23 +623,31 @@ function resolveSlot(label) {
   // "W R32-73", "W R16-89", etc.
   m = label.match(/^W (.+)$/);
   if (m) {
-    const team = preds.knockout?.[m[1]];
-    return team ? findTeamPosition(team) : null;
+    const matchId = m[1];
+    const match = findKoMatch(matchId);
+    if (!match) return null;
+    // If match has a confirmed result, use actual winner
+    if (match.score !== null && (match.home_team || match.away_team)) {
+      const winner = match.score.h > match.score.a ? match.home_team : match.away_team;
+      return winner ? findTeamPosition(winner) : null;
+    }
+    // Otherwise resolve winner side recursively
+    const side = preds.knockout?.[matchId];
+    if (!side) return null;
+    const winLabel = side === 'home' ? match.home_label : match.away_label;
+    return resolveSlot(winLabel);
   }
 
-  // "L SF-101" (loser = 3rd place match participant)
+  // "L SF-101" (loser → 3rd place match)
   m = label.match(/^L (.+)$/);
   if (m) {
-    const winner = preds.knockout?.[m[1]];
-    if (!winner) return null;
-    // Find the loser: the team that played and didn't win
     const matchId = m[1];
-    const matchData = [...(WC_DATA.knockout.sf || [])].find(x => x.id === matchId);
-    if (!matchData) return null;
-    const home = matchData.home_team || resolveSlot(matchData.home_label)?.team;
-    const away = matchData.away_team || resolveSlot(matchData.away_label)?.team;
-    const loser = (home === winner) ? away : home;
-    return loser ? findTeamPosition(loser) : null;
+    const match = findKoMatch(matchId);
+    if (!match) return null;
+    const side = preds.knockout?.[matchId];
+    if (!side) return null;
+    const loserLabel = side === 'home' ? match.away_label : match.home_label;
+    return resolveSlot(loserLabel);
   }
 
   return null;
