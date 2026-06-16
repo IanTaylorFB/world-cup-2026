@@ -182,18 +182,54 @@
     position: relative;
   }
 
-  .ko-match-wrapper::after {
+  /* Pair wrapper — groups two matches that feed into the next round */
+  .match-pair {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+
+  /* Top match in a pair: draw from its centre down to the pair midpoint */
+  .bracket-half.left  .match-pair .ko-match-wrapper:nth-child(1)::after,
+  .bracket-half.right .match-pair .ko-match-wrapper:nth-child(1)::after {
     content: '';
     position: absolute;
-    right: -4px;
-    top: 25%;
+    top: 50%;
     height: 50%;
+    width: 8px;
+  }
+  /* Bottom match in a pair: draw from the pair midpoint up to its centre */
+  .bracket-half.left  .match-pair .ko-match-wrapper:nth-child(2)::after,
+  .bracket-half.right .match-pair .ko-match-wrapper:nth-child(2)::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    height: 50%;
+    width: 8px;
+  }
+
+  /* Left bracket: connectors on the right */
+  .bracket-half.left .match-pair .ko-match-wrapper:nth-child(1)::after {
+    right: 0;
+    border-top: 1px solid var(--border);
+    border-right: 1px solid var(--border);
+  }
+  .bracket-half.left .match-pair .ko-match-wrapper:nth-child(2)::after {
+    right: 0;
+    border-bottom: 1px solid var(--border);
     border-right: 1px solid var(--border);
   }
 
-  .bracket-half.right .ko-match-wrapper::after {
-    right: auto;
-    left: -4px;
+  /* Right bracket: connectors on the left (mirrored) */
+  .bracket-half.right .match-pair .ko-match-wrapper:nth-child(1)::after {
+    left: 0;
+    border-top: 1px solid var(--border);
+    border-left: 1px solid var(--border);
+  }
+  .bracket-half.right .match-pair .ko-match-wrapper:nth-child(2)::after {
+    left: 0;
+    border-bottom: 1px solid var(--border);
+    border-left: 1px solid var(--border);
   }
 
   .ko-match {
@@ -685,7 +721,20 @@ function buildRoundCol(label, matches, flipped) {
   lbl.className = 'round-label';
   lbl.textContent = label;
   col.appendChild(lbl);
-  matches.forEach(m => col.appendChild(buildKoMatchEl(m, flipped)));
+
+  if (matches.length > 1) {
+    // Wrap consecutive pairs so CSS connectors can target nth-child correctly
+    for (let i = 0; i < matches.length; i += 2) {
+      const pair = document.createElement('div');
+      pair.className = 'match-pair';
+      pair.appendChild(buildKoMatchEl(matches[i], flipped));
+      if (matches[i + 1]) pair.appendChild(buildKoMatchEl(matches[i + 1], flipped));
+      col.appendChild(pair);
+    }
+  } else {
+    // Single match (SF slot) — no pairing needed
+    matches.forEach(m => col.appendChild(buildKoMatchEl(m, flipped)));
+  }
   return col;
 }
 
