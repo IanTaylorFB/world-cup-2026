@@ -34,7 +34,13 @@
   }
   header h1 { font-size: 18px; font-weight: 600; color: var(--gold); }
   header .meta { color: var(--muted); font-size: 12px; }
-  .tab-bar { display: flex; gap: 4px; }
+  .tab-bar { display: flex; align-items: center; gap: 4px; }
+  .header-link {
+    color: var(--muted); font-size: 13px; text-decoration: none;
+    padding: 4px 8px; border-radius: 6px; white-space: nowrap;
+  }
+  .header-link:hover { color: var(--text); background: var(--border); }
+  .header-sep { width: 1px; height: 18px; background: var(--border); margin: 0 4px; }
   .tab {
     padding: 6px 14px; border-radius: 6px; border: 1px solid var(--border);
     background: none; color: var(--muted); cursor: pointer; font-size: 13px;
@@ -304,6 +310,9 @@
     <div class="meta" id="updated-label"></div>
   </div>
   <div class="tab-bar">
+    <a class="header-link" href="README.md" target="_blank">ℹ️ About</a>
+    <a class="header-link" href="LICENSE" target="_blank">License</a>
+    <div class="header-sep"></div>
     <button class="tab active" id="tab-group" onclick="showView('group')">Group Stage</button>
     <button class="tab" id="tab-knockout" onclick="showView('knockout')">Knockout</button>
   </div>
