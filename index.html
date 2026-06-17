@@ -378,19 +378,21 @@ function teamInfo(name) {
 
 // ── Helpers ───────────────────────────────────────────────────────────────────
 
-const DAYS = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
-const MONTHS = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
-
 function fmtDatetime(date_bst, time_bst) {
   if (!date_bst) return '';
-  const [y,m,d] = date_bst.split('-').map(Number);
-  const dow = DAYS[new Date(y, m-1, d).getDay()];
-  return `${dow} ${d} ${MONTHS[m-1]} ${time_bst}`;
+  const iso = time_bst ? `${date_bst}T${time_bst}:00+01:00` : `${date_bst}T12:00:00+01:00`;
+  const dt = new Date(iso);
+  const datePart = dt.toLocaleDateString([], {weekday:'short', day:'numeric', month:'short'});
+  if (!time_bst) return datePart;
+  const timePart = dt.toLocaleTimeString([], {hour:'2-digit', minute:'2-digit', timeZoneName:'short'});
+  return `${datePart} ${timePart}`;
 }
 
 function fmtUpdated(iso) {
-  const d = new Date(iso);
-  return `Updated ${d.toUTCString().replace(' GMT','')} UTC`;
+  const dt = new Date(iso);
+  const datePart = dt.toLocaleDateString([], {weekday:'short', day:'numeric', month:'short', year:'numeric'});
+  const timePart = dt.toLocaleTimeString([], {hour:'2-digit', minute:'2-digit', timeZoneName:'short'});
+  return `Updated ${datePart} ${timePart}`;
 }
 
 function computeStandings(group) {
@@ -427,7 +429,7 @@ function openMatch(match, title) {
   const played = !!match.score;
   let html = `<button class="modal-close" onclick="closeModal()">✕</button>`;
   html += `<h3>${title}</h3>`;
-  html += `<div class="modal-date">${fmtDatetime(match.date_bst, match.time_bst)} BST</div>`;
+  html += `<div class="modal-date">${fmtDatetime(match.date_bst, match.time_bst)}</div>`;
   if (played) {
     html += `<div class="modal-score">${match.score.h} – ${match.score.a}</div>`;
     if (match.goals && match.goals.length) {
@@ -522,7 +524,7 @@ function renderGroups() {
         const newDot = m.new ? '<span class="new-dot">⬤</span>' : '';
         const hi = teamInfo(m.home), ai = teamInfo(m.away);
         matchHtml += `<div class="match-row" onclick='openMatch(${JSON.stringify(m)}, "${m.home} vs ${m.away}")' style="cursor:pointer">
-          <div class="match-datetime">${dt} BST</div>
+          <div class="match-datetime">${dt}</div>
           <div class="match-teams">
             <span class="team home"><span class="team-name">${m.home}</span><span class="team-abbr">${hi.abbr}</span><span class="team-flag">${hi.flag}</span></span>
             <span class="score-box">${m.score.h} – ${m.score.a}</span>
@@ -544,7 +546,7 @@ function renderGroups() {
         const dt = fmtDatetime(m.date_bst, m.time_bst);
         const uhi = teamInfo(m.home), uai = teamInfo(m.away);
         matchHtml += `<div class="match-row">
-          <div class="match-datetime">${dt} BST</div>
+          <div class="match-datetime">${dt}</div>
           <div class="match-teams">
             <span class="team home"><span class="team-name">${m.home}</span><span class="team-abbr">${uhi.abbr}</span><span class="team-flag">${uhi.flag}</span></span>
             <span class="score-box upcoming">vs</span>
@@ -710,7 +712,7 @@ function buildKoMatchEl(match, flipped) {
 
   if (dt) {
     const newDot = match.new ? ' <span class="new-dot">⬤</span>' : '';
-    box.innerHTML += `<div class="ko-team" style="border-bottom:none;padding:3px 8px"><span class="ko-date">${dt} BST${newDot}</span></div>`;
+    box.innerHTML += `<div class="ko-team" style="border-bottom:none;padding:3px 8px"><span class="ko-date">${dt}${newDot}</span></div>`;
   }
 
   box.innerHTML += `
