@@ -1,7 +1,7 @@
 // FIFA World Cup 2026 — data file
 // All times in BST (UTC+1). Updated daily via /update-worldcup
 const WC_DATA = {
-  updated: "2026-06-16T10:00:00Z",
+  updated: "2026-06-17T10:00:00Z",
   stage: "group", // "group" | "knockout"
   groups: {
     A: {
@@ -79,11 +79,11 @@ const WC_DATA = {
         {id:"E1", date_bst:"2026-06-14", time_bst:"18:00", home:"Germany", away:"Curaçao",
          score:{h:7,a:1},
          goals:[{t:"Germany",p:"Nmecha",m:6},{t:"Curaçao",p:"Comenencia",m:21},{t:"Germany",p:"Schlotterbeck",m:38},{t:"Germany",p:"Havertz",m:"45+5",pen:true},{t:"Germany",p:"Musiala",m:47},{t:"Germany",p:"Brown",m:68},{t:"Germany",p:"Undav",m:78},{t:"Germany",p:"Havertz",m:88}],
-         reds:[],yt:"https://www.youtube.com/watch?v=B6-Z5ul2ccQ", new:true},
+         reds:[],yt:"https://www.youtube.com/watch?v=B6-Z5ul2ccQ"},
         {id:"E2", date_bst:"2026-06-15", time_bst:"00:00", home:"Ivory Coast", away:"Ecuador",
          score:{h:1,a:0},
          goals:[{t:"Ivory Coast",p:"A. Diallo",m:90}],
-         reds:[],yt:"https://www.youtube.com/watch?v=KbmxSnT4dQU", new:true},
+         reds:[],yt:"https://www.youtube.com/watch?v=KbmxSnT4dQU"},
         {id:"E3", date_bst:"2026-06-20", time_bst:"21:00", home:"Germany", away:"Ivory Coast", score:null,goals:[],reds:[],yt:null},
         {id:"E4", date_bst:"2026-06-21", time_bst:"01:00", home:"Ecuador", away:"Curaçao", score:null,goals:[],reds:[],yt:null},
         {id:"E5", date_bst:"2026-06-25", time_bst:"21:00", home:"Curaçao", away:"Ivory Coast", score:null,goals:[],reds:[],yt:null},
@@ -96,11 +96,11 @@ const WC_DATA = {
         {id:"F1", date_bst:"2026-06-14", time_bst:"21:00", home:"Netherlands", away:"Japan",
          score:{h:2,a:2},
          goals:[{t:"Netherlands",p:"Van Dijk",m:50},{t:"Japan",p:"Nakamura",m:57},{t:"Netherlands",p:"Summerville",m:64},{t:"Japan",p:"Kamada",m:88}],
-         reds:[],yt:"https://www.youtube.com/watch?v=r8SvHZxALQs", new:true},
+         reds:[],yt:"https://www.youtube.com/watch?v=r8SvHZxALQs"},
         {id:"F2", date_bst:"2026-06-15", time_bst:"03:00", home:"Sweden", away:"Tunisia",
          score:{h:5,a:1},
          goals:[{t:"Sweden",p:"Ayari",m:7},{t:"Sweden",p:"Isak",m:30},{t:"Tunisia",p:"Rekik",m:43},{t:"Sweden",p:"Gyökeres",m:59},{t:"Sweden",p:"Svanberg",m:84},{t:"Sweden",p:"Ayari",m:"90+6"}],
-         reds:[],yt:"https://www.youtube.com/watch?v=TC9tqtH0CkA", new:true},
+         reds:[],yt:"https://www.youtube.com/watch?v=TC9tqtH0CkA"},
         {id:"F3", date_bst:"2026-06-20", time_bst:"18:00", home:"Netherlands", away:"Sweden", score:null,goals:[],reds:[],yt:null},
         {id:"F4", date_bst:"2026-06-21", time_bst:"05:00", home:"Tunisia", away:"Japan", score:null,goals:[],reds:[],yt:null},
         {id:"F5", date_bst:"2026-06-26", time_bst:"00:00", home:"Japan", away:"Sweden", score:null,goals:[],reds:[],yt:null},
@@ -113,11 +113,11 @@ const WC_DATA = {
         {id:"G1", date_bst:"2026-06-15", time_bst:"20:00", home:"Belgium", away:"Egypt",
          score:{h:1,a:1},
          goals:[{t:"Egypt",p:"Emam Ashour",m:19},{t:"Belgium",p:"Hany",m:66,og:true}],
-         reds:[],yt:"https://www.youtube.com/watch?v=nR2SQc4ZHNQ", new:true},
+         reds:[],yt:"https://www.youtube.com/watch?v=nR2SQc4ZHNQ"},
         {id:"G2", date_bst:"2026-06-16", time_bst:"02:00", home:"Iran", away:"New Zealand",
          score:{h:2,a:2},
          goals:[{t:"New Zealand",p:"Just",m:7},{t:"Iran",p:"Rezaeian",m:32},{t:"New Zealand",p:"Just",m:54},{t:"Iran",p:"Mohebi",m:64}],
-         reds:[],yt:"https://www.youtube.com/watch?v=hCpD7O-Iy7Y", new:true},
+         reds:[],yt:"https://www.youtube.com/watch?v=hCpD7O-Iy7Y"},
         {id:"G3", date_bst:"2026-06-21", time_bst:"20:00", home:"Belgium", away:"Iran", score:null,goals:[],reds:[],yt:null},
         {id:"G4", date_bst:"2026-06-22", time_bst:"02:00", home:"New Zealand", away:"Egypt", score:null,goals:[],reds:[],yt:null},
         {id:"G5", date_bst:"2026-06-27", time_bst:"04:00", home:"Egypt", away:"Iran", score:null,goals:[],reds:[],yt:null},
@@ -129,11 +129,11 @@ const WC_DATA = {
       matches: [
         {id:"H1", date_bst:"2026-06-15", time_bst:"17:00", home:"Spain", away:"Cape Verde",
          score:{h:0,a:0},
-         goals:[],reds:[],yt:"https://www.youtube.com/watch?v=-Vv4UnfvnEQ", new:true},
+         goals:[],reds:[],yt:"https://www.youtube.com/watch?v=-Vv4UnfvnEQ"},
         {id:"H2", date_bst:"2026-06-15", time_bst:"23:00", home:"Saudi Arabia", away:"Uruguay",
          score:{h:1,a:1},
          goals:[{t:"Saudi Arabia",p:"Al-Amri",m:41},{t:"Uruguay",p:"Araújo",m:80}],
-         reds:[],yt:"https://www.youtube.com/watch?v=fRuj2TLu4W0", new:true},
+         reds:[],yt:"https://www.youtube.com/watch?v=fRuj2TLu4W0"},
         {id:"H3", date_bst:"2026-06-21", time_bst:"17:00", home:"Spain", away:"Saudi Arabia", score:null,goals:[],reds:[],yt:null},
         {id:"H4", date_bst:"2026-06-21", time_bst:"23:00", home:"Uruguay", away:"Cape Verde", score:null,goals:[],reds:[],yt:null},
         {id:"H5", date_bst:"2026-06-27", time_bst:"01:00", home:"Cape Verde", away:"Saudi Arabia", score:null,goals:[],reds:[],yt:null},
@@ -143,8 +143,14 @@ const WC_DATA = {
     I: {
       teams: ["France","Senegal","Iraq","Norway"],
       matches: [
-        {id:"I1", date_bst:"2026-06-16", time_bst:"20:00", home:"France", away:"Senegal", score:null,goals:[],reds:[],yt:null},
-        {id:"I2", date_bst:"2026-06-16", time_bst:"23:00", home:"Iraq", away:"Norway", score:null,goals:[],reds:[],yt:null},
+        {id:"I1", date_bst:"2026-06-16", time_bst:"20:00", home:"France", away:"Senegal",
+         score:{h:3,a:1},
+         goals:[{t:"France",p:"Mbappé",m:66},{t:"France",p:"Barcola",m:82},{t:"Senegal",p:"Mbaye",m:"90+5"},{t:"France",p:"Mbappé",m:"90+6"}],
+         reds:[],yt:"https://www.youtube.com/watch?v=KMNza_iE7ZI", new:true},
+        {id:"I2", date_bst:"2026-06-16", time_bst:"23:00", home:"Iraq", away:"Norway",
+         score:{h:1,a:4},
+         goals:[{t:"Norway",p:"Haaland",m:29},{t:"Iraq",p:"Hussein",m:39},{t:"Norway",p:"Haaland",m:43},{t:"Norway",p:"Østigård",m:76},{t:"Norway",p:"Hussein",m:"90+6",og:true}],
+         reds:[],yt:"https://www.youtube.com/watch?v=J9-7-3bpoQg", new:true},
         {id:"I3", date_bst:"2026-06-22", time_bst:"22:00", home:"France", away:"Iraq", score:null,goals:[],reds:[],yt:null},
         {id:"I4", date_bst:"2026-06-23", time_bst:"01:00", home:"Norway", away:"Senegal", score:null,goals:[],reds:[],yt:null},
         {id:"I5", date_bst:"2026-06-26", time_bst:"20:00", home:"Norway", away:"France", score:null,goals:[],reds:[],yt:null},
@@ -154,8 +160,14 @@ const WC_DATA = {
     J: {
       teams: ["Argentina","Algeria","Austria","Jordan"],
       matches: [
-        {id:"J1", date_bst:"2026-06-17", time_bst:"02:00", home:"Argentina", away:"Algeria", score:null,goals:[],reds:[],yt:null},
-        {id:"J2", date_bst:"2026-06-17", time_bst:"05:00", home:"Austria", away:"Jordan", score:null,goals:[],reds:[],yt:null},
+        {id:"J1", date_bst:"2026-06-17", time_bst:"02:00", home:"Argentina", away:"Algeria",
+         score:{h:3,a:0},
+         goals:[{t:"Argentina",p:"Messi",m:17},{t:"Argentina",p:"Messi",m:60},{t:"Argentina",p:"Messi",m:76}],
+         reds:[],yt:"https://www.youtube.com/watch?v=P9fqnZaYMqY", new:true},
+        {id:"J2", date_bst:"2026-06-17", time_bst:"05:00", home:"Austria", away:"Jordan",
+         score:{h:3,a:1},
+         goals:[{t:"Austria",p:"Schmid",m:20},{t:"Jordan",p:"Olwan",m:50},{t:"Austria",p:"Al-Arab",m:76,og:true},{t:"Austria",p:"Arnautović",m:"90+12",pen:true}],
+         reds:[],yt:"https://www.youtube.com/watch?v=rNMCbKYUnHQ", new:true},
         {id:"J3", date_bst:"2026-06-22", time_bst:"18:00", home:"Argentina", away:"Austria", score:null,goals:[],reds:[],yt:null},
         {id:"J4", date_bst:"2026-06-23", time_bst:"04:00", home:"Jordan", away:"Algeria", score:null,goals:[],reds:[],yt:null},
         {id:"J5", date_bst:"2026-06-28", time_bst:"03:00", home:"Algeria", away:"Austria", score:null,goals:[],reds:[],yt:null},
@@ -248,8 +260,8 @@ const WC_DATA = {
       F: ["Sweden","Netherlands","Japan","Tunisia"],
       G: ["Belgium","Egypt","Iran","New Zealand"],
       H: ["Spain","Uruguay","Saudi Arabia","Cape Verde"],
-      I: ["France","Norway","Senegal","Iraq"],
-      J: ["Argentina","Austria","Algeria","Jordan"],
+      I: ["Norway","France","Senegal","Iraq"],
+      J: ["Argentina","Austria","Jordan","Algeria"],
       K: ["Portugal","Colombia","DR Congo","Uzbekistan"],
       L: ["England","Croatia","Ghana","Panama"],
     },
@@ -272,8 +284,8 @@ const WC_DATA = {
       "R32-74":"home",   // 1st E (Germany) beats Best 3rd
       "R32-75":"away",   // 1st F (Sweden) loses to 2nd C (Brazil)
       "R32-76":"away",   // 1st C (Scotland) loses to 2nd F (Netherlands)
-      "R32-77":"home",   // 1st I (France) beats Best 3rd
-      "R32-78":"home",   // 2nd E (Ivory Coast) beats 2nd I (Norway)
+      "R32-77":"home",   // 1st I (Norway) beats Best 3rd
+      "R32-78":"away",   // 2nd E (Ivory Coast) loses to 2nd I (France)
       "R32-79":"home",   // 1st A (Mexico) beats Best 3rd
       "R32-80":"home",   // 1st L (England) beats Best 3rd
       "R32-81":"home",   // 1st D (USA) beats Best 3rd
@@ -287,7 +299,7 @@ const WC_DATA = {
       // R16
       "R16-89":"away",   // W73 (S.Korea) loses to W74 (Germany)
       "R16-90":"home",   // W75 (Brazil) beats W76 (Netherlands)
-      "R16-91":"home",   // W77 (France) beats W78 (Ivory Coast)
+      "R16-91":"away",   // W77 (Norway) loses to W78 (France)
       "R16-92":"away",   // W79 (Mexico) loses to W80 (England)
       "R16-93":"away",   // W81 (USA) loses to W82 (Belgium)
       "R16-94":"away",   // W83 (Colombia) loses to W84 (Spain)
