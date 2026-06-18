@@ -1,7 +1,7 @@
 // FIFA World Cup 2026 — data file
 // All times in BST (UTC+1). Updated daily via /update-worldcup
 const WC_DATA = {
-  updated: "2026-06-17T10:00:00Z",
+  updated: "2026-06-18T13:13:18Z",
   stage: "group", // "group" | "knockout"
   groups: {
     A: {
@@ -146,11 +146,11 @@ const WC_DATA = {
         {id:"I1", date_bst:"2026-06-16", time_bst:"20:00", home:"France", away:"Senegal",
          score:{h:3,a:1},
          goals:[{t:"France",p:"Mbappé",m:66},{t:"France",p:"Barcola",m:82},{t:"Senegal",p:"Mbaye",m:"90+5"},{t:"France",p:"Mbappé",m:"90+6"}],
-         reds:[],yt:"https://www.youtube.com/watch?v=KMNza_iE7ZI", new:true},
+         reds:[],yt:"https://www.youtube.com/watch?v=KMNza_iE7ZI"},
         {id:"I2", date_bst:"2026-06-16", time_bst:"23:00", home:"Iraq", away:"Norway",
          score:{h:1,a:4},
          goals:[{t:"Norway",p:"Haaland",m:29},{t:"Iraq",p:"Hussein",m:39},{t:"Norway",p:"Haaland",m:43},{t:"Norway",p:"Østigård",m:76},{t:"Norway",p:"Hussein",m:"90+6",og:true}],
-         reds:[],yt:"https://www.youtube.com/watch?v=J9-7-3bpoQg", new:true},
+         reds:[],yt:"https://www.youtube.com/watch?v=J9-7-3bpoQg"},
         {id:"I3", date_bst:"2026-06-22", time_bst:"22:00", home:"France", away:"Iraq", score:null,goals:[],reds:[],yt:null},
         {id:"I4", date_bst:"2026-06-23", time_bst:"01:00", home:"Norway", away:"Senegal", score:null,goals:[],reds:[],yt:null},
         {id:"I5", date_bst:"2026-06-26", time_bst:"20:00", home:"Norway", away:"France", score:null,goals:[],reds:[],yt:null},
@@ -163,11 +163,11 @@ const WC_DATA = {
         {id:"J1", date_bst:"2026-06-17", time_bst:"02:00", home:"Argentina", away:"Algeria",
          score:{h:3,a:0},
          goals:[{t:"Argentina",p:"Messi",m:17},{t:"Argentina",p:"Messi",m:60},{t:"Argentina",p:"Messi",m:76}],
-         reds:[],yt:"https://www.youtube.com/watch?v=P9fqnZaYMqY", new:true},
+         reds:[],yt:"https://www.youtube.com/watch?v=P9fqnZaYMqY"},
         {id:"J2", date_bst:"2026-06-17", time_bst:"05:00", home:"Austria", away:"Jordan",
          score:{h:3,a:1},
          goals:[{t:"Austria",p:"Schmid",m:20},{t:"Jordan",p:"Olwan",m:50},{t:"Austria",p:"Al-Arab",m:76,og:true},{t:"Austria",p:"Arnautović",m:"90+12",pen:true}],
-         reds:[],yt:"https://www.youtube.com/watch?v=rNMCbKYUnHQ", new:true},
+         reds:[],yt:"https://www.youtube.com/watch?v=rNMCbKYUnHQ"},
         {id:"J3", date_bst:"2026-06-22", time_bst:"18:00", home:"Argentina", away:"Austria", score:null,goals:[],reds:[],yt:null},
         {id:"J4", date_bst:"2026-06-23", time_bst:"04:00", home:"Jordan", away:"Algeria", score:null,goals:[],reds:[],yt:null},
         {id:"J5", date_bst:"2026-06-28", time_bst:"03:00", home:"Algeria", away:"Austria", score:null,goals:[],reds:[],yt:null},
@@ -177,8 +177,14 @@ const WC_DATA = {
     K: {
       teams: ["Portugal","DR Congo","Uzbekistan","Colombia"],
       matches: [
-        {id:"K1", date_bst:"2026-06-17", time_bst:"17:00", home:"Portugal", away:"DR Congo", score:null,goals:[],reds:[],yt:null},
-        {id:"K2", date_bst:"2026-06-18", time_bst:"02:00", home:"Uzbekistan", away:"Colombia", score:null,goals:[],reds:[],yt:null},
+        {id:"K1", date_bst:"2026-06-17", time_bst:"17:00", home:"Portugal", away:"DR Congo",
+         score:{h:1,a:1},
+         goals:[{t:"Portugal",p:"J. Neves",m:6},{t:"DR Congo",p:"Wissa",m:"45+1"}],
+         reds:[],yt:"https://www.youtube.com/watch?v=NAX0g2sv5cQ", new:true},
+        {id:"K2", date_bst:"2026-06-18", time_bst:"02:00", home:"Uzbekistan", away:"Colombia",
+         score:{h:1,a:3},
+         goals:[{t:"Colombia",p:"Muñoz",m:40},{t:"Uzbekistan",p:"Fayzullaev",m:60},{t:"Colombia",p:"L. Díaz",m:65},{t:"Colombia",p:"Campaz",m:"90+9"}],
+         reds:[],yt:"https://www.youtube.com/watch?v=O-3QWKFN7xw", new:true},
         {id:"K3", date_bst:"2026-06-23", time_bst:"17:00", home:"Portugal", away:"Uzbekistan", score:null,goals:[],reds:[],yt:null},
         {id:"K4", date_bst:"2026-06-24", time_bst:"02:00", home:"Colombia", away:"DR Congo", score:null,goals:[],reds:[],yt:null},
         {id:"K5", date_bst:"2026-06-28", time_bst:"00:30", home:"Colombia", away:"Portugal", score:null,goals:[],reds:[],yt:null},
@@ -188,8 +194,14 @@ const WC_DATA = {
     L: {
       teams: ["England","Croatia","Ghana","Panama"],
       matches: [
-        {id:"L1", date_bst:"2026-06-17", time_bst:"21:00", home:"England", away:"Croatia", score:null,goals:[],reds:[],yt:null},
-        {id:"L2", date_bst:"2026-06-18", time_bst:"00:00", home:"Ghana", away:"Panama", score:null,goals:[],reds:[],yt:null},
+        {id:"L1", date_bst:"2026-06-17", time_bst:"21:00", home:"England", away:"Croatia",
+         score:{h:4,a:2},
+         goals:[{t:"England",p:"Kane",m:12,pen:true},{t:"Croatia",p:"Baturina",m:36},{t:"England",p:"Kane",m:42},{t:"Croatia",p:"Musa",m:"45+5"},{t:"England",p:"Bellingham",m:47},{t:"England",p:"Rashford",m:85}],
+         reds:[],yt:"https://www.youtube.com/watch?v=kFabAPJP5ys", new:true},
+        {id:"L2", date_bst:"2026-06-18", time_bst:"00:00", home:"Ghana", away:"Panama",
+         score:{h:1,a:0},
+         goals:[{t:"Ghana",p:"Yirenkyi",m:"90+5"}],
+         reds:[],yt:"https://www.youtube.com/watch?v=6urCp8XydUE", new:true},
         {id:"L3", date_bst:"2026-06-23", time_bst:"21:00", home:"England", away:"Ghana", score:null,goals:[],reds:[],yt:null},
         {id:"L4", date_bst:"2026-06-24", time_bst:"00:00", home:"Panama", away:"Croatia", score:null,goals:[],reds:[],yt:null},
         {id:"L5", date_bst:"2026-06-27", time_bst:"22:00", home:"Panama", away:"England", score:null,goals:[],reds:[],yt:null},
@@ -262,39 +274,39 @@ const WC_DATA = {
       H: ["Spain","Uruguay","Saudi Arabia","Cape Verde"],
       I: ["Norway","France","Senegal","Iraq"],
       J: ["Argentina","Austria","Jordan","Algeria"],
-      K: ["Portugal","Colombia","DR Congo","Uzbekistan"],
-      L: ["England","Croatia","Ghana","Panama"],
+      K: ["Colombia","Portugal","DR Congo","Uzbekistan"],
+      L: ["England","Ghana","Croatia","Panama"],
     },
     // Predicted best-3rd slot assignments (greedy proxy for FIFA Annex C)
     best_thirds_slots: {
-      "Best 3rd (A/B/C/D/F)": {team:"Morocco",           group:"C"},
+      "Best 3rd (A/B/C/D/F)": {team:"Bosnia and Herzegovina", group:"B"},
       "Best 3rd (C/D/F/G/H)": {team:"Turkey",            group:"D"},
-      "Best 3rd (C/E/F/H/I)": {team:"Senegal",            group:"I"},
-      "Best 3rd (E/H/I/J/K)": {team:"Saudi Arabia",      group:"H"},
-      "Best 3rd (B/E/F/I/J)": {team:"Bosnia and Herzegovina", group:"B"},
+      "Best 3rd (C/E/F/H/I)": {team:"Morocco",           group:"C"},
+      "Best 3rd (E/H/I/J/K)": {team:"DR Congo",          group:"K"},
+      "Best 3rd (B/E/F/I/J)": {team:"Japan",             group:"F"},
       "Best 3rd (A/E/H/I/J)": {team:"Czech Republic",    group:"A"},
       "Best 3rd (E/F/G/I/J)": {team:"Iran",              group:"G"},
-      "Best 3rd (D/E/I/J/L)": {team:"Japan",             group:"F"},
+      "Best 3rd (D/E/I/J/L)": {team:"Croatia",           group:"L"},
     },
     // Predicted knockout winners: "home" or "away" side wins each match.
     // Stored as sides so predictions cascade correctly when group standings change.
     knockout: {
       // R32: home=1st/2nd label, away=opponent label
       "R32-73":"home",   // 2nd A (S.Korea) beats 2nd B (Canada)
-      "R32-74":"home",   // 1st E (Germany) beats Best 3rd
+      "R32-74":"home",   // 1st E (Germany) beats Best 3rd (Bosnia)
       "R32-75":"away",   // 1st F (Sweden) loses to 2nd C (Brazil)
       "R32-76":"away",   // 1st C (Scotland) loses to 2nd F (Netherlands)
-      "R32-77":"home",   // 1st I (Norway) beats Best 3rd
+      "R32-77":"home",   // 1st I (Norway) beats Best 3rd (Turkey)
       "R32-78":"away",   // 2nd E (Ivory Coast) loses to 2nd I (France)
-      "R32-79":"home",   // 1st A (Mexico) beats Best 3rd
-      "R32-80":"home",   // 1st L (England) beats Best 3rd
-      "R32-81":"home",   // 1st D (USA) beats Best 3rd
-      "R32-82":"home",   // 1st G (Belgium) beats Best 3rd
-      "R32-83":"home",   // 2nd K (Colombia) beats 2nd L (Croatia)
+      "R32-79":"home",   // 1st A (Mexico) beats Best 3rd (Morocco)
+      "R32-80":"home",   // 1st L (England) beats Best 3rd (DR Congo)
+      "R32-81":"home",   // 1st D (USA) beats Best 3rd (Japan)
+      "R32-82":"home",   // 1st G (Belgium) beats Best 3rd (Czech Republic)
+      "R32-83":"home",   // 2nd K (Portugal) beats 2nd L (Ghana)
       "R32-84":"home",   // 1st H (Spain) beats 2nd J (Austria)
-      "R32-85":"home",   // 1st B (Bosnia) beats Best 3rd (Iran)
+      "R32-85":"home",   // 1st B (Switzerland) beats Best 3rd (Iran)
       "R32-86":"home",   // 1st J (Argentina) beats 2nd H (Uruguay)
-      "R32-87":"home",   // 1st K (Portugal) beats Best 3rd
+      "R32-87":"home",   // 1st K (Colombia) beats Best 3rd (Croatia)
       "R32-88":"home",   // 2nd D (Australia) beats 2nd G (Egypt)
       // R16
       "R16-89":"away",   // W73 (S.Korea) loses to W74 (Germany)
