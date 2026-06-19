@@ -642,10 +642,13 @@ function resolveSlot(label) {
       const winner = match.score.h > match.score.a ? match.home_team : match.away_team;
       return winner ? findTeamPosition(winner) : null;
     }
-    // Otherwise resolve winner side recursively
-    const side = preds.knockout?.[matchId];
-    if (!side) return null;
-    const winLabel = side === 'home' ? match.home_label : match.away_label;
+    // Otherwise resolve winner from prediction
+    const pred = preds.knockout?.[matchId];
+    if (!pred) return null;
+    // Team-name format: pred is the winning team name directly
+    if (pred !== 'home' && pred !== 'away') return findTeamPosition(pred);
+    // Legacy home/away format
+    const winLabel = pred === 'home' ? match.home_label : match.away_label;
     return resolveSlot(winLabel);
   }
 
@@ -655,9 +658,18 @@ function resolveSlot(label) {
     const matchId = m[1];
     const match = findKoMatch(matchId);
     if (!match) return null;
-    const side = preds.knockout?.[matchId];
-    if (!side) return null;
-    const loserLabel = side === 'home' ? match.away_label : match.home_label;
+    const pred = preds.knockout?.[matchId];
+    if (!pred) return null;
+    // Team-name format: loser is whichever participant is not the predicted winner
+    if (pred !== 'home' && pred !== 'away') {
+      const homeSlot = resolveSlot(match.home_label);
+      const awaySlot = resolveSlot(match.away_label);
+      if (homeSlot?.team === pred) return awaySlot;
+      if (awaySlot?.team === pred) return homeSlot;
+      return null;
+    }
+    // Legacy home/away format
+    const loserLabel = pred === 'home' ? match.away_label : match.home_label;
     return resolveSlot(loserLabel);
   }
 
