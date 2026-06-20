@@ -2,76 +2,100 @@
 
 Update the FIFA World Cup 2026 status chart with today's latest results, standings, and predictions.
 
-**Working directory:** `/Users/Ian/Code/Fun/World Cup`
+**Working directory:** `/Users/Ian/Code/Fun/World Cup`  
 **Data file:** `data.js`
 
 ---
 
-## Step 1 — Fetch today's results (parallel)
+## Step 1 — Read data.js
 
-Run these three WebSearches simultaneously:
-
-- `FIFA World Cup 2026 results scores goals [TODAY'S DATE]`
-- `FIFA World Cup 2026 group standings table [TODAY'S DATE]`
-- `FIFA World Cup 2026 red cards disciplinary [TODAY'S DATE]`
+Read the full contents of `data.js`. Identify all group matches where `score` is `null` and `date_bst` is on or before today's date (BST). These are the matches to update.
 
 ---
 
-## Step 2 — Fetch YouTube highlights
+## Step 2 — Fetch results for new matches
 
-For each match that is newly completed (has a score) AND has `yt: null`, run:
+For each match identified in Step 1, run a **WebSearch** (in parallel if multiple):
 
-`"[Home] vs [Away]" "World Cup 2026" highlights youtube`
+> `"[Home] [Away]" World Cup 2026 goals scorers red cards`
 
-Prefer official or broadcaster channels. Only use a URL if the video is under 9 minutes; leave `yt: null` if none found.
+Find the ESPN match page in the results and **WebFetch** it. Extract:
+- Final score (home / away)
+- Goal scorers: name, minute, penalty (`pen:true`) or own goal (`og:true`)
+- Red cards: team, player name, minute
+
+**Source:** ESPN match pages only. Do not consult multiple sources for the same match.
 
 ---
 
-## Step 3 — Read data.js
+## Step 3 — Fetch YouTube highlights
 
-Read the full contents of `data.js`.
+For each match being updated, run a **WebSearch** (in parallel):
+
+> `"[Home] vs [Away]" "World Cup 2026" highlights youtube`
+
+Select the first result from an official or broadcaster channel with a title matching `HIGHLIGHTS - [Home] v [Away]` (not "Extended Highlights"). Only use the URL if the video appears to be under 9 minutes. Otherwise leave `yt: null`.
 
 ---
 
-## Step 4 — Update match data
+## Step 4 — Fetch tournament-winner odds
 
-**4a. Clear new flags**
-Set `new: false` (or remove the `new` key) from every match that currently has `new: true`, across both `groups` and `knockout`.
+**WebFetch** FoxSports for current odds:  
+`https://www.foxsports.com/stories/soccer/world-cup-2026-champion-odds`
 
-**4b. Apply new results**
-For each match that now has a result and previously had `score: null`:
+This covers the top ~17 teams. If any team involved in a prediction is not listed, **WebFetch** RotoWire for the complete 48-team table:  
+`https://www.rotowire.com/soccer/article/2026-world-cup-winner-odds-favorites-to-win-fifa-world-cup-109815`
 
-```
-score: {h: N, a: N}
-goals: [{t: "Team", p: "Player", m: 34}, ...]   // add og:true or pen:true where applicable
-reds:  [{t: "Team", p: "Player", m: 78}, ...]
-yt:    "https://youtube.com/watch?v=..."  // or null
+Record American odds for every team needed. **Lower number = better odds = more likely to win.**
+
+---
+
+## Step 5 — Update match data in data.js
+
+**5a. Clear new flags**  
+Remove `new: true` (or set it to `false`) from every match currently marked `new: true`.
+
+**5b. Apply new results**  
+For each match with a result fetched in Step 2:
+```js
+score: {h: N, a: N},
+goals: [{t: "Team", p: "Player", m: 34}, ...],   // og:true or pen:true where applicable
+reds:  [{t: "Team", p: "Player", m: 78}, ...],
+yt:    "https://youtube.com/watch?v=...",          // or null
 new:   true
 ```
 
-**4c. Update stage flag**
+**5c. Update stage flag**  
 - If all 72 group matches have scores → set `stage: "knockout"`.
 - On the first run after group stage ends, resolve knockout `home_team`/`away_team` for all Round of 32 matches using the final group standings and the FIFA Annex C table for best-3rd slots.
 
 ---
 
-## Step 5 — Refresh predictions
+## Step 6 — Refresh predictions
 
-### 5a. Group predicted standings (`predictions.groups`)
+### 6a. Group predicted standings (`predictions.groups`)
 
-For each group A–L, build the predicted final standings array (index 0 = 1st place):
+For each group A–L, build the predicted final standings array (index 0 = 1st):
 
-- **Group complete** (3 matchdays played): use actual final standings.
-- **Group in progress** (1–2 matchdays): use current standings; for tied teams with remaining matches, use FanDuel group-winner odds to break ties.
-- **Group not started** (0 matches): use FanDuel group-winner odds order.
+- **Matches played** (any matchday): sort teams by actual results — points (W=3, D=1, L=0), then goal difference, then goals for, then alphabetical. Use this as the predicted final order.
+- **No matches played**: sort by tournament-winner odds from Step 4 (lowest odds = 1st).
 
-Search: `FIFA World Cup 2026 group winner odds FanDuel [TODAY'S DATE]`
+No separate group-winner odds search is needed.
 
-### 5b. Best 3rd slot assignment (`predictions.best_thirds_slots`)
+### 6b. Best 3rd slot assignment (`predictions.best_thirds_slots`)
 
-1. From `predictions.groups`, identify the predicted 3rd-place team for each group (index 2).
-2. Estimate which 8 of the 12 will have enough points to qualify — use current 3rd-place standings where available; for groups not yet played, assume the strongest non-top-2 team qualifies.
-3. Assign the 8 predicted qualifying thirds to the 8 bracket slots using a greedy algorithm that respects each slot's eligible-group constraint:
+**Official selection criteria (applied in order):**
+1. Points
+2. Goal difference
+3. Goals scored
+4. Team conduct score (fewest yellow/red cards)
+5. FIFA World Ranking (use tournament-winner odds as a proxy — lower odds ≈ higher ranking)
+
+**Process:**
+1. From `predictions.groups`, take the predicted 3rd-place team (index 2) for each group.
+2. For each of those 12 teams, look up their current group stats (points, GD, GF, cards) from the actual match data in `data.js`. Use 0/0/0/0 for groups not yet started.
+3. Rank all 12 thirds by the official criteria above. Select the top 8.
+4. Assign to bracket slots using greedy bipartite matching — most-constrained team (fewest eligible slots) first:
 
    | Slot label | Eligible groups |
    |---|---|
@@ -84,45 +108,46 @@ Search: `FIFA World Cup 2026 group winner odds FanDuel [TODAY'S DATE]`
    | Best 3rd (E/F/G/I/J) | E, F, G, I, J |
    | Best 3rd (D/E/I/J/L) | D, E, I, J, L |
 
-   Assign each qualifying third to the slot where its group appears, avoiding conflicts. Use a bipartite matching approach: assign the most-constrained teams first (fewest eligible slots).
+### 6c. Knockout predictions (`predictions.knockout`)
 
-   Write the result as:
-   ```js
-   "Best 3rd (A/B/C/D/F)": {team: "Morocco", group: "C"}
-   ```
+For each unplayed knockout match (`score: null`) in `r32`, `r16`, `qf`, `sf`, `third_place`, `final`:
 
-### 5c. Knockout predictions (`predictions.knockout`)
+1. Resolve the two predicted participants by following `predictions.groups` and `predictions.knockout` upstream (recursively resolve `home_label` and `away_label` the same way `index.html` does).
+2. Look up each team's tournament-winner odds from Step 4.
+3. Store the **name of the team with better (lower) odds** as the prediction value.
 
-Search: `FIFA World Cup 2026 knockout odds predictions [TODAY'S DATE]`
+```js
+"R32-73": "Switzerland",   // South Korea +40000 vs Switzerland +6500
+"R16-89": "Germany",       // Switzerland +6500 vs Germany +1400
+```
 
-For each match with `score: null` in `r32`, `r16`, `qf`, `sf`, `third_place`, and `final`:
+**Values are always team name strings — never `"home"` or `"away"`.**
 
-1. Determine which teams are predicted home and away by recursively resolving the match's `home_label` and `away_label` through the current bracket (following `predictions.knockout` for upstream matches).
-2. Look up odds or probability for those two teams.
-3. Store `"home"` if the home team is favoured, `"away"` if the away team is favoured.
-
-**Important:** values must be `"home"` or `"away"` — never team names. Team names are always resolved dynamically by `index.html`.
+For the 3rd-place match: the participants are the losers of SF-101 and SF-102. The loser of each semi-final is whichever predicted participant is *not* the value stored in `predictions.knockout["SF-101"]` / `["SF-102"]`.
 
 ---
 
-## Step 6 — Update timestamp
+## Step 7 — Update timestamp
 
-Set `updated` to the current UTC time: `"YYYY-MM-DDTHH:MM:SSZ"`
+```bash
+date -u +"%Y-%m-%dT%H:%M:%SZ"
+```
+
+Set `updated` to that value.
 
 ---
 
-## Step 7 — Write data.js
+## Step 8 — Write data.js
 
 Write the complete updated `data.js`. Preserve the file structure exactly — only values change.
 
 ---
 
-## Step 8 — Report
+## Step 9 — Report
 
 Tell the user:
 - Date/time of update
-- Matches updated with new scores (list them)
+- Matches updated (list with scores)
 - YouTube links found / not found
-- Whether stage changed group → knockout
-- Predictions refreshed: which groups used odds vs actual standings
-- Any issues (conflicting sources, missing data, Annex C lookup needed)
+- Any group standings or knockout prediction changes
+- Any issues (missing odds, conflicting data)
