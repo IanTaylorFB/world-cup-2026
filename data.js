@@ -1,7 +1,7 @@
 // FIFA World Cup 2026 — data file
 // All times in BST (UTC+1). Updated daily via /update-worldcup
 const WC_DATA = {
-  updated: "2026-06-24T08:00:15Z",
+  updated: "2026-06-25T07:32:14Z",
   stage: "group", // "group" | "knockout"
   groups: {
     A: {
@@ -24,8 +24,14 @@ const WC_DATA = {
          score:{h:1,a:0},
          goals:[{t:"Mexico",p:"Romo",m:50}],
          reds:[],yt:"https://www.youtube.com/watch?v=igQo36nrUeM"},
-        {id:"A5", date_bst:"2026-06-25", time_bst:"02:00", home:"Czech Republic", away:"Mexico", score:null,goals:[],reds:[],yt:null},
-        {id:"A6", date_bst:"2026-06-25", time_bst:"02:00", home:"South Africa", away:"South Korea", score:null,goals:[],reds:[],yt:null},
+        {id:"A5", date_bst:"2026-06-25", time_bst:"02:00", home:"Czech Republic", away:"Mexico",
+         score:{h:0,a:3},
+         goals:[{t:"Mexico",p:"Chávez",m:55},{t:"Mexico",p:"Quiñones",m:61},{t:"Mexico",p:"Fidalgo",m:"90+4"}],
+         reds:[],yt:"https://www.youtube.com/watch?v=hfG1HyjN-do", new:true},
+        {id:"A6", date_bst:"2026-06-25", time_bst:"02:00", home:"South Africa", away:"South Korea",
+         score:{h:1,a:0},
+         goals:[{t:"South Africa",p:"Maseko",m:63}],
+         reds:[],yt:"https://www.youtube.com/watch?v=eQHEClHublI", new:true},
       ]
     },
     B: {
@@ -47,8 +53,14 @@ const WC_DATA = {
          score:{h:6,a:0},
          goals:[{t:"Canada",p:"Larin",m:16},{t:"Canada",p:"David",m:29},{t:"Canada",p:"David",m:"45+3"},{t:"Canada",p:"Saliba",m:64},{t:"Qatar",p:"Manai",m:75,og:true},{t:"Canada",p:"David",m:"90+2"}],
          reds:[{t:"Qatar",p:"Homam Ahmed",m:33},{t:"Qatar",p:"Madibo",m:53}],yt:"https://www.youtube.com/watch?v=n44ndE6mwV0"},
-        {id:"B5", date_bst:"2026-06-25", time_bst:"23:00", home:"Switzerland", away:"Canada", score:null,goals:[],reds:[],yt:null},
-        {id:"B6", date_bst:"2026-06-25", time_bst:"23:00", home:"Bosnia and Herzegovina", away:"Qatar", score:null,goals:[],reds:[],yt:null},
+        {id:"B5", date_bst:"2026-06-24", time_bst:"20:00", home:"Switzerland", away:"Canada",
+         score:{h:2,a:1},
+         goals:[{t:"Switzerland",p:"Vargas",m:46},{t:"Switzerland",p:"Manzambi",m:57},{t:"Canada",p:"David",m:76}],
+         reds:[],yt:"https://www.youtube.com/watch?v=yt3iKlOAVYM", new:true},
+        {id:"B6", date_bst:"2026-06-24", time_bst:"20:00", home:"Bosnia and Herzegovina", away:"Qatar",
+         score:{h:3,a:1},
+         goals:[{t:"Bosnia and Herzegovina",p:"Alajbegović",m:29},{t:"Bosnia and Herzegovina",p:"Abunada",m:34,og:true},{t:"Qatar",p:"Al-Haydos",m:42},{t:"Bosnia and Herzegovina",p:"Mahmic",m:80}],
+         reds:[],yt:"https://www.youtube.com/watch?v=mk6m1LJdkrI", new:true},
       ]
     },
     C: {
@@ -70,8 +82,14 @@ const WC_DATA = {
          score:{h:3,a:0},
          goals:[{t:"Brazil",p:"Cunha",m:23},{t:"Brazil",p:"Cunha",m:36},{t:"Brazil",p:"Vinícius Júnior",m:"45+3"}],
          reds:[],yt:"https://www.youtube.com/watch?v=rtS2J1JzolQ"},
-        {id:"C5", date_bst:"2026-06-24", time_bst:"23:00", home:"Scotland", away:"Brazil", score:null,goals:[],reds:[],yt:null},
-        {id:"C6", date_bst:"2026-06-24", time_bst:"23:00", home:"Morocco", away:"Haiti", score:null,goals:[],reds:[],yt:null},
+        {id:"C5", date_bst:"2026-06-24", time_bst:"23:00", home:"Scotland", away:"Brazil",
+         score:{h:0,a:3},
+         goals:[{t:"Brazil",p:"Vinícius Júnior",m:7},{t:"Brazil",p:"Vinícius Júnior",m:"45+3"},{t:"Brazil",p:"Cunha",m:60}],
+         reds:[],yt:"https://www.youtube.com/watch?v=fWN13Oe4kA0", new:true},
+        {id:"C6", date_bst:"2026-06-24", time_bst:"23:00", home:"Morocco", away:"Haiti",
+         score:{h:4,a:2},
+         goals:[{t:"Haiti",p:"Bounou",m:10,og:true},{t:"Morocco",p:"Hakimi",m:39},{t:"Haiti",p:"Isidor",m:43},{t:"Morocco",p:"Saibari",m:"45+1"},{t:"Morocco",p:"Rahimi",m:78},{t:"Morocco",p:"Yassine",m:89}],
+         reds:[],yt:"https://www.youtube.com/watch?v=D5YbmFGtco4", new:true},
       ]
     },
     D: {
@@ -246,11 +264,11 @@ const WC_DATA = {
         {id:"K3", date_bst:"2026-06-23", time_bst:"17:00", home:"Portugal", away:"Uzbekistan",
          score:{h:5,a:0},
          goals:[{t:"Portugal",p:"Ronaldo",m:6},{t:"Portugal",p:"Nuno Mendes",m:17},{t:"Portugal",p:"Ronaldo",m:39},{t:"Uzbekistan",p:"Nematov",m:60,og:true},{t:"Portugal",p:"R. Leão",m:87}],
-         reds:[],yt:"https://www.youtube.com/watch?v=UB_JpyqtCVs", new:true},
+         reds:[],yt:"https://www.youtube.com/watch?v=UB_JpyqtCVs"},
         {id:"K4", date_bst:"2026-06-24", time_bst:"02:00", home:"Colombia", away:"DR Congo",
          score:{h:1,a:0},
          goals:[{t:"Colombia",p:"Muñoz",m:76}],
-         reds:[],yt:"https://www.youtube.com/watch?v=GHNdcbfBcl0", new:true},
+         reds:[],yt:"https://www.youtube.com/watch?v=GHNdcbfBcl0"},
         {id:"K5", date_bst:"2026-06-28", time_bst:"00:30", home:"Colombia", away:"Portugal", score:null,goals:[],reds:[],yt:null},
         {id:"K6", date_bst:"2026-06-28", time_bst:"00:30", home:"DR Congo", away:"Uzbekistan", score:null,goals:[],reds:[],yt:null},
       ]
@@ -268,11 +286,11 @@ const WC_DATA = {
          reds:[],yt:"https://www.youtube.com/watch?v=6urCp8XydUE"},
         {id:"L3", date_bst:"2026-06-23", time_bst:"21:00", home:"England", away:"Ghana",
          score:{h:0,a:0},
-         goals:[],reds:[],yt:"https://www.youtube.com/watch?v=fvBPDSIZ3sg", new:true},
+         goals:[],reds:[],yt:"https://www.youtube.com/watch?v=fvBPDSIZ3sg"},
         {id:"L4", date_bst:"2026-06-24", time_bst:"00:00", home:"Panama", away:"Croatia",
          score:{h:0,a:1},
          goals:[{t:"Croatia",p:"Budimir",m:54}],
-         reds:[],yt:"https://www.youtube.com/watch?v=IV1BFpYR-Eo", new:true},
+         reds:[],yt:"https://www.youtube.com/watch?v=IV1BFpYR-Eo"},
         {id:"L5", date_bst:"2026-06-27", time_bst:"22:00", home:"Panama", away:"England", score:null,goals:[],reds:[],yt:null},
         {id:"L6", date_bst:"2026-06-27", time_bst:"22:00", home:"Croatia", away:"Ghana", score:null,goals:[],reds:[],yt:null},
       ]
@@ -334,8 +352,8 @@ const WC_DATA = {
   // Knockout winners: team with better tournament-winner odds (FoxSports/RotoWire) advances
   predictions: {
     groups: {
-      A: ["Mexico","South Korea","Czech Republic","South Africa"],
-      B: ["Canada","Switzerland","Bosnia and Herzegovina","Qatar"],
+      A: ["Mexico","South Africa","South Korea","Czech Republic"],
+      B: ["Switzerland","Canada","Bosnia and Herzegovina","Qatar"],
       C: ["Brazil","Morocco","Scotland","Haiti"],
       D: ["United States","Australia","Paraguay","Turkey"],
       E: ["Germany","Ivory Coast","Ecuador","Curaçao"],
@@ -348,62 +366,62 @@ const WC_DATA = {
       L: ["England","Ghana","Croatia","Panama"],
     },
     // Predicted best-3rd slot assignments (official FIFA criteria: pts→GD→GF→conduct→odds proxy)
-    // Top 8 thirds by current stats: Sweden(F,3pts,0GD,6GF), Scotland(C,3pts,0GD,1GF),
-    // Croatia(L,3pts,-1GD,3GF,0reds), Algeria(J,3pts,-2GD,2GF,0reds),
-    // Paraguay(D,3pts,-2GD,2GF,1red), Cape Verde(H,2pts,0GD,2GF,0reds),
-    // Belgium(G,2pts,0GD,1GF,1red), Czech Republic(A,1pt,-1GD,2GF)
+    // Top 8 thirds by current stats: Bosnia(B,4pts,-1GD,5GF,1red), Sweden(F,3pts,0GD,6GF,0reds),
+    // Croatia(L,3pts,-1GD,3GF,0reds), South Korea(A,3pts,-1GD,2GF,0reds),
+    // Algeria(J,3pts,-2GD,2GF,0reds), Paraguay(D,3pts,-2GD,2GF,1red),
+    // Scotland(C,3pts,-3GD,1GF,0reds), Cape Verde(H,2pts,0GD,2GF,0reds)
     best_thirds_slots: {
-      "Best 3rd (A/B/C/D/F)": {team:"Paraguay",        group:"D"},
-      "Best 3rd (C/D/F/G/H)": {team:"Belgium",         group:"G"},
+      "Best 3rd (A/B/C/D/F)": {team:"Sweden",          group:"F"},
+      "Best 3rd (C/D/F/G/H)": {team:"Paraguay",        group:"D"},
       "Best 3rd (C/E/F/H/I)": {team:"Scotland",        group:"C"},
       "Best 3rd (E/H/I/J/K)": {team:"Cape Verde",      group:"H"},
-      "Best 3rd (B/E/F/I/J)": {team:"Sweden",          group:"F"},
-      "Best 3rd (A/E/H/I/J)": {team:"Czech Republic",  group:"A"},
+      "Best 3rd (B/E/F/I/J)": {team:"Bosnia and Herzegovina", group:"B"},
+      "Best 3rd (A/E/H/I/J)": {team:"South Korea",     group:"A"},
       "Best 3rd (E/F/G/I/J)": {team:"Algeria",         group:"J"},
       "Best 3rd (D/E/I/J/L)": {team:"Croatia",         group:"L"},
     },
     // Predicted knockout winners: team name that advances from each match.
     // Winner chosen by better tournament-winner odds (lower American odds = more likely).
     // Recalculate downstream matches whenever a predicted team changes.
-    // Odds source: FoxSports + RotoWire, June 24 2026.
+    // Odds source: FoxSports + RotoWire, June 25 2026.
     knockout: {
       // R32
-      "R32-73": "Switzerland",   // South Korea +40000 vs Switzerland +8000
-      "R32-74": "Germany",       // Germany +1300 vs Paraguay +30000
-      "R32-75": "Netherlands",   // Netherlands +1700 vs Morocco +3500
-      "R32-76": "Brazil",        // Brazil +1200 vs Japan +4000
-      "R32-77": "France",        // France +400 vs Belgium +5000
+      "R32-73": "Canada",        // South Africa +100000 vs Canada +20000
+      "R32-74": "Germany",       // Germany +1300 vs Sweden +12000
+      "R32-75": "Netherlands",   // Netherlands +1600 vs Morocco +3500
+      "R32-76": "Brazil",        // Brazil +1300 vs Japan +4500
+      "R32-77": "France",        // France +350 vs Paraguay +30000
       "R32-78": "Norway",        // Ivory Coast +25000 vs Norway +3000
-      "R32-79": "Mexico",        // Mexico +4500 vs Scotland +20000
-      "R32-80": "England",       // England +600 vs Cape Verde +100000
-      "R32-81": "United States", // USA +3300 vs Sweden +12000
-      "R32-82": "Czech Republic",// Egypt +30000 vs Czech Republic +25000
+      "R32-79": "Mexico",        // Mexico +3500 vs Scotland +20000
+      "R32-80": "England",       // England +650 vs Cape Verde +100000
+      "R32-81": "United States", // USA +3000 vs Bosnia +50000
+      "R32-82": "Egypt",         // Egypt +30000 vs South Korea +40000
       "R32-83": "Portugal",      // Portugal +1000 vs Ghana +30000
-      "R32-84": "Spain",         // Spain +500 vs Austria +15000
-      "R32-85": "Canada",        // Canada +20000 vs Algeria +35000
-      "R32-86": "Argentina",     // Argentina +650 vs Uruguay +6500
+      "R32-84": "Spain",         // Spain +550 vs Austria +15000
+      "R32-85": "Switzerland",   // Switzerland +7500 vs Algeria +35000
+      "R32-86": "Argentina",     // Argentina +600 vs Uruguay +6500
       "R32-87": "Colombia",      // Colombia +5000 vs Croatia +9000
       "R32-88": "Australia",     // Australia +60000 vs Iran +70000
       // R16
-      "R16-89": "Germany",       // Switzerland +8000 vs Germany +1300
-      "R16-90": "Brazil",        // Netherlands +1700 vs Brazil +1200
-      "R16-91": "France",        // France +400 vs Norway +3000
-      "R16-92": "England",       // Mexico +4500 vs England +600
-      "R16-93": "United States", // USA +3300 vs Czech Republic +25000
-      "R16-94": "Spain",         // Portugal +1000 vs Spain +500
-      "R16-95": "Argentina",     // Canada +20000 vs Argentina +650
+      "R16-89": "Germany",       // Canada +20000 vs Germany +1300
+      "R16-90": "Brazil",        // Netherlands +1600 vs Brazil +1300
+      "R16-91": "France",        // France +350 vs Norway +3000
+      "R16-92": "England",       // Mexico +3500 vs England +650
+      "R16-93": "United States", // USA +3000 vs Egypt +30000
+      "R16-94": "Spain",         // Portugal +1000 vs Spain +550
+      "R16-95": "Argentina",     // Switzerland +7500 vs Argentina +600
       "R16-96": "Colombia",      // Colombia +5000 vs Australia +60000
       // QF
-      "QF-97":  "Brazil",        // Germany +1300 vs Brazil +1200
-      "QF-98":  "France",        // France +400 vs England +600
-      "QF-99":  "Spain",         // USA +3300 vs Spain +500
-      "QF-100": "Argentina",     // Argentina +650 vs Colombia +5000
+      "QF-97":  "Brazil",        // Germany +1300 vs Brazil +1300 (tiebreaker: RotoWire Germany +1400 vs Brazil +900)
+      "QF-98":  "France",        // France +350 vs England +650
+      "QF-99":  "Spain",         // USA +3000 vs Spain +550
+      "QF-100": "Argentina",     // Argentina +600 vs Colombia +5000
       // SF
-      "SF-101": "France",        // Brazil +1200 vs France +400
-      "SF-102": "Spain",         // Spain +500 vs Argentina +650
+      "SF-101": "France",        // Brazil +1300 vs France +350
+      "SF-102": "Spain",         // Spain +550 vs Argentina +600
       // 3rd place & Final
-      "3PL-103": "Argentina",    // Brazil +1200 vs Argentina +650
-      "FIN-104": "France",       // France +400 vs Spain +500
+      "3PL-103": "Argentina",    // Brazil +1300 vs Argentina +600
+      "FIN-104": "France",       // France +350 vs Spain +550
     }
   }
 };
