@@ -498,8 +498,9 @@ function renderGroups() {
       <thead><tr>
         <th></th><th></th><th>P</th><th>W</th><th>D</th><th>L</th><th>GF</th><th>GA</th><th>GD</th><th>Pts</th>
       </tr></thead><tbody>`;
+    const isTop8Third = Object.values(WC_DATA.predictions.best_thirds_slots || {}).some(s => s.group === letter);
     standings.forEach((t, i) => {
-      const cls = i < 2 ? 'qualified' : (i === 2 ? 'playoff' : '');
+      const cls = i < 2 ? 'qualified' : (i === 2 && isTop8Third ? 'playoff' : '');
       const {flag, abbr} = teamInfo(t.name);
       const dotSlot = newTeams.has(t.name) ? '<span class="team-dot-slot">⬤</span>' : '<span class="team-dot-slot"> </span>';
       stHtml += `<tr class="${cls}">
