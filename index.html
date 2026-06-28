@@ -55,12 +55,15 @@
 
   /* ── Group Stage ── */
   #group-view { display: none; }
-  #group-view.visible { display: block; }
+  /* overflow-x + inner min-width mirror the knockout view, so the 3-column grid
+     scrolls horizontally on a narrow viewport instead of clipping the right edge. */
+  #group-view.visible { display: block; overflow-x: auto; }
 
   .groups-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 16px;
+    min-width: 1380px;
   }
 
   .group-card {
