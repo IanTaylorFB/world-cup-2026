@@ -352,38 +352,50 @@ const WC_DATA = {
   // slot fields: home_label/away_label = human-readable source when team is not yet known
   // home_team/away_team = null until resolved
   knockout: {
+    // NOTE: r32/r16/qf arrays are ordered by BRACKET POSITION (top→bottom of each half),
+    // not by match number. The renderer lays matches out positionally and draws connector
+    // lines between physically adjacent pairs, so array order must mirror FIFA's published
+    // progression. Left half (→ SF-101): R32 74,77,73,75,83,84,81,82. Right half (→ SF-102):
+    // R32 76,78,79,80,86,88,85,87. This is the fixed, pre-published 2026 bracket — do not
+    // re-pair sequentially. See missionlog/in-flight-changes/0018.
     r32: [
-      {id:"R32-73", date_bst:"2026-06-28", time_bst:"20:00", home_label:"2nd Group A", away_label:"2nd Group B", home_team:null,away_team:null, score:null,goals:[],reds:[],yt:null},
+      // Left half (feeds SF-101)
       {id:"R32-74", date_bst:"2026-06-29", time_bst:"21:30", home_label:"1st Group E", away_label:"Best 3rd (A/B/C/D/F)", home_team:null,away_team:null, score:null,goals:[],reds:[],yt:null},
-      {id:"R32-75", date_bst:"2026-06-30", time_bst:"02:00", home_label:"1st Group F", away_label:"2nd Group C", home_team:null,away_team:null, score:null,goals:[],reds:[],yt:null},
-      {id:"R32-76", date_bst:"2026-06-29", time_bst:"18:00", home_label:"1st Group C", away_label:"2nd Group F", home_team:null,away_team:null, score:null,goals:[],reds:[],yt:null},
       {id:"R32-77", date_bst:"2026-06-30", time_bst:"22:00", home_label:"1st Group I", away_label:"Best 3rd (C/D/F/G/H)", home_team:null,away_team:null, score:null,goals:[],reds:[],yt:null},
+      {id:"R32-73", date_bst:"2026-06-28", time_bst:"20:00", home_label:"2nd Group A", away_label:"2nd Group B", home_team:null,away_team:null, score:null,goals:[],reds:[],yt:null},
+      {id:"R32-75", date_bst:"2026-06-30", time_bst:"02:00", home_label:"1st Group F", away_label:"2nd Group C", home_team:null,away_team:null, score:null,goals:[],reds:[],yt:null},
+      {id:"R32-83", date_bst:"2026-07-03", time_bst:"00:00", home_label:"2nd Group K", away_label:"2nd Group L", home_team:null,away_team:null, score:null,goals:[],reds:[],yt:null},
+      {id:"R32-84", date_bst:"2026-07-02", time_bst:"20:00", home_label:"1st Group H", away_label:"2nd Group J", home_team:null,away_team:null, score:null,goals:[],reds:[],yt:null},
+      {id:"R32-81", date_bst:"2026-07-02", time_bst:"01:00", home_label:"1st Group D", away_label:"Best 3rd (B/E/F/I/J)", home_team:null,away_team:null, score:null,goals:[],reds:[],yt:null},
+      {id:"R32-82", date_bst:"2026-07-01", time_bst:"21:00", home_label:"1st Group G", away_label:"Best 3rd (A/E/H/I/J)", home_team:null,away_team:null, score:null,goals:[],reds:[],yt:null},
+      // Right half (feeds SF-102)
+      {id:"R32-76", date_bst:"2026-06-29", time_bst:"18:00", home_label:"1st Group C", away_label:"2nd Group F", home_team:null,away_team:null, score:null,goals:[],reds:[],yt:null},
       {id:"R32-78", date_bst:"2026-06-30", time_bst:"18:00", home_label:"2nd Group E", away_label:"2nd Group I", home_team:null,away_team:null, score:null,goals:[],reds:[],yt:null},
       {id:"R32-79", date_bst:"2026-07-01", time_bst:"02:00", home_label:"1st Group A", away_label:"Best 3rd (C/E/F/H/I)", home_team:null,away_team:null, score:null,goals:[],reds:[],yt:null},
       {id:"R32-80", date_bst:"2026-07-01", time_bst:"17:00", home_label:"1st Group L", away_label:"Best 3rd (E/H/I/J/K)", home_team:null,away_team:null, score:null,goals:[],reds:[],yt:null},
-      {id:"R32-81", date_bst:"2026-07-02", time_bst:"01:00", home_label:"1st Group D", away_label:"Best 3rd (B/E/F/I/J)", home_team:null,away_team:null, score:null,goals:[],reds:[],yt:null},
-      {id:"R32-82", date_bst:"2026-07-01", time_bst:"21:00", home_label:"1st Group G", away_label:"Best 3rd (A/E/H/I/J)", home_team:null,away_team:null, score:null,goals:[],reds:[],yt:null},
-      {id:"R32-83", date_bst:"2026-07-03", time_bst:"00:00", home_label:"2nd Group K", away_label:"2nd Group L", home_team:null,away_team:null, score:null,goals:[],reds:[],yt:null},
-      {id:"R32-84", date_bst:"2026-07-02", time_bst:"20:00", home_label:"1st Group H", away_label:"2nd Group J", home_team:null,away_team:null, score:null,goals:[],reds:[],yt:null},
-      {id:"R32-85", date_bst:"2026-07-03", time_bst:"04:00", home_label:"1st Group B", away_label:"Best 3rd (E/F/G/I/J)", home_team:null,away_team:null, score:null,goals:[],reds:[],yt:null},
       {id:"R32-86", date_bst:"2026-07-03", time_bst:"23:00", home_label:"1st Group J", away_label:"2nd Group H", home_team:null,away_team:null, score:null,goals:[],reds:[],yt:null},
-      {id:"R32-87", date_bst:"2026-07-04", time_bst:"02:30", home_label:"1st Group K", away_label:"Best 3rd (D/E/I/J/L)", home_team:null,away_team:null, score:null,goals:[],reds:[],yt:null},
       {id:"R32-88", date_bst:"2026-07-03", time_bst:"19:00", home_label:"2nd Group D", away_label:"2nd Group G", home_team:null,away_team:null, score:null,goals:[],reds:[],yt:null},
+      {id:"R32-85", date_bst:"2026-07-03", time_bst:"04:00", home_label:"1st Group B", away_label:"Best 3rd (E/F/G/I/J)", home_team:null,away_team:null, score:null,goals:[],reds:[],yt:null},
+      {id:"R32-87", date_bst:"2026-07-04", time_bst:"02:30", home_label:"1st Group K", away_label:"Best 3rd (D/E/I/J/L)", home_team:null,away_team:null, score:null,goals:[],reds:[],yt:null},
     ],
     r16: [
-      {id:"R16-89", date_bst:"2026-07-04", time_bst:"TBC", home_label:"W R32-73", away_label:"W R32-74", home_team:null,away_team:null, score:null,goals:[],reds:[],yt:null, feeds_from:["R32-73","R32-74"]},
-      {id:"R16-90", date_bst:"2026-07-04", time_bst:"TBC", home_label:"W R32-75", away_label:"W R32-76", home_team:null,away_team:null, score:null,goals:[],reds:[],yt:null, feeds_from:["R32-75","R32-76"]},
-      {id:"R16-91", date_bst:"2026-07-05", time_bst:"TBC", home_label:"W R32-77", away_label:"W R32-78", home_team:null,away_team:null, score:null,goals:[],reds:[],yt:null, feeds_from:["R32-77","R32-78"]},
+      // Left half (feeds SF-101)
+      {id:"R16-89", date_bst:"2026-07-04", time_bst:"TBC", home_label:"W R32-74", away_label:"W R32-77", home_team:null,away_team:null, score:null,goals:[],reds:[],yt:null, feeds_from:["R32-74","R32-77"]},
+      {id:"R16-90", date_bst:"2026-07-04", time_bst:"TBC", home_label:"W R32-73", away_label:"W R32-75", home_team:null,away_team:null, score:null,goals:[],reds:[],yt:null, feeds_from:["R32-73","R32-75"]},
+      {id:"R16-93", date_bst:"2026-07-06", time_bst:"TBC", home_label:"W R32-83", away_label:"W R32-84", home_team:null,away_team:null, score:null,goals:[],reds:[],yt:null, feeds_from:["R32-83","R32-84"]},
+      {id:"R16-94", date_bst:"2026-07-06", time_bst:"TBC", home_label:"W R32-81", away_label:"W R32-82", home_team:null,away_team:null, score:null,goals:[],reds:[],yt:null, feeds_from:["R32-81","R32-82"]},
+      // Right half (feeds SF-102)
+      {id:"R16-91", date_bst:"2026-07-05", time_bst:"TBC", home_label:"W R32-76", away_label:"W R32-78", home_team:null,away_team:null, score:null,goals:[],reds:[],yt:null, feeds_from:["R32-76","R32-78"]},
       {id:"R16-92", date_bst:"2026-07-05", time_bst:"TBC", home_label:"W R32-79", away_label:"W R32-80", home_team:null,away_team:null, score:null,goals:[],reds:[],yt:null, feeds_from:["R32-79","R32-80"]},
-      {id:"R16-93", date_bst:"2026-07-06", time_bst:"TBC", home_label:"W R32-81", away_label:"W R32-82", home_team:null,away_team:null, score:null,goals:[],reds:[],yt:null, feeds_from:["R32-81","R32-82"]},
-      {id:"R16-94", date_bst:"2026-07-06", time_bst:"TBC", home_label:"W R32-83", away_label:"W R32-84", home_team:null,away_team:null, score:null,goals:[],reds:[],yt:null, feeds_from:["R32-83","R32-84"]},
-      {id:"R16-95", date_bst:"2026-07-07", time_bst:"TBC", home_label:"W R32-85", away_label:"W R32-86", home_team:null,away_team:null, score:null,goals:[],reds:[],yt:null, feeds_from:["R32-85","R32-86"]},
-      {id:"R16-96", date_bst:"2026-07-07", time_bst:"TBC", home_label:"W R32-87", away_label:"W R32-88", home_team:null,away_team:null, score:null,goals:[],reds:[],yt:null, feeds_from:["R32-87","R32-88"]},
+      {id:"R16-95", date_bst:"2026-07-07", time_bst:"TBC", home_label:"W R32-86", away_label:"W R32-88", home_team:null,away_team:null, score:null,goals:[],reds:[],yt:null, feeds_from:["R32-86","R32-88"]},
+      {id:"R16-96", date_bst:"2026-07-07", time_bst:"TBC", home_label:"W R32-85", away_label:"W R32-87", home_team:null,away_team:null, score:null,goals:[],reds:[],yt:null, feeds_from:["R32-85","R32-87"]},
     ],
     qf: [
+      // Left half (feeds SF-101)
       {id:"QF-97", date_bst:"2026-07-09", time_bst:"TBC", home_label:"W R16-89", away_label:"W R16-90", home_team:null,away_team:null, score:null,goals:[],reds:[],yt:null, feeds_from:["R16-89","R16-90"]},
-      {id:"QF-98", date_bst:"2026-07-10", time_bst:"TBC", home_label:"W R16-91", away_label:"W R16-92", home_team:null,away_team:null, score:null,goals:[],reds:[],yt:null, feeds_from:["R16-91","R16-92"]},
-      {id:"QF-99", date_bst:"2026-07-10", time_bst:"TBC", home_label:"W R16-93", away_label:"W R16-94", home_team:null,away_team:null, score:null,goals:[],reds:[],yt:null, feeds_from:["R16-93","R16-94"]},
+      {id:"QF-98", date_bst:"2026-07-10", time_bst:"TBC", home_label:"W R16-93", away_label:"W R16-94", home_team:null,away_team:null, score:null,goals:[],reds:[],yt:null, feeds_from:["R16-93","R16-94"]},
+      // Right half (feeds SF-102)
+      {id:"QF-99", date_bst:"2026-07-10", time_bst:"TBC", home_label:"W R16-91", away_label:"W R16-92", home_team:null,away_team:null, score:null,goals:[],reds:[],yt:null, feeds_from:["R16-91","R16-92"]},
       {id:"QF-100",date_bst:"2026-07-11", time_bst:"TBC", home_label:"W R16-95", away_label:"W R16-96", home_team:null,away_team:null, score:null,goals:[],reds:[],yt:null, feeds_from:["R16-95","R16-96"]},
     ],
     sf: [
@@ -416,19 +428,19 @@ const WC_DATA = {
       K: ["Colombia","Portugal","DR Congo","Uzbekistan"],
       L: ["England","Croatia","Ghana","Panama"],
     },
-    // Predicted best-3rd slot assignments (official FIFA criteria: pts→GD→GF→conduct→odds proxy)
-    // Top 8 thirds by current stats: DR Congo(K,4pts,+1GD,4GF,0reds), Sweden(F,4pts,0GD,7GF,0reds),
-    // Ecuador(E,4pts,0GD,2GF,0reds), Ghana(L,4pts,0GD,2GF,0reds, Ecuador ranked above by odds +8000 vs +30000),
-    // Bosnia(B,4pts,-1GD,5GF,1red), Algeria(J,4pts,-2GD,5GF,0reds),
-    // Paraguay(D,4pts,-2GD,2GF,1red), Senegal(I,3pts,+2GD,8GF,0reds)
+    // Best-3rd slot assignments. The 8 qualifying thirds come from groups B,D,E,F,I,J,K,L.
+    // Slot allocation is NOT computed greedily — it follows FIFA Annex C (the fixed 495-combination
+    // table), taken here from the published Round of 32 bracket (Fox/ESPN/CBS, all groups complete).
+    // Teams: Paraguay(D), Sweden(F), Ecuador(E), DR Congo(K), Bosnia(B), Senegal(I), Algeria(J), Ghana(L).
+    // See missionlog/in-flight-changes/0019.
     best_thirds_slots: {
-      "Best 3rd (A/B/C/D/F)": {team:"Bosnia and Herzegovina", group:"B"},
-      "Best 3rd (C/D/F/G/H)": {team:"Paraguay",               group:"D"},
-      "Best 3rd (C/E/F/H/I)": {team:"Sweden",                 group:"F"},
+      "Best 3rd (A/B/C/D/F)": {team:"Paraguay",               group:"D"},
+      "Best 3rd (C/D/F/G/H)": {team:"Sweden",                 group:"F"},
+      "Best 3rd (C/E/F/H/I)": {team:"Ecuador",                group:"E"},
       "Best 3rd (E/H/I/J/K)": {team:"DR Congo",               group:"K"},
-      "Best 3rd (B/E/F/I/J)": {team:"Algeria",                group:"J"},
-      "Best 3rd (A/E/H/I/J)": {team:"Ecuador",                group:"E"},
-      "Best 3rd (E/F/G/I/J)": {team:"Senegal",                group:"I"},
+      "Best 3rd (B/E/F/I/J)": {team:"Bosnia and Herzegovina", group:"B"},
+      "Best 3rd (A/E/H/I/J)": {team:"Senegal",                group:"I"},
+      "Best 3rd (E/F/G/I/J)": {team:"Algeria",                group:"J"},
       "Best 3rd (D/E/I/J/L)": {team:"Ghana",                  group:"L"},
     },
     // Predicted knockout winners: team name that advances from each match.
@@ -438,40 +450,40 @@ const WC_DATA = {
     knockout: {
       // R32
       "R32-73": "Canada",        // South Africa +100000 vs Canada +20000
-      "R32-74": "Germany",       // Germany +1500 vs Bosnia +50000
+      "R32-74": "Germany",       // Germany +1500 vs Paraguay +30000
       "R32-75": "Netherlands",   // Netherlands +1500 vs Morocco +4000
       "R32-76": "Brazil",        // Brazil +1200 vs Japan +5000
-      "R32-77": "France",        // France +360 vs Paraguay +30000
+      "R32-77": "France",        // France +360 vs Sweden +12000
       "R32-78": "Norway",        // Ivory Coast +25000 vs Norway +3300
-      "R32-79": "Mexico",        // Mexico +4500 vs Sweden +12000
+      "R32-79": "Mexico",        // Mexico +4500 vs Ecuador +8000
       "R32-80": "England",       // England +600 vs DR Congo +100000
-      "R32-81": "United States", // USA +3500 vs Algeria ~+100000
-      "R32-82": "Belgium",       // Belgium +4500 vs Ecuador +8000
+      "R32-81": "United States", // USA +3500 vs Bosnia +50000
+      "R32-82": "Belgium",       // Belgium +4500 vs Senegal +9000
       "R32-83": "Portugal",      // Portugal +1300 vs Croatia +9000
       "R32-84": "Spain",         // Spain +600 vs Austria +15000
-      "R32-85": "Switzerland",   // Switzerland +5500 vs Senegal +9000
+      "R32-85": "Switzerland",   // Switzerland +5500 vs Algeria ~+100000
       "R32-86": "Argentina",     // Argentina +390 vs Cape Verde +100000
       "R32-87": "Colombia",      // Colombia +3500 vs Ghana +30000
       "R32-88": "Egypt",         // Egypt +30000 vs Australia +60000
-      // R16
-      "R16-89": "Germany",       // Canada +20000 vs Germany +1500
-      "R16-90": "Brazil",        // Netherlands +1500 vs Brazil +1200
-      "R16-91": "France",        // France +360 vs Norway +3300
+      // R16 (pairings per corrected FIFA bracket)
+      "R16-89": "France",        // Germany +1500 vs France +360
+      "R16-90": "Netherlands",   // Canada +20000 vs Netherlands +1500
+      "R16-91": "Brazil",        // Brazil +1200 vs Norway +3300
       "R16-92": "England",       // Mexico +4500 vs England +600
-      "R16-93": "United States", // USA +3500 vs Belgium +4500
-      "R16-94": "Spain",         // Portugal +1300 vs Spain +600
-      "R16-95": "Argentina",     // Switzerland +5500 vs Argentina +390
-      "R16-96": "Colombia",      // Colombia +3500 vs Egypt +30000
+      "R16-93": "Spain",         // Portugal +1300 vs Spain +600
+      "R16-94": "United States", // USA +3500 vs Belgium +4500
+      "R16-95": "Argentina",     // Argentina +390 vs Egypt +30000
+      "R16-96": "Colombia",      // Switzerland +5500 vs Colombia +3500
       // QF
-      "QF-97":  "Brazil",        // Germany +1500 vs Brazil +1200
-      "QF-98":  "France",        // France +360 vs England +600
-      "QF-99":  "Spain",         // USA +3500 vs Spain +600
+      "QF-97":  "France",        // France +360 vs Netherlands +1500
+      "QF-98":  "Spain",         // Spain +600 vs USA +3500
+      "QF-99":  "England",       // Brazil +1200 vs England +600
       "QF-100": "Argentina",     // Argentina +390 vs Colombia +3500
       // SF
-      "SF-101": "France",        // Brazil +1200 vs France +360
-      "SF-102": "Argentina",     // Spain +600 vs Argentina +390
+      "SF-101": "France",        // France +360 vs Spain +600
+      "SF-102": "Argentina",     // England +600 vs Argentina +390
       // 3rd place & Final
-      "3PL-103": "Spain",        // Brazil +1200 vs Spain +600
+      "3PL-103": "Spain",        // L SF-101 Spain vs L SF-102 England — FoxSports both +600; RotoWire Spain +450 vs England +700 → Spain
       "FIN-104": "France",       // France +360 vs Argentina +390
     }
   }

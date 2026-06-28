@@ -94,8 +94,23 @@ No separate group-winner odds search is needed.
 **Process:**
 1. From `predictions.groups`, take the predicted 3rd-place team (index 2) for each group.
 2. For each of those 12 teams, look up their current group stats (points, GD, GF, cards) from the actual match data in `data.js`. Use 0/0/0/0 for groups not yet started.
-3. Rank all 12 thirds by the official criteria above. Select the top 8.
-4. Assign to bracket slots using greedy bipartite matching — most-constrained team (fewest eligible slots) first:
+3. Rank all 12 thirds by the official criteria above. Select the top 8. **This step (which 8 teams) is computed by us.**
+4. **Assign the 8 thirds to bracket slots using FIFA's fixed allocation — NOT a greedy/by-hand match.**
+   The slot a third lands in depends only on *which 8 groups* qualified a third, via FIFA's Annex C
+   table (495 combinations). A greedy "most-constrained-first" match produces a *valid* but generally
+   *wrong* assignment — it disagrees with Annex C (see missionlog 0019). Source the assignment as follows:
+
+   - **Group stage complete** (all 72 group matches have scores → the 8 qualifying groups are known):
+     read the third-place → slot assignment directly from the **published Round of 32 bracket**
+     (FIFA / ESPN / CBS / Fox). This is authoritative — use it verbatim.
+   - **Group stage in progress** (predicting): you cannot know the final combination, so this is only a
+     provisional placeholder. If Annex C for the *predicted* combination is available, use it; otherwise
+     fall back to a valid match against the eligibility table below, and **flag in the report that the
+     best-3rd slots are provisional and must be reconciled against the published bracket once the
+     groups finish.**
+
+   The eligibility table below is only the *constraint* (which groups a slot can ever draw) — it does
+   **not** by itself determine the assignment:
 
    | Slot label | Eligible groups |
    |---|---|
