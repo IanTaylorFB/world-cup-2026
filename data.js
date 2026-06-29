@@ -1,8 +1,8 @@
 // FIFA World Cup 2026 — data file
 // All times in BST (UTC+1). Updated daily via /update-worldcup
 const WC_DATA = {
-  updated: "2026-06-28T08:12:54Z",
-  stage: "group", // "group" | "knockout"
+  updated: "2026-06-29T12:11:06Z",
+  stage: "knockout", // "group" | "knockout"
   groups: {
     A: {
       teams: ["Mexico","South Africa","South Korea","Czech Republic"],
@@ -283,11 +283,11 @@ const WC_DATA = {
         {id:"J5", date_bst:"2026-06-28", time_bst:"03:00", home:"Algeria", away:"Austria",
          score:{h:3,a:3},
          goals:[{t:"Austria",p:"Arnautovic",m:28},{t:"Algeria",p:"Belghali",m:45},{t:"Austria",p:"Sabitzer",m:55},{t:"Algeria",p:"Mahrez",m:60},{t:"Algeria",p:"Mahrez",m:"90+3"},{t:"Austria",p:"Kalajdzic",m:"90+6"}],
-         reds:[],yt:"https://www.youtube.com/watch?v=NIMe2mIfTdI", new:true},
+         reds:[],yt:"https://www.youtube.com/watch?v=NIMe2mIfTdI"},
         {id:"J6", date_bst:"2026-06-28", time_bst:"03:00", home:"Jordan", away:"Argentina",
          score:{h:1,a:3},
          goals:[{t:"Argentina",p:"Lo Celso",m:19},{t:"Argentina",p:"L. Martínez",m:31,pen:true},{t:"Jordan",p:"Al-Tamari",m:55},{t:"Argentina",p:"Messi",m:80}],
-         reds:[],yt:"https://www.youtube.com/watch?v=VLV_opHBk3U", new:true},
+         reds:[],yt:"https://www.youtube.com/watch?v=VLV_opHBk3U"},
       ]
     },
     K: {
@@ -311,11 +311,11 @@ const WC_DATA = {
          reds:[],yt:"https://www.youtube.com/watch?v=GHNdcbfBcl0"},
         {id:"K5", date_bst:"2026-06-28", time_bst:"00:30", home:"Colombia", away:"Portugal",
          score:{h:0,a:0},
-         goals:[],reds:[],yt:"https://www.youtube.com/watch?v=WRw6B3YxBZQ", new:true},
+         goals:[],reds:[],yt:"https://www.youtube.com/watch?v=WRw6B3YxBZQ"},
         {id:"K6", date_bst:"2026-06-28", time_bst:"00:30", home:"DR Congo", away:"Uzbekistan",
          score:{h:3,a:1},
          goals:[{t:"Uzbekistan",p:"Shomurodov",m:10},{t:"DR Congo",p:"Wissa",m:68,pen:true},{t:"DR Congo",p:"Mayele",m:78},{t:"DR Congo",p:"Wissa",m:"90+1"}],
-         reds:[],yt:"https://www.youtube.com/watch?v=GysGCE8iKXE", new:true},
+         reds:[],yt:"https://www.youtube.com/watch?v=GysGCE8iKXE"},
       ]
     },
     L: {
@@ -339,11 +339,11 @@ const WC_DATA = {
         {id:"L5", date_bst:"2026-06-27", time_bst:"22:00", home:"Panama", away:"England",
          score:{h:0,a:2},
          goals:[{t:"England",p:"Bellingham",m:62},{t:"England",p:"Kane",m:67}],
-         reds:[],yt:"https://www.youtube.com/watch?v=5QgvEKvqVbQ", new:true},
+         reds:[],yt:"https://www.youtube.com/watch?v=5QgvEKvqVbQ"},
         {id:"L6", date_bst:"2026-06-27", time_bst:"22:00", home:"Croatia", away:"Ghana",
          score:{h:2,a:1},
          goals:[{t:"Croatia",p:"Sucic",m:31},{t:"Ghana",p:"Luckassen",m:73},{t:"Croatia",p:"Vlasic",m:83}],
-         reds:[],yt:"https://www.youtube.com/watch?v=7dkbhbqzLOE", new:true},
+         reds:[],yt:"https://www.youtube.com/watch?v=7dkbhbqzLOE"},
       ]
     }
   },
@@ -360,23 +360,23 @@ const WC_DATA = {
     // re-pair sequentially. See missionlog/in-flight-changes/0018.
     r32: [
       // Left half (feeds SF-101)
-      {id:"R32-74", date_bst:"2026-06-29", time_bst:"21:30", home_label:"1st Group E", away_label:"Best 3rd (A/B/C/D/F)", home_team:null,away_team:null, score:null,goals:[],reds:[],yt:null},
-      {id:"R32-77", date_bst:"2026-06-30", time_bst:"22:00", home_label:"1st Group I", away_label:"Best 3rd (C/D/F/G/H)", home_team:null,away_team:null, score:null,goals:[],reds:[],yt:null},
-      {id:"R32-73", date_bst:"2026-06-28", time_bst:"20:00", home_label:"2nd Group A", away_label:"2nd Group B", home_team:null,away_team:null, score:null,goals:[],reds:[],yt:null},
-      {id:"R32-75", date_bst:"2026-06-30", time_bst:"02:00", home_label:"1st Group F", away_label:"2nd Group C", home_team:null,away_team:null, score:null,goals:[],reds:[],yt:null},
-      {id:"R32-83", date_bst:"2026-07-03", time_bst:"00:00", home_label:"2nd Group K", away_label:"2nd Group L", home_team:null,away_team:null, score:null,goals:[],reds:[],yt:null},
-      {id:"R32-84", date_bst:"2026-07-02", time_bst:"20:00", home_label:"1st Group H", away_label:"2nd Group J", home_team:null,away_team:null, score:null,goals:[],reds:[],yt:null},
-      {id:"R32-81", date_bst:"2026-07-02", time_bst:"01:00", home_label:"1st Group D", away_label:"Best 3rd (B/E/F/I/J)", home_team:null,away_team:null, score:null,goals:[],reds:[],yt:null},
-      {id:"R32-82", date_bst:"2026-07-01", time_bst:"21:00", home_label:"1st Group G", away_label:"Best 3rd (A/E/H/I/J)", home_team:null,away_team:null, score:null,goals:[],reds:[],yt:null},
+      {id:"R32-74", date_bst:"2026-06-29", time_bst:"21:30", home_label:"1st Group E", away_label:"Best 3rd (A/B/C/D/F)", home_team:"Germany",away_team:"Paraguay", score:null,goals:[],reds:[],yt:null},
+      {id:"R32-77", date_bst:"2026-06-30", time_bst:"22:00", home_label:"1st Group I", away_label:"Best 3rd (C/D/F/G/H)", home_team:"France",away_team:"Sweden", score:null,goals:[],reds:[],yt:null},
+      {id:"R32-73", date_bst:"2026-06-28", time_bst:"20:00", home_label:"2nd Group A", away_label:"2nd Group B", home_team:"South Africa",away_team:"Canada", score:{h:0,a:1},goals:[{t:"Canada",p:"Eustáquio",m:"90+2"}],reds:[],yt:"https://www.youtube.com/watch?v=tDBwRbOKND8", new:true},
+      {id:"R32-75", date_bst:"2026-06-30", time_bst:"02:00", home_label:"1st Group F", away_label:"2nd Group C", home_team:"Netherlands",away_team:"Morocco", score:null,goals:[],reds:[],yt:null},
+      {id:"R32-83", date_bst:"2026-07-03", time_bst:"00:00", home_label:"2nd Group K", away_label:"2nd Group L", home_team:"Portugal",away_team:"Croatia", score:null,goals:[],reds:[],yt:null},
+      {id:"R32-84", date_bst:"2026-07-02", time_bst:"20:00", home_label:"1st Group H", away_label:"2nd Group J", home_team:"Spain",away_team:"Austria", score:null,goals:[],reds:[],yt:null},
+      {id:"R32-81", date_bst:"2026-07-02", time_bst:"01:00", home_label:"1st Group D", away_label:"Best 3rd (B/E/F/I/J)", home_team:"United States",away_team:"Bosnia and Herzegovina", score:null,goals:[],reds:[],yt:null},
+      {id:"R32-82", date_bst:"2026-07-01", time_bst:"21:00", home_label:"1st Group G", away_label:"Best 3rd (A/E/H/I/J)", home_team:"Belgium",away_team:"Senegal", score:null,goals:[],reds:[],yt:null},
       // Right half (feeds SF-102)
-      {id:"R32-76", date_bst:"2026-06-29", time_bst:"18:00", home_label:"1st Group C", away_label:"2nd Group F", home_team:null,away_team:null, score:null,goals:[],reds:[],yt:null},
-      {id:"R32-78", date_bst:"2026-06-30", time_bst:"18:00", home_label:"2nd Group E", away_label:"2nd Group I", home_team:null,away_team:null, score:null,goals:[],reds:[],yt:null},
-      {id:"R32-79", date_bst:"2026-07-01", time_bst:"02:00", home_label:"1st Group A", away_label:"Best 3rd (C/E/F/H/I)", home_team:null,away_team:null, score:null,goals:[],reds:[],yt:null},
-      {id:"R32-80", date_bst:"2026-07-01", time_bst:"17:00", home_label:"1st Group L", away_label:"Best 3rd (E/H/I/J/K)", home_team:null,away_team:null, score:null,goals:[],reds:[],yt:null},
-      {id:"R32-86", date_bst:"2026-07-03", time_bst:"23:00", home_label:"1st Group J", away_label:"2nd Group H", home_team:null,away_team:null, score:null,goals:[],reds:[],yt:null},
-      {id:"R32-88", date_bst:"2026-07-03", time_bst:"19:00", home_label:"2nd Group D", away_label:"2nd Group G", home_team:null,away_team:null, score:null,goals:[],reds:[],yt:null},
-      {id:"R32-85", date_bst:"2026-07-03", time_bst:"04:00", home_label:"1st Group B", away_label:"Best 3rd (E/F/G/I/J)", home_team:null,away_team:null, score:null,goals:[],reds:[],yt:null},
-      {id:"R32-87", date_bst:"2026-07-04", time_bst:"02:30", home_label:"1st Group K", away_label:"Best 3rd (D/E/I/J/L)", home_team:null,away_team:null, score:null,goals:[],reds:[],yt:null},
+      {id:"R32-76", date_bst:"2026-06-29", time_bst:"18:00", home_label:"1st Group C", away_label:"2nd Group F", home_team:"Brazil",away_team:"Japan", score:null,goals:[],reds:[],yt:null},
+      {id:"R32-78", date_bst:"2026-06-30", time_bst:"18:00", home_label:"2nd Group E", away_label:"2nd Group I", home_team:"Ivory Coast",away_team:"Norway", score:null,goals:[],reds:[],yt:null},
+      {id:"R32-79", date_bst:"2026-07-01", time_bst:"02:00", home_label:"1st Group A", away_label:"Best 3rd (C/E/F/H/I)", home_team:"Mexico",away_team:"Ecuador", score:null,goals:[],reds:[],yt:null},
+      {id:"R32-80", date_bst:"2026-07-01", time_bst:"17:00", home_label:"1st Group L", away_label:"Best 3rd (E/H/I/J/K)", home_team:"England",away_team:"DR Congo", score:null,goals:[],reds:[],yt:null},
+      {id:"R32-86", date_bst:"2026-07-03", time_bst:"23:00", home_label:"1st Group J", away_label:"2nd Group H", home_team:"Argentina",away_team:"Cape Verde", score:null,goals:[],reds:[],yt:null},
+      {id:"R32-88", date_bst:"2026-07-03", time_bst:"19:00", home_label:"2nd Group D", away_label:"2nd Group G", home_team:"Australia",away_team:"Egypt", score:null,goals:[],reds:[],yt:null},
+      {id:"R32-85", date_bst:"2026-07-03", time_bst:"04:00", home_label:"1st Group B", away_label:"Best 3rd (E/F/G/I/J)", home_team:"Switzerland",away_team:"Algeria", score:null,goals:[],reds:[],yt:null},
+      {id:"R32-87", date_bst:"2026-07-04", time_bst:"02:30", home_label:"1st Group K", away_label:"Best 3rd (D/E/I/J/L)", home_team:"Colombia",away_team:"Ghana", score:null,goals:[],reds:[],yt:null},
     ],
     r16: [
       // Left half (feeds SF-101)
@@ -446,7 +446,7 @@ const WC_DATA = {
     // Predicted knockout winners: team name that advances from each match.
     // Winner chosen by better tournament-winner odds (lower American odds = more likely).
     // Recalculate downstream matches whenever a predicted team changes.
-    // Odds source: FoxSports + RotoWire, June 28 2026.
+    // Odds source: FoxSports (FanDuel), June 29 2026. Predicted winners unchanged from prior run.
     knockout: {
       // R32
       "R32-73": "Canada",        // South Africa +100000 vs Canada +20000
@@ -480,11 +480,11 @@ const WC_DATA = {
       "QF-99":  "England",       // Brazil +1200 vs England +600
       "QF-100": "Argentina",     // Argentina +390 vs Colombia +3500
       // SF
-      "SF-101": "France",        // France +360 vs Spain +600
-      "SF-102": "Argentina",     // England +600 vs Argentina +390
+      "SF-101": "France",        // France +340 vs Spain +650
+      "SF-102": "Argentina",     // England +650 vs Argentina +410
       // 3rd place & Final
-      "3PL-103": "Spain",        // L SF-101 Spain vs L SF-102 England — FoxSports both +600; RotoWire Spain +450 vs England +700 → Spain
-      "FIN-104": "France",       // France +360 vs Argentina +390
+      "3PL-103": "Spain",        // L SF-101 Spain vs L SF-102 England — FoxSports both +650; Spain better historically → Spain
+      "FIN-104": "France",       // France +340 vs Argentina +410
     }
   }
 };
