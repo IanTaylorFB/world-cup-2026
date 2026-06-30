@@ -268,6 +268,10 @@
   .ko-team .ko-date { font-size: 10px; color: var(--muted); text-align: center; padding: 3px 8px; }
   .ko-team .predicted { color: var(--muted); font-style: italic; flex: 1; font-size: 11px; }
   .ko-team .predicted .pred-pos { font-size: 10px; opacity: 0.8; }
+  .ko-pens {
+    font-size: 10px; color: var(--muted); text-align: center;
+    padding: 2px 8px; border-top: 1px solid var(--border);
+  }
 
   .final-col {
     display: flex;
@@ -447,6 +451,9 @@ function openMatch(match, title) {
   html += `<div class="modal-date">${fmtDatetime(match.date_bst, match.time_bst)}</div>`;
   if (played) {
     html += `<div class="modal-score">${match.score.h} – ${match.score.a}</div>`;
+    if (match.pens) {
+      html += `<div style="text-align:center;color:var(--muted);font-size:13px;margin-top:-12px;margin-bottom:14px">Penalties: ${match.pens.h} – ${match.pens.a}</div>`;
+    }
     if (match.goals && match.goals.length) {
       html += `<div class="section-title">Goals</div>`;
       match.goals.forEach(g => {
@@ -644,9 +651,12 @@ function resolveSlot(label) {
     const matchId = m[1];
     const match = findKoMatch(matchId);
     if (!match) return null;
-    // If match has a confirmed result, use actual winner
+    // If match has a confirmed result, use actual winner (penalties break a level score)
     if (match.score !== null && (match.home_team || match.away_team)) {
-      const winner = match.score.h > match.score.a ? match.home_team : match.away_team;
+      let winner;
+      if (match.score.h > match.score.a) winner = match.home_team;
+      else if (match.score.h < match.score.a) winner = match.away_team;
+      else winner = (match.pens && match.pens.h > match.pens.a) ? match.home_team : match.away_team;
       return winner ? findTeamPosition(winner) : null;
     }
     // Otherwise resolve winner from prediction
@@ -711,8 +721,10 @@ function buildKoMatchEl(match, flipped) {
   const awayName = koTeamName(match, 'away');
   const homeScore = koScoreStr(match, 'home');
   const awayScore = koScoreStr(match, 'away');
-  const homeWin = match.score && match.score.h > match.score.a;
-  const awayWin = match.score && match.score.h < match.score.a;
+  const homeWin = match.score && (match.score.h > match.score.a ||
+    (match.score.h === match.score.a && match.pens && match.pens.h > match.pens.a));
+  const awayWin = match.score && (match.score.h < match.score.a ||
+    (match.score.h === match.score.a && match.pens && match.pens.a > match.pens.h));
   const dt = fmtDatetime(match.date_bst, match.time_bst !== 'TBC' ? match.time_bst : '');
 
   // Resolve predictions for unconfirmed slots
@@ -753,6 +765,10 @@ function buildKoMatchEl(match, flipped) {
       ${match.score !== null ? `<span class="ko-score ${awayWin ? 'win' : ''}">${awayScore}</span>` : ''}
     </div>
   `;
+
+  if (match.pens) {
+    box.innerHTML += `<div class="ko-pens">${match.pens.h}–${match.pens.a} on pens</div>`;
+  }
 
   wrapper.appendChild(box);
   return wrapper;

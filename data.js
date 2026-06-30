@@ -1,7 +1,7 @@
 // FIFA World Cup 2026 — data file
 // All times in BST (UTC+1). Updated daily via /update-worldcup
 const WC_DATA = {
-  updated: "2026-06-29T12:11:06Z",
+  updated: "2026-06-30T13:26:19Z",
   stage: "knockout", // "group" | "knockout"
   groups: {
     A: {
@@ -360,16 +360,16 @@ const WC_DATA = {
     // re-pair sequentially. See missionlog/in-flight-changes/0018.
     r32: [
       // Left half (feeds SF-101)
-      {id:"R32-74", date_bst:"2026-06-29", time_bst:"21:30", home_label:"1st Group E", away_label:"Best 3rd (A/B/C/D/F)", home_team:"Germany",away_team:"Paraguay", score:null,goals:[],reds:[],yt:null},
+      {id:"R32-74", date_bst:"2026-06-29", time_bst:"21:30", home_label:"1st Group E", away_label:"Best 3rd (A/B/C/D/F)", home_team:"Germany",away_team:"Paraguay", score:{h:1,a:1},pens:{h:3,a:4},goals:[{t:"Paraguay",p:"Enciso",m:42},{t:"Germany",p:"Havertz",m:54}],reds:[],yt:"https://www.youtube.com/watch?v=gVYimAh7meQ", new:true},
       {id:"R32-77", date_bst:"2026-06-30", time_bst:"22:00", home_label:"1st Group I", away_label:"Best 3rd (C/D/F/G/H)", home_team:"France",away_team:"Sweden", score:null,goals:[],reds:[],yt:null},
-      {id:"R32-73", date_bst:"2026-06-28", time_bst:"20:00", home_label:"2nd Group A", away_label:"2nd Group B", home_team:"South Africa",away_team:"Canada", score:{h:0,a:1},goals:[{t:"Canada",p:"Eustáquio",m:"90+2"}],reds:[],yt:"https://www.youtube.com/watch?v=tDBwRbOKND8", new:true},
-      {id:"R32-75", date_bst:"2026-06-30", time_bst:"02:00", home_label:"1st Group F", away_label:"2nd Group C", home_team:"Netherlands",away_team:"Morocco", score:null,goals:[],reds:[],yt:null},
+      {id:"R32-73", date_bst:"2026-06-28", time_bst:"20:00", home_label:"2nd Group A", away_label:"2nd Group B", home_team:"South Africa",away_team:"Canada", score:{h:0,a:1},goals:[{t:"Canada",p:"Eustáquio",m:"90+2"}],reds:[],yt:"https://www.youtube.com/watch?v=tDBwRbOKND8"},
+      {id:"R32-75", date_bst:"2026-06-30", time_bst:"02:00", home_label:"1st Group F", away_label:"2nd Group C", home_team:"Netherlands",away_team:"Morocco", score:{h:1,a:1},pens:{h:2,a:3},goals:[{t:"Netherlands",p:"Gakpo",m:72},{t:"Morocco",p:"Issa Diop",m:"90+1"}],reds:[],yt:"https://www.youtube.com/watch?v=Kn3HmZNQsUY", new:true},
       {id:"R32-83", date_bst:"2026-07-03", time_bst:"00:00", home_label:"2nd Group K", away_label:"2nd Group L", home_team:"Portugal",away_team:"Croatia", score:null,goals:[],reds:[],yt:null},
       {id:"R32-84", date_bst:"2026-07-02", time_bst:"20:00", home_label:"1st Group H", away_label:"2nd Group J", home_team:"Spain",away_team:"Austria", score:null,goals:[],reds:[],yt:null},
       {id:"R32-81", date_bst:"2026-07-02", time_bst:"01:00", home_label:"1st Group D", away_label:"Best 3rd (B/E/F/I/J)", home_team:"United States",away_team:"Bosnia and Herzegovina", score:null,goals:[],reds:[],yt:null},
       {id:"R32-82", date_bst:"2026-07-01", time_bst:"21:00", home_label:"1st Group G", away_label:"Best 3rd (A/E/H/I/J)", home_team:"Belgium",away_team:"Senegal", score:null,goals:[],reds:[],yt:null},
       // Right half (feeds SF-102)
-      {id:"R32-76", date_bst:"2026-06-29", time_bst:"18:00", home_label:"1st Group C", away_label:"2nd Group F", home_team:"Brazil",away_team:"Japan", score:null,goals:[],reds:[],yt:null},
+      {id:"R32-76", date_bst:"2026-06-29", time_bst:"18:00", home_label:"1st Group C", away_label:"2nd Group F", home_team:"Brazil",away_team:"Japan", score:{h:2,a:1},goals:[{t:"Japan",p:"Sano",m:29},{t:"Brazil",p:"Casemiro",m:56},{t:"Brazil",p:"Martinelli",m:"90+5"}],reds:[],yt:"https://www.youtube.com/watch?v=QgUSOlN0Tt0", new:true},
       {id:"R32-78", date_bst:"2026-06-30", time_bst:"18:00", home_label:"2nd Group E", away_label:"2nd Group I", home_team:"Ivory Coast",away_team:"Norway", score:null,goals:[],reds:[],yt:null},
       {id:"R32-79", date_bst:"2026-07-01", time_bst:"02:00", home_label:"1st Group A", away_label:"Best 3rd (C/E/F/H/I)", home_team:"Mexico",away_team:"Ecuador", score:null,goals:[],reds:[],yt:null},
       {id:"R32-80", date_bst:"2026-07-01", time_bst:"17:00", home_label:"1st Group L", away_label:"Best 3rd (E/H/I/J/K)", home_team:"England",away_team:"DR Congo", score:null,goals:[],reds:[],yt:null},
@@ -446,7 +446,7 @@ const WC_DATA = {
     // Predicted knockout winners: team name that advances from each match.
     // Winner chosen by better tournament-winner odds (lower American odds = more likely).
     // Recalculate downstream matches whenever a predicted team changes.
-    // Odds source: FoxSports (FanDuel), June 29 2026. Predicted winners unchanged from prior run.
+    // Odds source: FoxSports (FanDuel), June 30 2026. Netherlands eliminated on pens → R16-90 now Morocco.
     knockout: {
       // R32
       "R32-73": "Canada",        // South Africa +100000 vs Canada +20000
@@ -467,7 +467,7 @@ const WC_DATA = {
       "R32-88": "Egypt",         // Egypt +30000 vs Australia +60000
       // R16 (pairings per corrected FIFA bracket)
       "R16-89": "France",        // Germany +1500 vs France +360
-      "R16-90": "Netherlands",   // Canada +20000 vs Netherlands +1500
+      "R16-90": "Morocco",       // Canada +12500 vs Morocco +1900 (actual: Canada beat RSA, Morocco beat NED on pens)
       "R16-91": "Brazil",        // Brazil +1200 vs Norway +3300
       "R16-92": "England",       // Mexico +4500 vs England +600
       "R16-93": "Spain",         // Portugal +1300 vs Spain +600
@@ -480,11 +480,11 @@ const WC_DATA = {
       "QF-99":  "England",       // Brazil +1200 vs England +600
       "QF-100": "Argentina",     // Argentina +390 vs Colombia +3500
       // SF
-      "SF-101": "France",        // France +340 vs Spain +650
-      "SF-102": "Argentina",     // England +650 vs Argentina +410
+      "SF-101": "France",        // France +250 vs Spain +650
+      "SF-102": "Argentina",     // England +700 vs Argentina +400
       // 3rd place & Final
-      "3PL-103": "Spain",        // L SF-101 Spain vs L SF-102 England — FoxSports both +650; Spain better historically → Spain
-      "FIN-104": "France",       // France +340 vs Argentina +410
+      "3PL-103": "Spain",        // L SF-101 Spain +650 vs L SF-102 England +700 → Spain
+      "FIN-104": "France",       // France +250 vs Argentina +400
     }
   }
 };
