@@ -1,7 +1,7 @@
 // FIFA World Cup 2026 — data file
 // All times in BST (UTC+1). Updated daily via /update-worldcup
 const WC_DATA = {
-  updated: "2026-07-01T05:47:31Z",
+  updated: "2026-07-02T06:16:39Z",
   stage: "knockout", // "group" | "knockout"
   groups: {
     A: {
@@ -361,18 +361,18 @@ const WC_DATA = {
     r32: [
       // Left half (feeds SF-101)
       {id:"R32-74", date_bst:"2026-06-29", time_bst:"21:30", home_label:"1st Group E", away_label:"Best 3rd (A/B/C/D/F)", home_team:"Germany",away_team:"Paraguay", score:{h:1,a:1},pens:{h:3,a:4},goals:[{t:"Paraguay",p:"Enciso",m:42},{t:"Germany",p:"Havertz",m:54}],reds:[],yt:"https://www.youtube.com/watch?v=gVYimAh7meQ"},
-      {id:"R32-77", date_bst:"2026-06-30", time_bst:"22:00", home_label:"1st Group I", away_label:"Best 3rd (C/D/F/G/H)", home_team:"France",away_team:"Sweden", score:{h:3,a:0},goals:[{t:"France",p:"Mbappé",m:45},{t:"France",p:"Barcola",m:53},{t:"France",p:"Mbappé",m:74}],reds:[],yt:"https://www.youtube.com/watch?v=D9K1xdAIwfg", new:true},
+      {id:"R32-77", date_bst:"2026-06-30", time_bst:"22:00", home_label:"1st Group I", away_label:"Best 3rd (C/D/F/G/H)", home_team:"France",away_team:"Sweden", score:{h:3,a:0},goals:[{t:"France",p:"Mbappé",m:45},{t:"France",p:"Barcola",m:53},{t:"France",p:"Mbappé",m:74}],reds:[],yt:"https://www.youtube.com/watch?v=D9K1xdAIwfg"},
       {id:"R32-73", date_bst:"2026-06-28", time_bst:"20:00", home_label:"2nd Group A", away_label:"2nd Group B", home_team:"South Africa",away_team:"Canada", score:{h:0,a:1},goals:[{t:"Canada",p:"Eustáquio",m:"90+2"}],reds:[],yt:"https://www.youtube.com/watch?v=tDBwRbOKND8"},
       {id:"R32-75", date_bst:"2026-06-30", time_bst:"02:00", home_label:"1st Group F", away_label:"2nd Group C", home_team:"Netherlands",away_team:"Morocco", score:{h:1,a:1},pens:{h:2,a:3},goals:[{t:"Netherlands",p:"Gakpo",m:72},{t:"Morocco",p:"Issa Diop",m:"90+1"}],reds:[],yt:"https://www.youtube.com/watch?v=Kn3HmZNQsUY"},
       {id:"R32-83", date_bst:"2026-07-03", time_bst:"00:00", home_label:"2nd Group K", away_label:"2nd Group L", home_team:"Portugal",away_team:"Croatia", score:null,goals:[],reds:[],yt:null},
       {id:"R32-84", date_bst:"2026-07-02", time_bst:"20:00", home_label:"1st Group H", away_label:"2nd Group J", home_team:"Spain",away_team:"Austria", score:null,goals:[],reds:[],yt:null},
-      {id:"R32-81", date_bst:"2026-07-02", time_bst:"01:00", home_label:"1st Group D", away_label:"Best 3rd (B/E/F/I/J)", home_team:"United States",away_team:"Bosnia and Herzegovina", score:null,goals:[],reds:[],yt:null},
-      {id:"R32-82", date_bst:"2026-07-01", time_bst:"21:00", home_label:"1st Group G", away_label:"Best 3rd (A/E/H/I/J)", home_team:"Belgium",away_team:"Senegal", score:null,goals:[],reds:[],yt:null},
+      {id:"R32-81", date_bst:"2026-07-02", time_bst:"01:00", home_label:"1st Group D", away_label:"Best 3rd (B/E/F/I/J)", home_team:"United States",away_team:"Bosnia and Herzegovina", score:{h:2,a:0},goals:[{t:"United States",p:"Balogun",m:45},{t:"United States",p:"Tillman",m:82}],reds:[{t:"United States",p:"Balogun",m:64}],yt:"https://www.youtube.com/watch?v=WDWtcfLdndc", new:true},
+      {id:"R32-82", date_bst:"2026-07-01", time_bst:"21:00", home_label:"1st Group G", away_label:"Best 3rd (A/E/H/I/J)", home_team:"Belgium",away_team:"Senegal", score:{h:3,a:2},goals:[{t:"Senegal",p:"H. Diarra",m:24},{t:"Senegal",p:"I. Sarr",m:51},{t:"Belgium",p:"Lukaku",m:86},{t:"Belgium",p:"Tielemans",m:89},{t:"Belgium",p:"Tielemans",m:"120+5",pen:true}],reds:[],yt:"https://www.youtube.com/watch?v=jL7UyztS_XE", new:true},
       // Right half (feeds SF-102)
       {id:"R32-76", date_bst:"2026-06-29", time_bst:"18:00", home_label:"1st Group C", away_label:"2nd Group F", home_team:"Brazil",away_team:"Japan", score:{h:2,a:1},goals:[{t:"Japan",p:"Sano",m:29},{t:"Brazil",p:"Casemiro",m:56},{t:"Brazil",p:"Martinelli",m:"90+5"}],reds:[],yt:"https://www.youtube.com/watch?v=QgUSOlN0Tt0"},
-      {id:"R32-78", date_bst:"2026-06-30", time_bst:"18:00", home_label:"2nd Group E", away_label:"2nd Group I", home_team:"Ivory Coast",away_team:"Norway", score:{h:1,a:2},goals:[{t:"Norway",p:"Nusa",m:39},{t:"Ivory Coast",p:"Amad Diallo",m:74},{t:"Norway",p:"Haaland",m:86}],reds:[],yt:"https://www.youtube.com/watch?v=Axhonxm7emA", new:true},
-      {id:"R32-79", date_bst:"2026-07-01", time_bst:"02:00", home_label:"1st Group A", away_label:"Best 3rd (C/E/F/H/I)", home_team:"Mexico",away_team:"Ecuador", score:{h:2,a:0},goals:[{t:"Mexico",p:"Quiñones",m:22},{t:"Mexico",p:"Jiménez",m:31}],reds:[{t:"Ecuador",p:"Hincapié",m:"90+5"}],yt:"https://www.youtube.com/watch?v=HpZf48QB-M0", new:true},
-      {id:"R32-80", date_bst:"2026-07-01", time_bst:"17:00", home_label:"1st Group L", away_label:"Best 3rd (E/H/I/J/K)", home_team:"England",away_team:"DR Congo", score:null,goals:[],reds:[],yt:null},
+      {id:"R32-78", date_bst:"2026-06-30", time_bst:"18:00", home_label:"2nd Group E", away_label:"2nd Group I", home_team:"Ivory Coast",away_team:"Norway", score:{h:1,a:2},goals:[{t:"Norway",p:"Nusa",m:39},{t:"Ivory Coast",p:"Amad Diallo",m:74},{t:"Norway",p:"Haaland",m:86}],reds:[],yt:"https://www.youtube.com/watch?v=Axhonxm7emA"},
+      {id:"R32-79", date_bst:"2026-07-01", time_bst:"02:00", home_label:"1st Group A", away_label:"Best 3rd (C/E/F/H/I)", home_team:"Mexico",away_team:"Ecuador", score:{h:2,a:0},goals:[{t:"Mexico",p:"Quiñones",m:22},{t:"Mexico",p:"Jiménez",m:31}],reds:[{t:"Ecuador",p:"Hincapié",m:"90+5"}],yt:"https://www.youtube.com/watch?v=HpZf48QB-M0"},
+      {id:"R32-80", date_bst:"2026-07-01", time_bst:"17:00", home_label:"1st Group L", away_label:"Best 3rd (E/H/I/J/K)", home_team:"England",away_team:"DR Congo", score:{h:2,a:1},goals:[{t:"DR Congo",p:"Cipenga",m:7},{t:"England",p:"Kane",m:75},{t:"England",p:"Kane",m:86}],reds:[],yt:"https://www.youtube.com/watch?v=x24Ir5Ua4RQ", new:true},
       {id:"R32-86", date_bst:"2026-07-03", time_bst:"23:00", home_label:"1st Group J", away_label:"2nd Group H", home_team:"Argentina",away_team:"Cape Verde", score:null,goals:[],reds:[],yt:null},
       {id:"R32-88", date_bst:"2026-07-03", time_bst:"19:00", home_label:"2nd Group D", away_label:"2nd Group G", home_team:"Australia",away_team:"Egypt", score:null,goals:[],reds:[],yt:null},
       {id:"R32-85", date_bst:"2026-07-03", time_bst:"04:00", home_label:"1st Group B", away_label:"Best 3rd (E/F/G/I/J)", home_team:"Switzerland",away_team:"Algeria", score:null,goals:[],reds:[],yt:null},
@@ -446,7 +446,7 @@ const WC_DATA = {
     // Predicted knockout winners: team name that advances from each match.
     // Winner chosen by better tournament-winner odds (lower American odds = more likely).
     // Recalculate downstream matches whenever a predicted team changes.
-    // Odds source: FoxSports, July 1 2026. R32-77/78/79 in — France, Norway, Mexico all advanced as predicted; no prediction changes.
+    // Odds source: FoxSports, July 2 2026. R32-80/81/82 in — England, USA, Belgium all advanced as predicted; no prediction changes.
     knockout: {
       // R32
       "R32-73": "Canada",        // South Africa +100000 vs Canada +20000
@@ -456,9 +456,9 @@ const WC_DATA = {
       "R32-77": "France",        // France 3-0 Sweden (actual)
       "R32-78": "Norway",        // Ivory Coast 1-2 Norway (actual)
       "R32-79": "Mexico",        // Mexico 2-0 Ecuador (actual)
-      "R32-80": "England",       // England +600 vs DR Congo +100000
-      "R32-81": "United States", // USA +3500 vs Bosnia +50000
-      "R32-82": "Belgium",       // Belgium +4500 vs Senegal +9000
+      "R32-80": "England",       // England 2-1 DR Congo (actual)
+      "R32-81": "United States", // USA 2-0 Bosnia (actual)
+      "R32-82": "Belgium",       // Belgium 3-2 Senegal AET (actual)
       "R32-83": "Portugal",      // Portugal +1300 vs Croatia +9000
       "R32-84": "Spain",         // Spain +600 vs Austria +15000
       "R32-85": "Switzerland",   // Switzerland +5500 vs Algeria ~+100000
@@ -469,22 +469,22 @@ const WC_DATA = {
       "R16-89": "France",        // Paraguay (actual) vs France +185 → France
       "R16-90": "Morocco",       // Canada +17500 vs Morocco +2200 → Morocco (both actual: Canada beat RSA, Morocco beat NED on pens)
       "R16-91": "Brazil",        // Brazil +1200 vs Norway +3300
-      "R16-92": "England",       // Mexico +4500 vs England +600
+      "R16-92": "England",       // Mexico +2700 vs England +850
       "R16-93": "Spain",         // Portugal +1300 vs Spain +600
-      "R16-94": "United States", // USA +3500 vs Belgium +4500
+      "R16-94": "United States", // USA +2500 vs Belgium +3500 (Balogun suspended R16, but odds still favour USA)
       "R16-95": "Argentina",     // Argentina +390 vs Egypt +30000
       "R16-96": "Colombia",      // Switzerland +5500 vs Colombia +3500
       // QF
       "QF-97":  "France",        // France +185 vs Morocco +2200 → France
       "QF-98":  "Spain",         // Spain +600 vs USA +3500
-      "QF-99":  "England",       // Brazil +1200 vs England +600
+      "QF-99":  "England",       // Brazil +1000 vs England +850
       "QF-100": "Argentina",     // Argentina +390 vs Colombia +3500
       // SF
-      "SF-101": "France",        // France +185 vs Spain +650
-      "SF-102": "Argentina",     // England +800 vs Argentina +430
+      "SF-101": "France",        // France +185 vs Spain +700
+      "SF-102": "Argentina",     // England +850 vs Argentina +410
       // 3rd place & Final
-      "3PL-103": "Spain",        // L SF-101 Spain +650 vs L SF-102 England +800 → Spain
-      "FIN-104": "France",       // France +185 vs Argentina +430
+      "3PL-103": "Spain",        // L SF-101 Spain +700 vs L SF-102 England +850 → Spain
+      "FIN-104": "France",       // France +185 vs Argentina +410
     }
   }
 };
