@@ -1,7 +1,7 @@
 // FIFA World Cup 2026 — data file
 // All times in BST (UTC+1). Updated daily via /update-worldcup
 const WC_DATA = {
-  updated: "2026-07-04T06:29:21Z",
+  updated: "2026-07-05T06:50:11Z",
   stage: "knockout", // "group" | "knockout"
   groups: {
     A: {
@@ -373,15 +373,15 @@ const WC_DATA = {
       {id:"R32-78", date_bst:"2026-06-30", time_bst:"18:00", home_label:"2nd Group E", away_label:"2nd Group I", home_team:"Ivory Coast",away_team:"Norway", score:{h:1,a:2},goals:[{t:"Norway",p:"Nusa",m:39},{t:"Ivory Coast",p:"Amad Diallo",m:74},{t:"Norway",p:"Haaland",m:86}],reds:[],yt:"https://www.youtube.com/watch?v=Axhonxm7emA"},
       {id:"R32-79", date_bst:"2026-07-01", time_bst:"02:00", home_label:"1st Group A", away_label:"Best 3rd (C/E/F/H/I)", home_team:"Mexico",away_team:"Ecuador", score:{h:2,a:0},goals:[{t:"Mexico",p:"Quiñones",m:22},{t:"Mexico",p:"Jiménez",m:31}],reds:[{t:"Ecuador",p:"Hincapié",m:"90+5"}],yt:"https://www.youtube.com/watch?v=HpZf48QB-M0"},
       {id:"R32-80", date_bst:"2026-07-01", time_bst:"17:00", home_label:"1st Group L", away_label:"Best 3rd (E/H/I/J/K)", home_team:"England",away_team:"DR Congo", score:{h:2,a:1},goals:[{t:"DR Congo",p:"Cipenga",m:7},{t:"England",p:"Kane",m:75},{t:"England",p:"Kane",m:86}],reds:[],yt:"https://www.youtube.com/watch?v=x24Ir5Ua4RQ"},
-      {id:"R32-86", date_bst:"2026-07-03", time_bst:"23:00", home_label:"1st Group J", away_label:"2nd Group H", home_team:"Argentina",away_team:"Cape Verde", score:{h:3,a:2},goals:[{t:"Argentina",p:"Messi",m:29},{t:"Cape Verde",p:"Duarte",m:59},{t:"Argentina",p:"L. Martínez",m:92},{t:"Cape Verde",p:"Cabral",m:103},{t:"Argentina",p:"Borges",m:111,og:true}],reds:[],yt:"https://www.youtube.com/watch?v=EC2jOKluGRI", new:true},
-      {id:"R32-88", date_bst:"2026-07-03", time_bst:"19:00", home_label:"2nd Group D", away_label:"2nd Group G", home_team:"Australia",away_team:"Egypt", score:{h:1,a:1},pens:{h:2,a:4},goals:[{t:"Egypt",p:"Emam Ashour",m:13},{t:"Australia",p:"Hany",m:55,og:true}],reds:[],yt:"https://www.youtube.com/watch?v=ACWOG7t8Plk", new:true},
+      {id:"R32-86", date_bst:"2026-07-03", time_bst:"23:00", home_label:"1st Group J", away_label:"2nd Group H", home_team:"Argentina",away_team:"Cape Verde", score:{h:3,a:2},goals:[{t:"Argentina",p:"Messi",m:29},{t:"Cape Verde",p:"Duarte",m:59},{t:"Argentina",p:"L. Martínez",m:92},{t:"Cape Verde",p:"Cabral",m:103},{t:"Argentina",p:"Borges",m:111,og:true}],reds:[],yt:"https://www.youtube.com/watch?v=EC2jOKluGRI"},
+      {id:"R32-88", date_bst:"2026-07-03", time_bst:"19:00", home_label:"2nd Group D", away_label:"2nd Group G", home_team:"Australia",away_team:"Egypt", score:{h:1,a:1},pens:{h:2,a:4},goals:[{t:"Egypt",p:"Emam Ashour",m:13},{t:"Australia",p:"Hany",m:55,og:true}],reds:[],yt:"https://www.youtube.com/watch?v=ACWOG7t8Plk"},
       {id:"R32-85", date_bst:"2026-07-03", time_bst:"04:00", home_label:"1st Group B", away_label:"Best 3rd (E/F/G/I/J)", home_team:"Switzerland",away_team:"Algeria", score:{h:2,a:0},goals:[{t:"Switzerland",p:"Embolo",m:10},{t:"Switzerland",p:"Ndoye",m:46}],reds:[],yt:"https://www.youtube.com/watch?v=_pO3-HVy-p0"},
-      {id:"R32-87", date_bst:"2026-07-04", time_bst:"02:30", home_label:"1st Group K", away_label:"Best 3rd (D/E/I/J/L)", home_team:"Colombia",away_team:"Ghana", score:{h:1,a:0},goals:[{t:"Colombia",p:"Arias",m:14}],reds:[],yt:"https://www.youtube.com/watch?v=q9fXwjLYvG4", new:true},
+      {id:"R32-87", date_bst:"2026-07-04", time_bst:"02:30", home_label:"1st Group K", away_label:"Best 3rd (D/E/I/J/L)", home_team:"Colombia",away_team:"Ghana", score:{h:1,a:0},goals:[{t:"Colombia",p:"Arias",m:14}],reds:[],yt:"https://www.youtube.com/watch?v=q9fXwjLYvG4"},
     ],
     r16: [
       // Left half (feeds SF-101)
-      {id:"R16-89", date_bst:"2026-07-04", time_bst:"TBC", home_label:"W R32-74", away_label:"W R32-77", home_team:null,away_team:null, score:null,goals:[],reds:[],yt:null, feeds_from:["R32-74","R32-77"]},
-      {id:"R16-90", date_bst:"2026-07-04", time_bst:"TBC", home_label:"W R32-73", away_label:"W R32-75", home_team:null,away_team:null, score:null,goals:[],reds:[],yt:null, feeds_from:["R32-73","R32-75"]},
+      {id:"R16-89", date_bst:"2026-07-04", time_bst:"22:00", home_label:"W R32-74", away_label:"W R32-77", home_team:"Paraguay",away_team:"France", score:{h:0,a:1},goals:[{t:"France",p:"Mbappé",m:70,pen:true}],reds:[],yt:"https://www.youtube.com/watch?v=5OxGV8aVG-k", new:true, feeds_from:["R32-74","R32-77"]},
+      {id:"R16-90", date_bst:"2026-07-04", time_bst:"18:00", home_label:"W R32-73", away_label:"W R32-75", home_team:"Canada",away_team:"Morocco", score:{h:0,a:3},goals:[{t:"Morocco",p:"Ounahi",m:50},{t:"Morocco",p:"Ounahi",m:82},{t:"Morocco",p:"Rahimi",m:"90+8"}],reds:[],yt:"https://www.youtube.com/watch?v=QLFucR6SGr4", new:true, feeds_from:["R32-73","R32-75"]},
       {id:"R16-93", date_bst:"2026-07-06", time_bst:"TBC", home_label:"W R32-83", away_label:"W R32-84", home_team:null,away_team:null, score:null,goals:[],reds:[],yt:null, feeds_from:["R32-83","R32-84"]},
       {id:"R16-94", date_bst:"2026-07-06", time_bst:"TBC", home_label:"W R32-81", away_label:"W R32-82", home_team:null,away_team:null, score:null,goals:[],reds:[],yt:null, feeds_from:["R32-81","R32-82"]},
       // Right half (feeds SF-102)
@@ -446,7 +446,7 @@ const WC_DATA = {
     // Predicted knockout winners: team name that advances from each match.
     // Winner chosen by better tournament-winner odds (lower American odds = more likely).
     // Recalculate downstream matches whenever a predicted team changes.
-    // Odds source: FoxSports, July 4 2026. Round of 32 COMPLETE — R32-86/87/88 in (Argentina, Colombia, Egypt all advanced as predicted); no prediction changes.
+    // Odds source: FoxSports, July 5 2026. R16-89/90 played — France 1-0 Paraguay, Morocco 3-0 Canada (both advanced as predicted); no prediction changes.
     knockout: {
       // R32
       "R32-73": "Canada",        // South Africa +100000 vs Canada +20000
@@ -466,25 +466,25 @@ const WC_DATA = {
       "R32-87": "Colombia",      // Colombia 1-0 Ghana (actual)
       "R32-88": "Egypt",         // Australia 1-1 Egypt, Egypt 4-2 pens (actual)
       // R16 (pairings per corrected FIFA bracket)
-      "R16-89": "France",        // Paraguay (actual) vs France +180 → France
-      "R16-90": "Morocco",       // Canada +25000 vs Morocco +3500 → Morocco (both actual: Canada beat RSA, Morocco beat NED on pens)
-      "R16-91": "Brazil",        // Brazil (actual) +1300 vs Norway (actual) +4000 → Brazil
-      "R16-92": "England",       // Mexico (actual) +3000 vs England (actual) +1000 → England
-      "R16-93": "Spain",         // Portugal (actual) +1300 vs Spain (actual) +550 → Spain
+      "R16-89": "France",        // France 1-0 Paraguay (actual)
+      "R16-90": "Morocco",       // Morocco 3-0 Canada (actual)
+      "R16-91": "Brazil",        // Brazil (actual) +1100 vs Norway (actual) +4000 → Brazil
+      "R16-92": "England",       // Mexico (actual) +2700 vs England (actual) +1000 → England
+      "R16-93": "Spain",         // Portugal (actual) +1400 vs Spain (actual) +550 → Spain
       "R16-94": "United States", // USA +3000 vs Belgium +5000 (both actual; Balogun suspended R16, but odds still favour USA)
-      "R16-95": "Argentina",     // Argentina (actual) +370 vs Egypt (actual) → Argentina
-      "R16-96": "Colombia",      // Switzerland (actual) +7500 vs Colombia (actual) +2700 → Colombia
+      "R16-95": "Argentina",     // Argentina (actual) +460 vs Egypt (actual) +30000 → Argentina
+      "R16-96": "Colombia",      // Switzerland (actual) +7000 vs Colombia (actual) +2500 → Colombia
       // QF
-      "QF-97":  "France",        // France +180 vs Morocco +3500 → France
+      "QF-97":  "France",        // France +170 vs Morocco +3000 → France
       "QF-98":  "Spain",         // Spain +550 vs USA +3000
-      "QF-99":  "England",       // Brazil +1300 vs England +1000 → England
-      "QF-100": "Argentina",     // Argentina +370 vs Colombia +2700 → Argentina
+      "QF-99":  "England",       // Brazil +1100 vs England +1000 → England
+      "QF-100": "Argentina",     // Argentina +460 vs Colombia +2500 → Argentina
       // SF
-      "SF-101": "France",        // France +180 vs Spain +550
-      "SF-102": "Argentina",     // England +1000 vs Argentina +370 → Argentina
+      "SF-101": "France",        // France +170 vs Spain +550
+      "SF-102": "Argentina",     // England +1000 vs Argentina +460 → Argentina
       // 3rd place & Final
       "3PL-103": "Spain",        // L SF-101 Spain +550 vs L SF-102 England +1000 → Spain
-      "FIN-104": "France",       // France +180 vs Argentina +370 → France
+      "FIN-104": "France",       // France +170 vs Argentina +460 → France
     }
   }
 };
