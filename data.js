@@ -1,7 +1,7 @@
 // FIFA World Cup 2026 — data file
 // All times in BST (UTC+1). Updated daily via /update-worldcup
 const WC_DATA = {
-  updated: "2026-07-05T06:50:11Z",
+  updated: "2026-07-06T09:15:27Z",
   stage: "knockout", // "group" | "knockout"
   groups: {
     A: {
@@ -380,13 +380,13 @@ const WC_DATA = {
     ],
     r16: [
       // Left half (feeds SF-101)
-      {id:"R16-89", date_bst:"2026-07-04", time_bst:"22:00", home_label:"W R32-74", away_label:"W R32-77", home_team:"Paraguay",away_team:"France", score:{h:0,a:1},goals:[{t:"France",p:"Mbappé",m:70,pen:true}],reds:[],yt:"https://www.youtube.com/watch?v=5OxGV8aVG-k", new:true, feeds_from:["R32-74","R32-77"]},
-      {id:"R16-90", date_bst:"2026-07-04", time_bst:"18:00", home_label:"W R32-73", away_label:"W R32-75", home_team:"Canada",away_team:"Morocco", score:{h:0,a:3},goals:[{t:"Morocco",p:"Ounahi",m:50},{t:"Morocco",p:"Ounahi",m:82},{t:"Morocco",p:"Rahimi",m:"90+8"}],reds:[],yt:"https://www.youtube.com/watch?v=QLFucR6SGr4", new:true, feeds_from:["R32-73","R32-75"]},
+      {id:"R16-89", date_bst:"2026-07-04", time_bst:"22:00", home_label:"W R32-74", away_label:"W R32-77", home_team:"Paraguay",away_team:"France", score:{h:0,a:1},goals:[{t:"France",p:"Mbappé",m:70,pen:true}],reds:[],yt:"https://www.youtube.com/watch?v=5OxGV8aVG-k", feeds_from:["R32-74","R32-77"]},
+      {id:"R16-90", date_bst:"2026-07-04", time_bst:"18:00", home_label:"W R32-73", away_label:"W R32-75", home_team:"Canada",away_team:"Morocco", score:{h:0,a:3},goals:[{t:"Morocco",p:"Ounahi",m:50},{t:"Morocco",p:"Ounahi",m:82},{t:"Morocco",p:"Rahimi",m:"90+8"}],reds:[],yt:"https://www.youtube.com/watch?v=QLFucR6SGr4", feeds_from:["R32-73","R32-75"]},
       {id:"R16-93", date_bst:"2026-07-06", time_bst:"TBC", home_label:"W R32-83", away_label:"W R32-84", home_team:null,away_team:null, score:null,goals:[],reds:[],yt:null, feeds_from:["R32-83","R32-84"]},
       {id:"R16-94", date_bst:"2026-07-06", time_bst:"TBC", home_label:"W R32-81", away_label:"W R32-82", home_team:null,away_team:null, score:null,goals:[],reds:[],yt:null, feeds_from:["R32-81","R32-82"]},
       // Right half (feeds SF-102)
-      {id:"R16-91", date_bst:"2026-07-05", time_bst:"TBC", home_label:"W R32-76", away_label:"W R32-78", home_team:null,away_team:null, score:null,goals:[],reds:[],yt:null, feeds_from:["R32-76","R32-78"]},
-      {id:"R16-92", date_bst:"2026-07-05", time_bst:"TBC", home_label:"W R32-79", away_label:"W R32-80", home_team:null,away_team:null, score:null,goals:[],reds:[],yt:null, feeds_from:["R32-79","R32-80"]},
+      {id:"R16-91", date_bst:"2026-07-05", time_bst:"TBC", home_label:"W R32-76", away_label:"W R32-78", home_team:"Brazil",away_team:"Norway", score:{h:1,a:2},goals:[{t:"Norway",p:"Haaland",m:79},{t:"Norway",p:"Haaland",m:90},{t:"Brazil",p:"Neymar",m:"90+10",pen:true}],reds:[],yt:"https://www.youtube.com/watch?v=vpcukTVSD8Q", new:true, feeds_from:["R32-76","R32-78"]},
+      {id:"R16-92", date_bst:"2026-07-05", time_bst:"TBC", home_label:"W R32-79", away_label:"W R32-80", home_team:"Mexico",away_team:"England", score:{h:2,a:3},goals:[{t:"England",p:"Bellingham",m:36},{t:"England",p:"Bellingham",m:38},{t:"Mexico",p:"Quiñones",m:42},{t:"England",p:"Kane",m:60,pen:true},{t:"Mexico",p:"Jiménez",m:69,pen:true}],reds:[{t:"England",p:"Quansah",m:54}],yt:"https://www.youtube.com/watch?v=1FVVKb0UNFo", new:true, feeds_from:["R32-79","R32-80"]},
       {id:"R16-95", date_bst:"2026-07-07", time_bst:"TBC", home_label:"W R32-86", away_label:"W R32-88", home_team:null,away_team:null, score:null,goals:[],reds:[],yt:null, feeds_from:["R32-86","R32-88"]},
       {id:"R16-96", date_bst:"2026-07-07", time_bst:"TBC", home_label:"W R32-85", away_label:"W R32-87", home_team:null,away_team:null, score:null,goals:[],reds:[],yt:null, feeds_from:["R32-85","R32-87"]},
     ],
@@ -395,7 +395,7 @@ const WC_DATA = {
       {id:"QF-97", date_bst:"2026-07-09", time_bst:"TBC", home_label:"W R16-89", away_label:"W R16-90", home_team:null,away_team:null, score:null,goals:[],reds:[],yt:null, feeds_from:["R16-89","R16-90"]},
       {id:"QF-98", date_bst:"2026-07-10", time_bst:"TBC", home_label:"W R16-93", away_label:"W R16-94", home_team:null,away_team:null, score:null,goals:[],reds:[],yt:null, feeds_from:["R16-93","R16-94"]},
       // Right half (feeds SF-102)
-      {id:"QF-99", date_bst:"2026-07-10", time_bst:"TBC", home_label:"W R16-91", away_label:"W R16-92", home_team:null,away_team:null, score:null,goals:[],reds:[],yt:null, feeds_from:["R16-91","R16-92"]},
+      {id:"QF-99", date_bst:"2026-07-11", time_bst:"TBC", home_label:"W R16-91", away_label:"W R16-92", home_team:null,away_team:null, score:null,goals:[],reds:[],yt:null, feeds_from:["R16-91","R16-92"]},
       {id:"QF-100",date_bst:"2026-07-11", time_bst:"TBC", home_label:"W R16-95", away_label:"W R16-96", home_team:null,away_team:null, score:null,goals:[],reds:[],yt:null, feeds_from:["R16-95","R16-96"]},
     ],
     sf: [
@@ -446,7 +446,8 @@ const WC_DATA = {
     // Predicted knockout winners: team name that advances from each match.
     // Winner chosen by better tournament-winner odds (lower American odds = more likely).
     // Recalculate downstream matches whenever a predicted team changes.
-    // Odds source: FoxSports, July 5 2026. R16-89/90 played — France 1-0 Paraguay, Morocco 3-0 Canada (both advanced as predicted); no prediction changes.
+    // Odds source: FoxSports (FanDuel), July 6 2026. R16-91/92 played — Norway 2-1 Brazil (UPSET: Brazil was predicted), England 3-2 Mexico (advanced as predicted).
+    // England odds shortened to +500 → 3PL-103 now predicts England over Spain (was Spain). QF-99 participant changed Brazil→Norway but England still predicted to win.
     knockout: {
       // R32
       "R32-73": "Canada",        // South Africa +100000 vs Canada +20000
@@ -468,23 +469,23 @@ const WC_DATA = {
       // R16 (pairings per corrected FIFA bracket)
       "R16-89": "France",        // France 1-0 Paraguay (actual)
       "R16-90": "Morocco",       // Morocco 3-0 Canada (actual)
-      "R16-91": "Brazil",        // Brazil (actual) +1100 vs Norway (actual) +4000 → Brazil
-      "R16-92": "England",       // Mexico (actual) +2700 vs England (actual) +1000 → England
+      "R16-91": "Norway",        // Norway 2-1 Brazil (actual) — UPSET, Brazil was predicted
+      "R16-92": "England",       // England 3-2 Mexico (actual)
       "R16-93": "Spain",         // Portugal (actual) +1400 vs Spain (actual) +550 → Spain
-      "R16-94": "United States", // USA +3000 vs Belgium +5000 (both actual; Balogun suspended R16, but odds still favour USA)
-      "R16-95": "Argentina",     // Argentina (actual) +460 vs Egypt (actual) +30000 → Argentina
-      "R16-96": "Colombia",      // Switzerland (actual) +7000 vs Colombia (actual) +2500 → Colombia
+      "R16-94": "United States", // USA +3000 vs Belgium +5500 (both actual; odds favour USA)
+      "R16-95": "Argentina",     // Argentina (actual) +440 vs Egypt (actual) +25000 → Argentina
+      "R16-96": "Colombia",      // Switzerland (actual) +7500 vs Colombia (actual) +2500 → Colombia
       // QF
       "QF-97":  "France",        // France +170 vs Morocco +3000 → France
-      "QF-98":  "Spain",         // Spain +550 vs USA +3000
-      "QF-99":  "England",       // Brazil +1100 vs England +1000 → England
-      "QF-100": "Argentina",     // Argentina +460 vs Colombia +2500 → Argentina
+      "QF-98":  "Spain",         // Spain +550 vs USA +3000 → Spain
+      "QF-99":  "England",       // Norway (actual) +1600 vs England (actual) +500 → England
+      "QF-100": "Argentina",     // Argentina +440 vs Colombia +2500 → Argentina
       // SF
-      "SF-101": "France",        // France +170 vs Spain +550
-      "SF-102": "Argentina",     // England +1000 vs Argentina +460 → Argentina
+      "SF-101": "France",        // France +170 vs Spain +550 → France
+      "SF-102": "Argentina",     // England +500 vs Argentina +440 → Argentina
       // 3rd place & Final
-      "3PL-103": "Spain",        // L SF-101 Spain +550 vs L SF-102 England +1000 → Spain
-      "FIN-104": "France",       // France +170 vs Argentina +460 → France
+      "3PL-103": "England",      // L SF-101 Spain +550 vs L SF-102 England +500 → England
+      "FIN-104": "France",       // France +170 vs Argentina +440 → France
     }
   }
 };
