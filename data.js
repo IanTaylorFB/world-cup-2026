@@ -1,7 +1,7 @@
 // FIFA World Cup 2026 — data file
 // All times in BST (UTC+1). Updated daily via /update-worldcup
 const WC_DATA = {
-  updated: "2026-07-08T11:25:15Z",
+  updated: "2026-07-10T17:17:19Z",
   stage: "knockout", // "group" | "knockout"
   groups: {
     A: {
@@ -387,16 +387,16 @@ const WC_DATA = {
       // Right half (feeds SF-102)
       {id:"R16-91", date_bst:"2026-07-05", time_bst:"TBC", home_label:"W R32-76", away_label:"W R32-78", home_team:"Brazil",away_team:"Norway", score:{h:1,a:2},goals:[{t:"Norway",p:"Haaland",m:79},{t:"Norway",p:"Haaland",m:90},{t:"Brazil",p:"Neymar",m:"90+10",pen:true}],reds:[],yt:"https://www.youtube.com/watch?v=vpcukTVSD8Q", feeds_from:["R32-76","R32-78"]},
       {id:"R16-92", date_bst:"2026-07-05", time_bst:"TBC", home_label:"W R32-79", away_label:"W R32-80", home_team:"Mexico",away_team:"England", score:{h:2,a:3},goals:[{t:"England",p:"Bellingham",m:36},{t:"England",p:"Bellingham",m:38},{t:"Mexico",p:"Quiñones",m:42},{t:"England",p:"Kane",m:60,pen:true},{t:"Mexico",p:"Jiménez",m:69,pen:true}],reds:[{t:"England",p:"Quansah",m:54}],yt:"https://www.youtube.com/watch?v=1FVVKb0UNFo", feeds_from:["R32-79","R32-80"]},
-      {id:"R16-95", date_bst:"2026-07-07", time_bst:"TBC", home_label:"W R32-86", away_label:"W R32-88", home_team:"Argentina",away_team:"Egypt", score:{h:3,a:2},goals:[{t:"Egypt",p:"Ibrahim",m:15},{t:"Egypt",p:"Zico",m:67},{t:"Argentina",p:"Romero",m:79},{t:"Argentina",p:"Messi",m:83},{t:"Argentina",p:"E. Fernández",m:"90+2"}],reds:[],yt:"https://www.youtube.com/watch?v=SQAVHtEcDEk", new:true, feeds_from:["R32-86","R32-88"]},
-      {id:"R16-96", date_bst:"2026-07-07", time_bst:"TBC", home_label:"W R32-85", away_label:"W R32-87", home_team:"Switzerland",away_team:"Colombia", score:{h:0,a:0},pens:{h:4,a:3},goals:[],reds:[],yt:"https://www.youtube.com/watch?v=_RAxvAKNc5Y", new:true, feeds_from:["R32-85","R32-87"]},
+      {id:"R16-95", date_bst:"2026-07-07", time_bst:"TBC", home_label:"W R32-86", away_label:"W R32-88", home_team:"Argentina",away_team:"Egypt", score:{h:3,a:2},goals:[{t:"Egypt",p:"Ibrahim",m:15},{t:"Egypt",p:"Zico",m:67},{t:"Argentina",p:"Romero",m:79},{t:"Argentina",p:"Messi",m:83},{t:"Argentina",p:"E. Fernández",m:"90+2"}],reds:[],yt:"https://www.youtube.com/watch?v=SQAVHtEcDEk", feeds_from:["R32-86","R32-88"]},
+      {id:"R16-96", date_bst:"2026-07-07", time_bst:"TBC", home_label:"W R32-85", away_label:"W R32-87", home_team:"Switzerland",away_team:"Colombia", score:{h:0,a:0},pens:{h:4,a:3},goals:[],reds:[],yt:"https://www.youtube.com/watch?v=_RAxvAKNc5Y", feeds_from:["R32-85","R32-87"]},
     ],
     qf: [
       // Left half (feeds SF-101)
-      {id:"QF-97", date_bst:"2026-07-09", time_bst:"TBC", home_label:"W R16-89", away_label:"W R16-90", home_team:null,away_team:null, score:null,goals:[],reds:[],yt:null, feeds_from:["R16-89","R16-90"]},
+      {id:"QF-97", date_bst:"2026-07-09", time_bst:"TBC", home_label:"W R16-89", away_label:"W R16-90", home_team:"France",away_team:"Morocco", score:{h:2,a:0},goals:[{t:"France",p:"Mbappé",m:60},{t:"France",p:"Dembélé",m:66}],reds:[],yt:"https://www.youtube.com/watch?v=fLeA9wFInyA", new:true, feeds_from:["R16-89","R16-90"]},
       {id:"QF-98", date_bst:"2026-07-10", time_bst:"TBC", home_label:"W R16-93", away_label:"W R16-94", home_team:null,away_team:null, score:null,goals:[],reds:[],yt:null, feeds_from:["R16-93","R16-94"]},
       // Right half (feeds SF-102)
       {id:"QF-99", date_bst:"2026-07-11", time_bst:"TBC", home_label:"W R16-91", away_label:"W R16-92", home_team:null,away_team:null, score:null,goals:[],reds:[],yt:null, feeds_from:["R16-91","R16-92"]},
-      {id:"QF-100",date_bst:"2026-07-11", time_bst:"TBC", home_label:"W R16-95", away_label:"W R16-96", home_team:null,away_team:null, score:null,goals:[],reds:[],yt:null, feeds_from:["R16-95","R16-96"]},
+      {id:"QF-100",date_bst:"2026-07-12", time_bst:"TBC", home_label:"W R16-95", away_label:"W R16-96", home_team:null,away_team:null, score:null,goals:[],reds:[],yt:null, feeds_from:["R16-95","R16-96"]},
     ],
     sf: [
       {id:"SF-101", date_bst:"2026-07-14", time_bst:"TBC", home_label:"W QF-97", away_label:"W QF-98", home_team:null,away_team:null, score:null,goals:[],reds:[],yt:null, feeds_from:["QF-97","QF-98"]},
@@ -446,8 +446,8 @@ const WC_DATA = {
     // Predicted knockout winners: team name that advances from each match.
     // Winner chosen by better tournament-winner odds (lower American odds = more likely).
     // Recalculate downstream matches whenever a predicted team changes.
-    // Odds source: FoxSports (FanDuel), July 8 2026. R16 complete. R16-95/96 played — Argentina 3-2 Egypt (advanced as predicted), Switzerland 0-0 Colombia 4-3 pens (UPSET: Colombia was predicted).
-    // Switzerland replaces Colombia in QF-100 but Argentina still predicted to win (+390 vs +3300). All QF participants now set; no downstream prediction flips.
+    // Odds source: FoxSports (FanDuel), July 10 2026. QF-97 played — France 2-0 Morocco (advanced as predicted). Spain v Belgium (QF-98) kicks off tonight, still unplayed.
+    // France shortened to tournament favourite (+135). No prediction flips: France advanced as predicted; QF-98/99/100 participants unchanged.
     knockout: {
       // R32
       "R32-73": "Canada",        // South Africa +100000 vs Canada +20000
@@ -476,16 +476,16 @@ const WC_DATA = {
       "R16-95": "Argentina",     // Argentina 3-2 Egypt (actual)
       "R16-96": "Switzerland",   // Switzerland 0-0 Colombia, 4-3 pens (actual) — UPSET, Colombia was predicted
       // QF
-      "QF-97":  "France",        // France +175 vs Morocco +2700 → France
-      "QF-98":  "Spain",         // Spain +370 vs Belgium +3000 → Spain
-      "QF-99":  "England",       // Norway +1400 vs England +480 → England
-      "QF-100": "Argentina",     // Argentina +390 vs Switzerland +3300 → Argentina
+      "QF-97":  "France",        // France 2-0 Morocco (actual)
+      "QF-98":  "Spain",         // Spain +410 vs Belgium +3500 → Spain
+      "QF-99":  "England",       // Norway +1600 vs England +490 → England
+      "QF-100": "Argentina",     // Argentina +420 vs Switzerland +3500 → Argentina
       // SF
-      "SF-101": "France",        // France +175 vs Spain +370 → France
-      "SF-102": "Argentina",     // England +480 vs Argentina +390 → Argentina
+      "SF-101": "France",        // France +135 vs Spain +410 → France
+      "SF-102": "Argentina",     // England +490 vs Argentina +420 → Argentina
       // 3rd place & Final
-      "3PL-103": "Spain",        // L SF-101 Spain +370 vs L SF-102 England +480 → Spain
-      "FIN-104": "France",       // France +175 vs Argentina +390 → France
+      "3PL-103": "Spain",        // L SF-101 Spain +410 vs L SF-102 England +490 → Spain
+      "FIN-104": "France",       // France +135 vs Argentina +420 → France
     }
   }
 };
