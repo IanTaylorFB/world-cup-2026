@@ -1,7 +1,7 @@
 // FIFA World Cup 2026 — data file
 // All times in BST (UTC+1). Updated daily via /update-worldcup
 const WC_DATA = {
-  updated: "2026-07-10T17:17:19Z",
+  updated: "2026-07-11T08:43:30Z",
   stage: "knockout", // "group" | "knockout"
   groups: {
     A: {
@@ -392,8 +392,8 @@ const WC_DATA = {
     ],
     qf: [
       // Left half (feeds SF-101)
-      {id:"QF-97", date_bst:"2026-07-09", time_bst:"TBC", home_label:"W R16-89", away_label:"W R16-90", home_team:"France",away_team:"Morocco", score:{h:2,a:0},goals:[{t:"France",p:"Mbappé",m:60},{t:"France",p:"Dembélé",m:66}],reds:[],yt:"https://www.youtube.com/watch?v=fLeA9wFInyA", new:true, feeds_from:["R16-89","R16-90"]},
-      {id:"QF-98", date_bst:"2026-07-10", time_bst:"TBC", home_label:"W R16-93", away_label:"W R16-94", home_team:null,away_team:null, score:null,goals:[],reds:[],yt:null, feeds_from:["R16-93","R16-94"]},
+      {id:"QF-97", date_bst:"2026-07-09", time_bst:"TBC", home_label:"W R16-89", away_label:"W R16-90", home_team:"France",away_team:"Morocco", score:{h:2,a:0},goals:[{t:"France",p:"Mbappé",m:60},{t:"France",p:"Dembélé",m:66}],reds:[],yt:"https://www.youtube.com/watch?v=fLeA9wFInyA", feeds_from:["R16-89","R16-90"]},
+      {id:"QF-98", date_bst:"2026-07-10", time_bst:"TBC", home_label:"W R16-93", away_label:"W R16-94", home_team:"Spain",away_team:"Belgium", score:{h:2,a:1},goals:[{t:"Spain",p:"Fabián Ruiz",m:30},{t:"Belgium",p:"De Ketelaere",m:41},{t:"Spain",p:"Merino",m:88}],reds:[],yt:"https://www.youtube.com/watch?v=bjDqza_M0xg", new:true, feeds_from:["R16-93","R16-94"]},
       // Right half (feeds SF-102)
       {id:"QF-99", date_bst:"2026-07-11", time_bst:"TBC", home_label:"W R16-91", away_label:"W R16-92", home_team:null,away_team:null, score:null,goals:[],reds:[],yt:null, feeds_from:["R16-91","R16-92"]},
       {id:"QF-100",date_bst:"2026-07-12", time_bst:"TBC", home_label:"W R16-95", away_label:"W R16-96", home_team:null,away_team:null, score:null,goals:[],reds:[],yt:null, feeds_from:["R16-95","R16-96"]},
@@ -446,8 +446,8 @@ const WC_DATA = {
     // Predicted knockout winners: team name that advances from each match.
     // Winner chosen by better tournament-winner odds (lower American odds = more likely).
     // Recalculate downstream matches whenever a predicted team changes.
-    // Odds source: FoxSports (FanDuel), July 10 2026. QF-97 played — France 2-0 Morocco (advanced as predicted). Spain v Belgium (QF-98) kicks off tonight, still unplayed.
-    // France shortened to tournament favourite (+135). No prediction flips: France advanced as predicted; QF-98/99/100 participants unchanged.
+    // Odds source: FoxSports, July 11 2026. QF-98 played — Spain 2-1 Belgium (advanced as predicted). Norway v England (QF-99) kicks off tonight; Argentina v Switzerland (QF-100) is Sunday July 12.
+    // Odds: France +150, Spain +300, Argentina +440, England +460, Norway +1600. No prediction flips — all QF/SF/final participants unchanged.
     knockout: {
       // R32
       "R32-73": "Canada",        // South Africa +100000 vs Canada +20000
@@ -477,15 +477,15 @@ const WC_DATA = {
       "R16-96": "Switzerland",   // Switzerland 0-0 Colombia, 4-3 pens (actual) — UPSET, Colombia was predicted
       // QF
       "QF-97":  "France",        // France 2-0 Morocco (actual)
-      "QF-98":  "Spain",         // Spain +410 vs Belgium +3500 → Spain
-      "QF-99":  "England",       // Norway +1600 vs England +490 → England
-      "QF-100": "Argentina",     // Argentina +420 vs Switzerland +3500 → Argentina
+      "QF-98":  "Spain",         // Spain 2-1 Belgium (actual)
+      "QF-99":  "England",       // Norway +1600 vs England +460 → England
+      "QF-100": "Argentina",     // Argentina +440 vs Switzerland +3500 → Argentina
       // SF
-      "SF-101": "France",        // France +135 vs Spain +410 → France
-      "SF-102": "Argentina",     // England +490 vs Argentina +420 → Argentina
+      "SF-101": "France",        // France +150 vs Spain +300 → France
+      "SF-102": "Argentina",     // England +460 vs Argentina +440 → Argentina
       // 3rd place & Final
-      "3PL-103": "Spain",        // L SF-101 Spain +410 vs L SF-102 England +490 → Spain
-      "FIN-104": "France",       // France +135 vs Argentina +420 → France
+      "3PL-103": "Spain",        // L SF-101 Spain +300 vs L SF-102 England +460 → Spain
+      "FIN-104": "France",       // France +150 vs Argentina +440 → France
     }
   }
 };
