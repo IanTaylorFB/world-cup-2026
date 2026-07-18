@@ -1,7 +1,7 @@
 // FIFA World Cup 2026 — data file
 // All times in BST (UTC+1). Updated daily via /update-worldcup
 const WC_DATA = {
-  updated: "2026-07-12T13:24:40Z",
+  updated: "2026-07-18T08:00:09Z",
   stage: "knockout", // "group" | "knockout"
   groups: {
     A: {
@@ -395,18 +395,18 @@ const WC_DATA = {
       {id:"QF-97", date_bst:"2026-07-09", time_bst:"TBC", home_label:"W R16-89", away_label:"W R16-90", home_team:"France",away_team:"Morocco", score:{h:2,a:0},goals:[{t:"France",p:"Mbappé",m:60},{t:"France",p:"Dembélé",m:66}],reds:[],yt:"https://www.youtube.com/watch?v=fLeA9wFInyA", feeds_from:["R16-89","R16-90"]},
       {id:"QF-98", date_bst:"2026-07-10", time_bst:"TBC", home_label:"W R16-93", away_label:"W R16-94", home_team:"Spain",away_team:"Belgium", score:{h:2,a:1},goals:[{t:"Spain",p:"Fabián Ruiz",m:30},{t:"Belgium",p:"De Ketelaere",m:41},{t:"Spain",p:"Merino",m:88}],reds:[],yt:"https://www.youtube.com/watch?v=bjDqza_M0xg", feeds_from:["R16-93","R16-94"]},
       // Right half (feeds SF-102)
-      {id:"QF-99", date_bst:"2026-07-11", time_bst:"TBC", home_label:"W R16-91", away_label:"W R16-92", home_team:"Norway",away_team:"England", score:{h:1,a:2},goals:[{t:"Norway",p:"Schjelderup",m:36},{t:"England",p:"Bellingham",m:"45+2"},{t:"England",p:"Bellingham",m:93}],reds:[],yt:"https://www.youtube.com/watch?v=TLrG2qEQJxY", new:true, feeds_from:["R16-91","R16-92"]},
-      {id:"QF-100",date_bst:"2026-07-12", time_bst:"TBC", home_label:"W R16-95", away_label:"W R16-96", home_team:"Argentina",away_team:"Switzerland", score:{h:3,a:1},goals:[{t:"Argentina",p:"Mac Allister",m:10},{t:"Switzerland",p:"Ndoye",m:67},{t:"Argentina",p:"Álvarez",m:112},{t:"Argentina",p:"L. Martínez",m:"120+1"}],reds:[{t:"Switzerland",p:"Embolo",m:72}],yt:"https://www.youtube.com/watch?v=FGhW41kIpgQ", new:true, feeds_from:["R16-95","R16-96"]},
+      {id:"QF-99", date_bst:"2026-07-11", time_bst:"TBC", home_label:"W R16-91", away_label:"W R16-92", home_team:"Norway",away_team:"England", score:{h:1,a:2},goals:[{t:"Norway",p:"Schjelderup",m:36},{t:"England",p:"Bellingham",m:"45+2"},{t:"England",p:"Bellingham",m:93}],reds:[],yt:"https://www.youtube.com/watch?v=TLrG2qEQJxY", feeds_from:["R16-91","R16-92"]},
+      {id:"QF-100",date_bst:"2026-07-12", time_bst:"TBC", home_label:"W R16-95", away_label:"W R16-96", home_team:"Argentina",away_team:"Switzerland", score:{h:3,a:1},goals:[{t:"Argentina",p:"Mac Allister",m:10},{t:"Switzerland",p:"Ndoye",m:67},{t:"Argentina",p:"Álvarez",m:112},{t:"Argentina",p:"L. Martínez",m:"120+1"}],reds:[{t:"Switzerland",p:"Embolo",m:72}],yt:"https://www.youtube.com/watch?v=FGhW41kIpgQ", feeds_from:["R16-95","R16-96"]},
     ],
     sf: [
-      {id:"SF-101", date_bst:"2026-07-14", time_bst:"TBC", home_label:"W QF-97", away_label:"W QF-98", home_team:null,away_team:null, score:null,goals:[],reds:[],yt:null, feeds_from:["QF-97","QF-98"]},
-      {id:"SF-102", date_bst:"2026-07-15", time_bst:"TBC", home_label:"W QF-99", away_label:"W QF-100", home_team:null,away_team:null, score:null,goals:[],reds:[],yt:null, feeds_from:["QF-99","QF-100"]},
+      {id:"SF-101", date_bst:"2026-07-14", time_bst:"TBC", home_label:"W QF-97", away_label:"W QF-98", home_team:"France",away_team:"Spain", score:{h:0,a:2},goals:[{t:"Spain",p:"Oyarzabal",m:22,pen:true},{t:"Spain",p:"Porro",m:58}],reds:[],yt:"https://www.youtube.com/watch?v=_cV8QcKp3GU", new:true, feeds_from:["QF-97","QF-98"]},
+      {id:"SF-102", date_bst:"2026-07-15", time_bst:"TBC", home_label:"W QF-99", away_label:"W QF-100", home_team:"England",away_team:"Argentina", score:{h:1,a:2},goals:[{t:"England",p:"Gordon",m:55},{t:"Argentina",p:"E. Fernández",m:85},{t:"Argentina",p:"L. Martínez",m:"90+2"}],reds:[],yt:"https://www.youtube.com/watch?v=oB2mK8eJli4", new:true, feeds_from:["QF-99","QF-100"]},
     ],
     third_place: [
-      {id:"3PL-103", date_bst:"2026-07-18", time_bst:"TBC", home_label:"L SF-101", away_label:"L SF-102", home_team:null,away_team:null, score:null,goals:[],reds:[],yt:null},
+      {id:"3PL-103", date_bst:"2026-07-18", time_bst:"TBC", home_label:"L SF-101", away_label:"L SF-102", home_team:"France",away_team:"England", score:null,goals:[],reds:[],yt:null},
     ],
     final: [
-      {id:"FIN-104", date_bst:"2026-07-19", time_bst:"TBC", home_label:"W SF-101", away_label:"W SF-102", home_team:null,away_team:null, score:null,goals:[],reds:[],yt:null, feeds_from:["SF-101","SF-102"]},
+      {id:"FIN-104", date_bst:"2026-07-19", time_bst:"TBC", home_label:"W SF-101", away_label:"W SF-102", home_team:"Spain",away_team:"Argentina", score:null,goals:[],reds:[],yt:null, feeds_from:["SF-101","SF-102"]},
     ]
   },
 
@@ -446,8 +446,8 @@ const WC_DATA = {
     // Predicted knockout winners: team name that advances from each match.
     // Winner chosen by better tournament-winner odds (lower American odds = more likely).
     // Recalculate downstream matches whenever a predicted team changes.
-    // Odds source: FoxSports (FanDuel), July 12 2026. Quarter-finals COMPLETE — England 2-1 Norway AET (advanced as predicted), Argentina 3-1 Switzerland AET (advanced as predicted). Semi-finals set: France v Spain, Argentina v England.
-    // Odds (four semi-finalists): France +155, Argentina +300, Spain +330, England +350. No prediction flips — France and Argentina still predicted finalists; France to lift the trophy.
+    // Odds source: FoxSports (FanDuel), July 18 2026. Semi-finals COMPLETE — Spain 2-0 France (UPSET, France was predicted), Argentina 2-1 England (as predicted). FINAL set: Spain v Argentina (Sun Jul 19). Third-place play-off: France v England (Sat Jul 18, not yet played).
+    // Odds (two finalists): Spain +130, Argentina +260 → Spain now predicted champion (France, prior pick, eliminated). Third-place: France (last live champion price +155) favoured over England (+350).
     knockout: {
       // R32
       "R32-73": "Canada",        // South Africa +100000 vs Canada +20000
@@ -481,11 +481,11 @@ const WC_DATA = {
       "QF-99":  "England",       // England 2-1 Norway AET (actual)
       "QF-100": "Argentina",     // Argentina 3-1 Switzerland AET (actual)
       // SF
-      "SF-101": "France",        // France +155 vs Spain +330 → France
-      "SF-102": "Argentina",     // England +350 vs Argentina +300 → Argentina
+      "SF-101": "Spain",         // Spain 2-0 France (actual) — UPSET, France was predicted
+      "SF-102": "Argentina",     // Argentina 2-1 England (actual)
       // 3rd place & Final
-      "3PL-103": "Spain",        // L SF-101 Spain +330 vs L SF-102 England +350 → Spain
-      "FIN-104": "France",       // France +155 vs Argentina +300 → France
+      "3PL-103": "France",       // L SF-101 France vs L SF-102 England — France (last live +155) vs England (+350) → France
+      "FIN-104": "Spain",        // W SF-101 Spain +130 vs W SF-102 Argentina +260 → Spain
     }
   }
 };
