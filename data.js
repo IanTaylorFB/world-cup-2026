@@ -1,7 +1,7 @@
 // FIFA World Cup 2026 — data file
 // All times in BST (UTC+1). Updated daily via /update-worldcup
 const WC_DATA = {
-  updated: "2026-07-18T08:00:09Z",
+  updated: "2026-07-19T10:15:36Z",
   stage: "knockout", // "group" | "knockout"
   groups: {
     A: {
@@ -399,11 +399,11 @@ const WC_DATA = {
       {id:"QF-100",date_bst:"2026-07-12", time_bst:"TBC", home_label:"W R16-95", away_label:"W R16-96", home_team:"Argentina",away_team:"Switzerland", score:{h:3,a:1},goals:[{t:"Argentina",p:"Mac Allister",m:10},{t:"Switzerland",p:"Ndoye",m:67},{t:"Argentina",p:"Álvarez",m:112},{t:"Argentina",p:"L. Martínez",m:"120+1"}],reds:[{t:"Switzerland",p:"Embolo",m:72}],yt:"https://www.youtube.com/watch?v=FGhW41kIpgQ", feeds_from:["R16-95","R16-96"]},
     ],
     sf: [
-      {id:"SF-101", date_bst:"2026-07-14", time_bst:"TBC", home_label:"W QF-97", away_label:"W QF-98", home_team:"France",away_team:"Spain", score:{h:0,a:2},goals:[{t:"Spain",p:"Oyarzabal",m:22,pen:true},{t:"Spain",p:"Porro",m:58}],reds:[],yt:"https://www.youtube.com/watch?v=_cV8QcKp3GU", new:true, feeds_from:["QF-97","QF-98"]},
-      {id:"SF-102", date_bst:"2026-07-15", time_bst:"TBC", home_label:"W QF-99", away_label:"W QF-100", home_team:"England",away_team:"Argentina", score:{h:1,a:2},goals:[{t:"England",p:"Gordon",m:55},{t:"Argentina",p:"E. Fernández",m:85},{t:"Argentina",p:"L. Martínez",m:"90+2"}],reds:[],yt:"https://www.youtube.com/watch?v=oB2mK8eJli4", new:true, feeds_from:["QF-99","QF-100"]},
+      {id:"SF-101", date_bst:"2026-07-14", time_bst:"TBC", home_label:"W QF-97", away_label:"W QF-98", home_team:"France",away_team:"Spain", score:{h:0,a:2},goals:[{t:"Spain",p:"Oyarzabal",m:22,pen:true},{t:"Spain",p:"Porro",m:58}],reds:[],yt:"https://www.youtube.com/watch?v=_cV8QcKp3GU", feeds_from:["QF-97","QF-98"]},
+      {id:"SF-102", date_bst:"2026-07-15", time_bst:"TBC", home_label:"W QF-99", away_label:"W QF-100", home_team:"England",away_team:"Argentina", score:{h:1,a:2},goals:[{t:"England",p:"Gordon",m:55},{t:"Argentina",p:"E. Fernández",m:85},{t:"Argentina",p:"L. Martínez",m:"90+2"}],reds:[],yt:"https://www.youtube.com/watch?v=oB2mK8eJli4", feeds_from:["QF-99","QF-100"]},
     ],
     third_place: [
-      {id:"3PL-103", date_bst:"2026-07-18", time_bst:"TBC", home_label:"L SF-101", away_label:"L SF-102", home_team:"France",away_team:"England", score:null,goals:[],reds:[],yt:null},
+      {id:"3PL-103", date_bst:"2026-07-18", time_bst:"TBC", home_label:"L SF-101", away_label:"L SF-102", home_team:"France",away_team:"England", score:{h:4,a:6},goals:[{t:"England",p:"Rice",m:3},{t:"England",p:"Konsa",m:18},{t:"England",p:"Saka",m:37},{t:"England",p:"Saka",m:"45+1"},{t:"France",p:"Mbappé",m:48},{t:"France",p:"Barcola",m:54},{t:"France",p:"Mbappé",m:66},{t:"England",p:"Saka",m:87,pen:true},{t:"France",p:"Dembélé",m:"90+6"},{t:"England",p:"Bellingham",m:"90+8"}],reds:[],yt:"https://www.youtube.com/watch?v=u6sORZy4kU0", new:true},
     ],
     final: [
       {id:"FIN-104", date_bst:"2026-07-19", time_bst:"TBC", home_label:"W SF-101", away_label:"W SF-102", home_team:"Spain",away_team:"Argentina", score:null,goals:[],reds:[],yt:null, feeds_from:["SF-101","SF-102"]},
@@ -446,8 +446,8 @@ const WC_DATA = {
     // Predicted knockout winners: team name that advances from each match.
     // Winner chosen by better tournament-winner odds (lower American odds = more likely).
     // Recalculate downstream matches whenever a predicted team changes.
-    // Odds source: FoxSports (FanDuel), July 18 2026. Semi-finals COMPLETE — Spain 2-0 France (UPSET, France was predicted), Argentina 2-1 England (as predicted). FINAL set: Spain v Argentina (Sun Jul 19). Third-place play-off: France v England (Sat Jul 18, not yet played).
-    // Odds (two finalists): Spain +130, Argentina +260 → Spain now predicted champion (France, prior pick, eliminated). Third-place: France (last live champion price +155) favoured over England (+350).
+    // Odds source: FoxSports (FanDuel), July 19 2026. Third-place play-off COMPLETE — England 6-4 France (UPSET, France was predicted). FINAL today: Spain v Argentina (Sun Jul 19), not yet played.
+    // Odds (two finalists): Spain +130, Argentina +260 → Spain predicted champion (France, prior pick, eliminated in SF).
     knockout: {
       // R32
       "R32-73": "Canada",        // South Africa +100000 vs Canada +20000
@@ -484,7 +484,7 @@ const WC_DATA = {
       "SF-101": "Spain",         // Spain 2-0 France (actual) — UPSET, France was predicted
       "SF-102": "Argentina",     // Argentina 2-1 England (actual)
       // 3rd place & Final
-      "3PL-103": "France",       // L SF-101 France vs L SF-102 England — France (last live +155) vs England (+350) → France
+      "3PL-103": "England",      // England 6-4 France (actual) — UPSET, France was predicted
       "FIN-104": "Spain",        // W SF-101 Spain +130 vs W SF-102 Argentina +260 → Spain
     }
   }
