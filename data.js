@@ -1,7 +1,7 @@
 // FIFA World Cup 2026 — data file
 // All times in BST (UTC+1). Updated daily via /update-worldcup
 const WC_DATA = {
-  updated: "2026-07-19T10:15:36Z",
+  updated: "2026-07-20T07:44:16Z",
   stage: "knockout", // "group" | "knockout"
   groups: {
     A: {
@@ -382,31 +382,31 @@ const WC_DATA = {
       // Left half (feeds SF-101)
       {id:"R16-89", date_bst:"2026-07-04", time_bst:"22:00", home_label:"W R32-74", away_label:"W R32-77", home_team:"Paraguay",away_team:"France", score:{h:0,a:1},goals:[{t:"France",p:"Mbappé",m:70,pen:true}],reds:[],yt:"https://www.youtube.com/watch?v=5OxGV8aVG-k", feeds_from:["R32-74","R32-77"]},
       {id:"R16-90", date_bst:"2026-07-04", time_bst:"18:00", home_label:"W R32-73", away_label:"W R32-75", home_team:"Canada",away_team:"Morocco", score:{h:0,a:3},goals:[{t:"Morocco",p:"Ounahi",m:50},{t:"Morocco",p:"Ounahi",m:82},{t:"Morocco",p:"Rahimi",m:"90+8"}],reds:[],yt:"https://www.youtube.com/watch?v=QLFucR6SGr4", feeds_from:["R32-73","R32-75"]},
-      {id:"R16-93", date_bst:"2026-07-06", time_bst:"TBC", home_label:"W R32-83", away_label:"W R32-84", home_team:"Portugal",away_team:"Spain", score:{h:0,a:1},goals:[{t:"Spain",p:"Merino",m:"90+1"}],reds:[],yt:"https://www.youtube.com/watch?v=KHTXATo7kL8", feeds_from:["R32-83","R32-84"]},
-      {id:"R16-94", date_bst:"2026-07-06", time_bst:"TBC", home_label:"W R32-81", away_label:"W R32-82", home_team:"United States",away_team:"Belgium", score:{h:1,a:4},goals:[{t:"Belgium",p:"De Ketelaere",m:9},{t:"United States",p:"Tillman",m:31},{t:"Belgium",p:"De Ketelaere",m:33},{t:"Belgium",p:"Vanaken",m:57},{t:"Belgium",p:"Lukaku",m:"90+3"}],reds:[],yt:"https://www.youtube.com/watch?v=RzhjHsBCffA", feeds_from:["R32-81","R32-82"]},
+      {id:"R16-93", date_bst:"2026-07-06", time_bst:"20:00", home_label:"W R32-83", away_label:"W R32-84", home_team:"Portugal",away_team:"Spain", score:{h:0,a:1},goals:[{t:"Spain",p:"Merino",m:"90+1"}],reds:[],yt:"https://www.youtube.com/watch?v=KHTXATo7kL8", feeds_from:["R32-83","R32-84"]},
+      {id:"R16-94", date_bst:"2026-07-07", time_bst:"01:00", home_label:"W R32-81", away_label:"W R32-82", home_team:"United States",away_team:"Belgium", score:{h:1,a:4},goals:[{t:"Belgium",p:"De Ketelaere",m:9},{t:"United States",p:"Tillman",m:31},{t:"Belgium",p:"De Ketelaere",m:33},{t:"Belgium",p:"Vanaken",m:57},{t:"Belgium",p:"Lukaku",m:"90+3"}],reds:[],yt:"https://www.youtube.com/watch?v=RzhjHsBCffA", feeds_from:["R32-81","R32-82"]},
       // Right half (feeds SF-102)
-      {id:"R16-91", date_bst:"2026-07-05", time_bst:"TBC", home_label:"W R32-76", away_label:"W R32-78", home_team:"Brazil",away_team:"Norway", score:{h:1,a:2},goals:[{t:"Norway",p:"Haaland",m:79},{t:"Norway",p:"Haaland",m:90},{t:"Brazil",p:"Neymar",m:"90+10",pen:true}],reds:[],yt:"https://www.youtube.com/watch?v=vpcukTVSD8Q", feeds_from:["R32-76","R32-78"]},
-      {id:"R16-92", date_bst:"2026-07-05", time_bst:"TBC", home_label:"W R32-79", away_label:"W R32-80", home_team:"Mexico",away_team:"England", score:{h:2,a:3},goals:[{t:"England",p:"Bellingham",m:36},{t:"England",p:"Bellingham",m:38},{t:"Mexico",p:"Quiñones",m:42},{t:"England",p:"Kane",m:60,pen:true},{t:"Mexico",p:"Jiménez",m:69,pen:true}],reds:[{t:"England",p:"Quansah",m:54}],yt:"https://www.youtube.com/watch?v=1FVVKb0UNFo", feeds_from:["R32-79","R32-80"]},
-      {id:"R16-95", date_bst:"2026-07-07", time_bst:"TBC", home_label:"W R32-86", away_label:"W R32-88", home_team:"Argentina",away_team:"Egypt", score:{h:3,a:2},goals:[{t:"Egypt",p:"Ibrahim",m:15},{t:"Egypt",p:"Zico",m:67},{t:"Argentina",p:"Romero",m:79},{t:"Argentina",p:"Messi",m:83},{t:"Argentina",p:"E. Fernández",m:"90+2"}],reds:[],yt:"https://www.youtube.com/watch?v=SQAVHtEcDEk", feeds_from:["R32-86","R32-88"]},
-      {id:"R16-96", date_bst:"2026-07-07", time_bst:"TBC", home_label:"W R32-85", away_label:"W R32-87", home_team:"Switzerland",away_team:"Colombia", score:{h:0,a:0},pens:{h:4,a:3},goals:[],reds:[],yt:"https://www.youtube.com/watch?v=_RAxvAKNc5Y", feeds_from:["R32-85","R32-87"]},
+      {id:"R16-91", date_bst:"2026-07-05", time_bst:"21:00", home_label:"W R32-76", away_label:"W R32-78", home_team:"Brazil",away_team:"Norway", score:{h:1,a:2},goals:[{t:"Norway",p:"Haaland",m:79},{t:"Norway",p:"Haaland",m:90},{t:"Brazil",p:"Neymar",m:"90+10",pen:true}],reds:[],yt:"https://www.youtube.com/watch?v=vpcukTVSD8Q", feeds_from:["R32-76","R32-78"]},
+      {id:"R16-92", date_bst:"2026-07-06", time_bst:"01:00", home_label:"W R32-79", away_label:"W R32-80", home_team:"Mexico",away_team:"England", score:{h:2,a:3},goals:[{t:"England",p:"Bellingham",m:36},{t:"England",p:"Bellingham",m:38},{t:"Mexico",p:"Quiñones",m:42},{t:"England",p:"Kane",m:60,pen:true},{t:"Mexico",p:"Jiménez",m:69,pen:true}],reds:[{t:"England",p:"Quansah",m:54}],yt:"https://www.youtube.com/watch?v=1FVVKb0UNFo", feeds_from:["R32-79","R32-80"]},
+      {id:"R16-95", date_bst:"2026-07-07", time_bst:"17:00", home_label:"W R32-86", away_label:"W R32-88", home_team:"Argentina",away_team:"Egypt", score:{h:3,a:2},goals:[{t:"Egypt",p:"Ibrahim",m:15},{t:"Egypt",p:"Zico",m:67},{t:"Argentina",p:"Romero",m:79},{t:"Argentina",p:"Messi",m:83},{t:"Argentina",p:"E. Fernández",m:"90+2"}],reds:[],yt:"https://www.youtube.com/watch?v=SQAVHtEcDEk", feeds_from:["R32-86","R32-88"]},
+      {id:"R16-96", date_bst:"2026-07-07", time_bst:"21:00", home_label:"W R32-85", away_label:"W R32-87", home_team:"Switzerland",away_team:"Colombia", score:{h:0,a:0},pens:{h:4,a:3},goals:[],reds:[],yt:"https://www.youtube.com/watch?v=_RAxvAKNc5Y", feeds_from:["R32-85","R32-87"]},
     ],
     qf: [
       // Left half (feeds SF-101)
-      {id:"QF-97", date_bst:"2026-07-09", time_bst:"TBC", home_label:"W R16-89", away_label:"W R16-90", home_team:"France",away_team:"Morocco", score:{h:2,a:0},goals:[{t:"France",p:"Mbappé",m:60},{t:"France",p:"Dembélé",m:66}],reds:[],yt:"https://www.youtube.com/watch?v=fLeA9wFInyA", feeds_from:["R16-89","R16-90"]},
-      {id:"QF-98", date_bst:"2026-07-10", time_bst:"TBC", home_label:"W R16-93", away_label:"W R16-94", home_team:"Spain",away_team:"Belgium", score:{h:2,a:1},goals:[{t:"Spain",p:"Fabián Ruiz",m:30},{t:"Belgium",p:"De Ketelaere",m:41},{t:"Spain",p:"Merino",m:88}],reds:[],yt:"https://www.youtube.com/watch?v=bjDqza_M0xg", feeds_from:["R16-93","R16-94"]},
+      {id:"QF-97", date_bst:"2026-07-09", time_bst:"21:00", home_label:"W R16-89", away_label:"W R16-90", home_team:"France",away_team:"Morocco", score:{h:2,a:0},goals:[{t:"France",p:"Mbappé",m:60},{t:"France",p:"Dembélé",m:66}],reds:[],yt:"https://www.youtube.com/watch?v=fLeA9wFInyA", feeds_from:["R16-89","R16-90"]},
+      {id:"QF-98", date_bst:"2026-07-10", time_bst:"20:00", home_label:"W R16-93", away_label:"W R16-94", home_team:"Spain",away_team:"Belgium", score:{h:2,a:1},goals:[{t:"Spain",p:"Fabián Ruiz",m:30},{t:"Belgium",p:"De Ketelaere",m:41},{t:"Spain",p:"Merino",m:88}],reds:[],yt:"https://www.youtube.com/watch?v=bjDqza_M0xg", feeds_from:["R16-93","R16-94"]},
       // Right half (feeds SF-102)
-      {id:"QF-99", date_bst:"2026-07-11", time_bst:"TBC", home_label:"W R16-91", away_label:"W R16-92", home_team:"Norway",away_team:"England", score:{h:1,a:2},goals:[{t:"Norway",p:"Schjelderup",m:36},{t:"England",p:"Bellingham",m:"45+2"},{t:"England",p:"Bellingham",m:93}],reds:[],yt:"https://www.youtube.com/watch?v=TLrG2qEQJxY", feeds_from:["R16-91","R16-92"]},
-      {id:"QF-100",date_bst:"2026-07-12", time_bst:"TBC", home_label:"W R16-95", away_label:"W R16-96", home_team:"Argentina",away_team:"Switzerland", score:{h:3,a:1},goals:[{t:"Argentina",p:"Mac Allister",m:10},{t:"Switzerland",p:"Ndoye",m:67},{t:"Argentina",p:"Álvarez",m:112},{t:"Argentina",p:"L. Martínez",m:"120+1"}],reds:[{t:"Switzerland",p:"Embolo",m:72}],yt:"https://www.youtube.com/watch?v=FGhW41kIpgQ", feeds_from:["R16-95","R16-96"]},
+      {id:"QF-99", date_bst:"2026-07-11", time_bst:"22:00", home_label:"W R16-91", away_label:"W R16-92", home_team:"Norway",away_team:"England", score:{h:1,a:2},goals:[{t:"Norway",p:"Schjelderup",m:36},{t:"England",p:"Bellingham",m:"45+2"},{t:"England",p:"Bellingham",m:93}],reds:[],yt:"https://www.youtube.com/watch?v=TLrG2qEQJxY", feeds_from:["R16-91","R16-92"]},
+      {id:"QF-100",date_bst:"2026-07-12", time_bst:"02:00", home_label:"W R16-95", away_label:"W R16-96", home_team:"Argentina",away_team:"Switzerland", score:{h:3,a:1},goals:[{t:"Argentina",p:"Mac Allister",m:10},{t:"Switzerland",p:"Ndoye",m:67},{t:"Argentina",p:"Álvarez",m:112},{t:"Argentina",p:"L. Martínez",m:"120+1"}],reds:[{t:"Switzerland",p:"Embolo",m:72}],yt:"https://www.youtube.com/watch?v=FGhW41kIpgQ", feeds_from:["R16-95","R16-96"]},
     ],
     sf: [
-      {id:"SF-101", date_bst:"2026-07-14", time_bst:"TBC", home_label:"W QF-97", away_label:"W QF-98", home_team:"France",away_team:"Spain", score:{h:0,a:2},goals:[{t:"Spain",p:"Oyarzabal",m:22,pen:true},{t:"Spain",p:"Porro",m:58}],reds:[],yt:"https://www.youtube.com/watch?v=_cV8QcKp3GU", feeds_from:["QF-97","QF-98"]},
-      {id:"SF-102", date_bst:"2026-07-15", time_bst:"TBC", home_label:"W QF-99", away_label:"W QF-100", home_team:"England",away_team:"Argentina", score:{h:1,a:2},goals:[{t:"England",p:"Gordon",m:55},{t:"Argentina",p:"E. Fernández",m:85},{t:"Argentina",p:"L. Martínez",m:"90+2"}],reds:[],yt:"https://www.youtube.com/watch?v=oB2mK8eJli4", feeds_from:["QF-99","QF-100"]},
+      {id:"SF-101", date_bst:"2026-07-14", time_bst:"20:00", home_label:"W QF-97", away_label:"W QF-98", home_team:"France",away_team:"Spain", score:{h:0,a:2},goals:[{t:"Spain",p:"Oyarzabal",m:22,pen:true},{t:"Spain",p:"Porro",m:58}],reds:[],yt:"https://www.youtube.com/watch?v=_cV8QcKp3GU", feeds_from:["QF-97","QF-98"]},
+      {id:"SF-102", date_bst:"2026-07-15", time_bst:"20:00", home_label:"W QF-99", away_label:"W QF-100", home_team:"England",away_team:"Argentina", score:{h:1,a:2},goals:[{t:"England",p:"Gordon",m:55},{t:"Argentina",p:"E. Fernández",m:85},{t:"Argentina",p:"L. Martínez",m:"90+2"}],reds:[],yt:"https://www.youtube.com/watch?v=oB2mK8eJli4", feeds_from:["QF-99","QF-100"]},
     ],
     third_place: [
-      {id:"3PL-103", date_bst:"2026-07-18", time_bst:"TBC", home_label:"L SF-101", away_label:"L SF-102", home_team:"France",away_team:"England", score:{h:4,a:6},goals:[{t:"England",p:"Rice",m:3},{t:"England",p:"Konsa",m:18},{t:"England",p:"Saka",m:37},{t:"England",p:"Saka",m:"45+1"},{t:"France",p:"Mbappé",m:48},{t:"France",p:"Barcola",m:54},{t:"France",p:"Mbappé",m:66},{t:"England",p:"Saka",m:87,pen:true},{t:"France",p:"Dembélé",m:"90+6"},{t:"England",p:"Bellingham",m:"90+8"}],reds:[],yt:"https://www.youtube.com/watch?v=u6sORZy4kU0", new:true},
+      {id:"3PL-103", date_bst:"2026-07-18", time_bst:"22:00", home_label:"L SF-101", away_label:"L SF-102", home_team:"France",away_team:"England", score:{h:4,a:6},goals:[{t:"England",p:"Rice",m:3},{t:"England",p:"Konsa",m:18},{t:"England",p:"Saka",m:37},{t:"England",p:"Saka",m:"45+1"},{t:"France",p:"Mbappé",m:48},{t:"France",p:"Barcola",m:54},{t:"France",p:"Mbappé",m:66},{t:"England",p:"Saka",m:87,pen:true},{t:"France",p:"Dembélé",m:"90+6"},{t:"England",p:"Bellingham",m:"90+8"}],reds:[],yt:"https://www.youtube.com/watch?v=u6sORZy4kU0"},
     ],
     final: [
-      {id:"FIN-104", date_bst:"2026-07-19", time_bst:"TBC", home_label:"W SF-101", away_label:"W SF-102", home_team:"Spain",away_team:"Argentina", score:null,goals:[],reds:[],yt:null, feeds_from:["SF-101","SF-102"]},
+      {id:"FIN-104", date_bst:"2026-07-19", time_bst:"20:00", home_label:"W SF-101", away_label:"W SF-102", home_team:"Spain",away_team:"Argentina", score:{h:1,a:0},goals:[{t:"Spain",p:"Ferran Torres",m:106}],reds:[{t:"Argentina",p:"E. Fernández",m:"90+3"}],yt:"https://www.youtube.com/watch?v=6HaHNYjnghE", new:true, feeds_from:["SF-101","SF-102"]},
     ]
   },
 
@@ -446,8 +446,9 @@ const WC_DATA = {
     // Predicted knockout winners: team name that advances from each match.
     // Winner chosen by better tournament-winner odds (lower American odds = more likely).
     // Recalculate downstream matches whenever a predicted team changes.
-    // Odds source: FoxSports (FanDuel), July 19 2026. Third-place play-off COMPLETE — England 6-4 France (UPSET, France was predicted). FINAL today: Spain v Argentina (Sun Jul 19), not yet played.
-    // Odds (two finalists): Spain +130, Argentina +260 → Spain predicted champion (France, prior pick, eliminated in SF).
+    // TOURNAMENT COMPLETE — Spain are 2026 World Cup champions (Spain 1-0 Argentina AET, Ferran Torres 106').
+    // Final pre-match odds (FoxSports/FanDuel): Spain +130, Argentina +260 → Spain was predicted champion. Prediction CORRECT.
+    // All knockout matches now played; no further odds needed.
     knockout: {
       // R32
       "R32-73": "Canada",        // South Africa +100000 vs Canada +20000
@@ -485,7 +486,7 @@ const WC_DATA = {
       "SF-102": "Argentina",     // Argentina 2-1 England (actual)
       // 3rd place & Final
       "3PL-103": "England",      // England 6-4 France (actual) — UPSET, France was predicted
-      "FIN-104": "Spain",        // W SF-101 Spain +130 vs W SF-102 Argentina +260 → Spain
+      "FIN-104": "Spain",        // Spain 1-0 Argentina AET (actual) — Spain predicted & won, CHAMPIONS
     }
   }
 };
